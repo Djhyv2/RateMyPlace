@@ -10,22 +10,21 @@ namespace RateMyPlace.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["Page"]=="Register")
+            if (Request.QueryString["Page"] == "Register")
             {
                 txtPasswordRepeat.Visible = true;
-                btnLogin.Visible = false ;
+                btnLogin.Visible = false;
                 Page.Title = "Register";
-            }//Only runs on first page load
-        }//Shows register
+            }//Shows register if specified in get array
+        }
 
 
         protected void handleLogin_click(object sender, EventArgs e)
         {
             //Get Stored Password
             List<SqlParameter> parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("@Username", txtUsername.Text));
+            parameters.Add(new SqlParameter("@Username", txtUsername.Text.ToLower()));
             DataTable credentials = Connection.RunSQL("SELECT PK_Username, Password FROM Users WHERE PK_Username = @Username", parameters);//Gets password from database for user supplied username
-
 
             //Turn input password into hash
             string password = credentials.Rows[0]["Password"].ToString();
@@ -35,8 +34,6 @@ namespace RateMyPlace.Pages
             var pbkdf2 = new Rfc2898DeriveBytes(txtPassword.Text, salt, 1000);
             byte[] hash = pbkdf2.GetBytes(20);
 
-
-            
             //Compare stored hashed to input hashed
             for (int i = 0; i < 20; i++)
             {
@@ -56,13 +53,23 @@ namespace RateMyPlace.Pages
             if (Request.QueryString["Page"] != "Register")
             {
                 Response.Redirect("Login.aspx?Page=Register");
-            }
+            }//If not register page
 
-            if (txtPassword.Text == txtPasswordRepeat.Text)
+            if (txtPassword.Text != txtPasswordRepeat.Text || null == txtUsername.Text || "" == txtUsername.Text)
             {
+                return;
+            }//If passwords don't match or username blank, return
 
-            }
+            List<SqlParameter> getUsernameParameter = new List<SqlParameter>();
+            getUsernameParameter.Add(new SqlParameter("@Username", txtUsername.Text));
+            DataTable usernameTable = Connection.RunSQL("SELECT PK_Username FROM Users WHERE PK_Username = @Username", getUsernameParameter);//Gets password from database for user supplied username
+            if (0 < usernameTable.Rows.Count)
+            {
+                return;
+            }//If Username already exists
 
+
+            //Turns password into hash
             byte[] salt = new byte[16];
             new RNGCryptoServiceProvider().GetBytes(salt);
             var pdkdf2 = new Rfc2898DeriveBytes(txtPassword.Text, salt, 1000);
@@ -72,6 +79,15 @@ namespace RateMyPlace.Pages
             Array.Copy(hash, 0, hashBytes, 16, 20);
             string passwordHash = Convert.ToBase64String(hashBytes);
 
+            //Store user into database
+            List<SqlParameter> insertUserParameters = new List<SqlParameter>();
+            insertUserParameters.Add(new SqlParameter("@Username", txtUsername.Text.ToLower()));
+            insertUserParameters.Add(new SqlParameter("@Password", passwordHash));
+            Connection.RunNonQuerySQL("INSERT INTO Users (PK_Username,Password) VALUES (@Username,@Password)", insertUserParameters);
+
+            //Login user
+            Session["Username"] = txtUsername.Text;//Saves username into session if successfully logged in
+            Response.Redirect("HomePage.aspx");//Redirects user to home page after log in
         }
     }
 }
