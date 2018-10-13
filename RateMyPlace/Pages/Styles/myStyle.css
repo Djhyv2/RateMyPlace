@@ -9,12 +9,12 @@ div#loginFormContainer {
     height: 45vh;
     width: 42vw;
     background-color: white;
-    opacity: .9;
     border-radius: 8px;
     opacity: .85;
     box-shadow: 0px 0px 13px 2px;
 }
-body {
+
+body#loginBody {
     background-color: #e57e57;
 }
 
@@ -152,7 +152,247 @@ div#loginFormContainer .carousel {
 
 
 nav#topbar {
-    height: 12vh;
-    background-color: white;
+    height: 10vh;
+    background-color: #e57e57;
+    font-family: 'Kalam', cursive;
 }
 
+nav#topbar a.nav-link {
+    color: white;
+}
+
+nav#topbar a.navbar-brand:hover {
+    color: cadetblue;
+}
+
+nav#topbar a.navbar-brand {
+    font-size: 1.9em;
+}
+
+nav#topbar #userIcon {
+    background-color: white;
+    padding: 10px;
+    border-radius: 40px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+nav#topbar a#logout {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+}
+
+nav#topbar a.nav-link:hover {
+    color: cadetblue;
+}
+
+nav#topbar #userIcon:hover {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+
+div#homePageBox {
+    margin: 3% auto 0 auto;
+    height: 85vh;
+    width: 95%;
+    padding: 0;
+    background-color: navajowhite;
+}
+
+div#homePageBox .item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+}
+
+div#homePageBox .item img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+div#homePageBox .item:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+div#homePageBox div.item + p {
+    position: relative;
+    top: -15%;
+    left: 3%;
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    color: black;
+    transition: color .7s ease;
+}
+
+div#homePageBox .item .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .7s ease;
+    background-color: #277851;
+}
+
+div#homePageBox .item:hover .overlay {
+    opacity: .7;
+}
+
+div#homePageBox .item:hover + p {
+    color: white;
+}
+
+div#homePageBox div.row {
+    margin-bottom: 5%;
+    padding: 0;
+}
+
+div#homePageBox div#row2 {
+    margin-top: -100px;
+}
+
+body#homeBody {
+    background-color: navajowhite;
+}
+
+div#homePageCarousel .crop {
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+div#homePageCarousel .crop img {
+    width: 100%;
+    height: auto;
+    margin: 0 0 0 0;
+    border-radius: 5px;
+}
+
+
+div#homePageCarousel .crop .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    opacity: .75;
+    background-image: linear-gradient(transparent, #277851);
+    transition: .7s ease;
+}
+
+
+div#homePageCarousel .carousel-caption {
+    opacity: 1;
+    z-index: 1001;
+    bottom: 130px !important;
+    font-family: 'Kalam', cursive;
+}
+
+
+div#homePageCarousel .carousel-caption .badge-pill {
+    background-color: #2f3f74;
+    padding: 10px 20px;
+    margin-top: 60px;
+    font-size: 1.2em;
+    font-family: 'Kalam', cursive;
+}
+
+div#homePageCarousel .carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 100px;
+    width: 100px;
+    outline: black;
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    opacity: .6;
+    background-color: whitesmoke;
+    background-image: none;
+    transition: opacity .7s ease;
+}
+
+div#homePageCarousel .carousel-control-next-icon:hover {
+opacity: .8;
+}
+
+div#homePageCarousel .carousel-control-prev-icon:hover {
+    opacity: .8;
+}
+
+div#homePageCarousel .carousel-control-next-icon:after {
+    content: '>';
+    font-size: 55px;
+    color: #277851;
+}
+
+div#homePageCarousel .carousel-control-prev-icon:after {
+    content: '<';
+    font-size: 55px;
+    color: #277851;
+}
+
+div#homePageCarousel img#homePageCarouselSubImage1 {
+    position: relative;
+    height: 60px;
+    width: 90px;
+    top: -70px;
+    left: 38%;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 3px #22734c;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+div#homePageCarousel img#homePageCarouselSubImage2 {
+    position: relative;
+    height: 60px;
+    width: 90px;
+    top: -70px;
+    left: 40%;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 3px #22734c;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+div#homePageCarousel img#homePageCarouselSubImage3 {
+    position: relative;
+    height: 60px;
+    width: 90px;
+    top: -70px;
+    left: 42%;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 3px #22734c;
+    transition: all .4s ease;
+    cursor: pointer;
+}
+
+div#homePageCarousel img#homePageCarouselSubImage3:hover {
+    transform: scale(1.1);
+}
+
+div#homePageCarousel img#homePageCarouselSubImage2:hover {
+    transform: scale(1.1);
+}
+
+div#homePageCarousel img#homePageCarouselSubImage1:hover {
+    transform: scale(1.1);
+}

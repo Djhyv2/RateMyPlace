@@ -20,7 +20,7 @@
 	</script>
     
 </head>
-<body>
+<body id="loginBody">
   
     <div id="loginFormContainer" class="row">
         <div class="col-6 m-0 p-0">
