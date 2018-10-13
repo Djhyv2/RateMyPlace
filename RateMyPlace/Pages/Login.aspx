@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" %>
+﻿<%@ Page Language="C#"  AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="RateMyPlace.Pages.ReviewPopup"  %>
 <!DOCTYPE html>
 <html>
 <head runat="server">
