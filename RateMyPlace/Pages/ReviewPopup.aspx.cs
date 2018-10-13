@@ -210,9 +210,14 @@ namespace RateMyPlace.Pages
             review.Pros = /*Text of pros box;
             review.Cons = /*Text of cons box;
 
-            if (review.Parking)
+            if (review.Parking && parking fee is not blank)
             {
                 review.ParkingCost = Math.Round(float.Parse( /*Parking field, CultureInfo.InvariantCulture.NumberFormat), 2);
+            }
+
+            if( review.Pet && petfee is not blank)
+            {
+                review.PetFee = Math.Round(float.Parse( /*Pet fee field, CultureInfo.InvariantCulture.NumberFormat), 2);
             }
 
             review.SendToDatabase();
