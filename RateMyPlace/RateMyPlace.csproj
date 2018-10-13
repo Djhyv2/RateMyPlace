@@ -76,6 +76,7 @@
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Styles\myStyle.css" />
     <Content Include="Pages\HomePage.aspx" />
+    <Content Include="Pages\SingleComplex.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
@@ -116,6 +117,9 @@
     <Compile Include="Utilities\Connection.cs" />
     <Compile Include="Pages\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SingleComplex.aspx.cs">
+      <DependentUpon>SingleComplex.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
