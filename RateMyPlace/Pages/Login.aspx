@@ -50,7 +50,7 @@
                 <div class="carousel-item">
                     <img id="leftImage" src="https://openclipart.org/download/244447/Originuum---Chapeu-de-Formatura---1.0.0.svg">
                             
-                    <p>Let's Go!</p>
+                    <p>Get Started Today!</p>
                             
                 </div>
               </div>
