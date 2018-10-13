@@ -68,14 +68,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\CompareHousing.aspx" />
+    <Content Include="Pages\CompareReview.aspx" />
     <Content Include="Pages\ReviewPopup.aspx" />
+    <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Web.config" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Styles\myStyle.css" />
     <Content Include="Pages\HomePage.aspx" />
+    <Content Include="Pages\Scripts\myScripts.js" />
+    <Content Include="Pages\SingleComplex.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
+    <Compile Include="Pages\CompareHousing.aspx.cs">
+      <DependentUpon>CompareHousing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CompareHousing.aspx.designer.cs">
+      <DependentUpon>CompareHousing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CompareReview.aspx.cs">
+      <DependentUpon>CompareReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CompareReview.aspx.designer.cs">
+      <DependentUpon>CompareReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -90,9 +109,22 @@
     <Compile Include="Pages\ReviewPopup.aspx.designer.cs">
       <DependentUpon>ReviewPopup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ViewReview.aspx.cs">
+      <DependentUpon>ViewReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewReview.aspx.designer.cs">
+      <DependentUpon>ViewReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Utilities\Connection.cs" />
+    <Compile Include="Pages\HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SingleComplex.aspx.cs">
+      <DependentUpon>SingleComplex.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -104,6 +136,9 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\Scripts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
