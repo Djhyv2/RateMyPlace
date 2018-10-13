@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
 using System.Data;
+using System.Collections.Generic;
 
 namespace RateMyPlace
 {
@@ -11,16 +12,38 @@ namespace RateMyPlace
         /// <summary>
         /// Executes the passed SQL command
         /// </summary>
-        /// <param name="SQL">
+        /// <param name="sql">
         /// Text of SQL to execute
         /// </param>
         /// <returns>
         /// Table of values from executed SQL
         /// </returns>
-        public static DataTable RunSQL(string SQL)
+        public static DataTable RunSQL(string sql)
+        {
+            return RunSQL(sql, null);//Chain constructors from less specific to more specific 
+        }
+
+
+        /// <summary>
+        /// Executes the passed SQL command
+        /// </summary>
+        /// <param name="sql">
+        /// Text of SQL to execute
+        /// </param>
+        /// <param name="parameters">
+        /// List of Parameters to be applied to sql
+        /// </param>
+        /// <returns>
+        /// Table of values from executed SQL
+        /// </returns>
+        public static DataTable RunSQL(string sql, List<SqlParameter> parameters)
         {
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);//Gets connection string from Web.Config, requires the System.Configuration
-            SqlCommand sqlCmd = new SqlCommand(SQL, sqlConn);
+            SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
+            if (null != parameters)
+            {
+                sqlCmd.Parameters.AddRange(parameters.ToArray());//Converts list to array and adds all to sql parameters
+            }
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCmd);
             DataTable dataTable = new DataTable();
             try
