@@ -257,7 +257,7 @@ div#homePageBox .item:hover img {
 
 div#homePageBox div.item + p {
     position: relative;
-    top: -15%;
+    margin-top: -40px; 
     left: 3%;
     font-family: 'Kalam', cursive;
     font-size: 30px;
@@ -286,16 +286,24 @@ div#homePageBox .item:hover + p {
     color: white;
 }
 
+div#homePageBox .item:hover .overlay {
+    opacity: .7;
+}
+
+div#homePageBox .item:hover + p {
+    color: white;
+}
+
+div#homePageBox div.item + p:hover {
+    color: white;
+    cursor: pointer;
+}
+
 div#homePageBox div.row {
-    margin-bottom: 5%;
     padding: 0;
 }
 
-div#homePageBox div#row2 {
-    margin-top: -100px;
-}
-
-body#homeBody {
+div#homeBody {
     background-color: navajowhite;
 }
 
