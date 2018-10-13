@@ -15,7 +15,8 @@ namespace RateMyPlace.Pages
 
         public void DetermineStatistics()
         {
-            string complexName;
+            //set complexName to an empty string just to clear errors. need to figure out how to get that data
+            string complexName = "";
             string maxOverall;
             string minOverall;
             string averageOverall;
