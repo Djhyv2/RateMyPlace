@@ -34,13 +34,13 @@
                 <a class="nav-link" href="#">Add Review</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">View Review</a>
+            <a class="nav-link" href="ViewReview.aspx">View Review</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Compare Reviews</a>
+                <a class="nav-link" href="CompareReview.aspx">Compare Reviews</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Compare Housing</a>
+                <a class="nav-link" href="CompareHousing.aspx">Compare Housing</a>
             </li>
             <li class="nav-item">
                 <a id="logout" class="nav-link" href="#">Logout</a>
