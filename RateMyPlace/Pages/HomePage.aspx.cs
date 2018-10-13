@@ -1,10 +1,11 @@
 ﻿using System;
 namespace RateMyPlace.Pages
 {
-    public class HomePage
+    public partial class HomePage : System.Web.UI.Page
     {
-        public HomePage()
+        protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }
