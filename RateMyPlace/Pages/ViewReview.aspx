@@ -24,7 +24,7 @@
 </head>
 <body>
     <nav id="topbar" class="navbar fixed-top navbar-expand-lg">
-      <a class="navbar-brand" href="#">RateMyPlace</a>
+      <a class="navbar-brand" href="HomePage.aspx">RateMyPlace</a>
             
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -55,6 +55,7 @@
     </nav>
     <form id="form1" runat="server">       
     </form>           
-    <% PopulateReviews(); %> <!--Figure out how to get this string from code to run in HTML-->
+    <% string str = PopulateReviews(); %> <!--Figure out how to get this string from code to run in HTML-->
+    eval(str);
 </body>
 </html>
