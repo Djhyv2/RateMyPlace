@@ -190,33 +190,33 @@ namespace RateMyPlace.Pages
                 review.Parking = false;
         }
 
-        private void SubmitClick(object sender, EventArgs e) //When the user accepts their rating as final
+        /*private void SubmitClick(object sender, EventArgs e) //When the user accepts their rating as final
         {
-            if( /*Distance field is not blank*/ )
+            if ( /*Distance field is not blank )
             {
-                review.Distance = Math.Round( float.Parse( /*Distance field*/, CultureInfo.InvariantCulture.NumberFormat), 2);
+                review.Distance = Math.Round(float.Parse( /*Distance field, CultureInfo.InvariantCulture.NumberFormat), 2);
             }
 
-            if ( /*Rent field is not blank*/ )
+            if ( /*Rent field is not blank )
             {
-                review.Rent = Math.Round(float.Parse( /*Rent field*/, CultureInfo.InvariantCulture.NumberFormat), 2);
+                review.Rent = Math.Round(float.Parse( /*Rent field, CultureInfo.InvariantCulture.NumberFormat), 2);
             }
 
-            if ( /*Utilities field is not blank*/ )
+            if ( /*Utilities field is not blank )
             {
-                review.Utility = Math.Round(float.Parse( /*Utility field*/, CultureInfo.InvariantCulture.NumberFormat), 2);
+                review.Utility = Math.Round(float.Parse( /*Utility field, CultureInfo.InvariantCulture.NumberFormat), 2);
             }
 
-            review.Pros = /*Text of pros box*/;
-            review.Cons = /*Text of cons box*/;
+            review.Pros = /*Text of pros box;
+            review.Cons = /*Text of cons box;
 
-            if( review.Parking )
+            if (review.Parking)
             {
-                review.ParkingCost = Math.Round(float.Parse( /*Parking field*/, CultureInfo.InvariantCulture.NumberFormat), 2);
+                review.ParkingCost = Math.Round(float.Parse( /*Parking field, CultureInfo.InvariantCulture.NumberFormat), 2);
             }
 
-            review.SendToDatabase(); 
-        }
+            review.SendToDatabase();
+        }*/
 
         private void CancelClick( object sender, EventArgs e)
         {
