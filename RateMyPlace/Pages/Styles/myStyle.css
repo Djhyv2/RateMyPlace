@@ -6,14 +6,16 @@
 div#loginFormContainer {
     margin: 13% auto 0 auto;
     position: relative;
-    height: 40vh;
+    height: 45vh;
     width: 42vw;
-    background-color: #fafafa;
+    background-color: white;
     opacity: .9;
     border-radius: 8px;
+    opacity: .85;
+    box-shadow: 0px 0px 13px 2px;
 }
 body {
-    background-color: #af5931;
+    background-color: #e57e57;
 }
 
 div#loginFormContainer form {
@@ -26,6 +28,8 @@ div#loginFormContainer form {
 h1#welcomeText {
     margin-top: 10%;
     text-align: center;
+    font-size: 35pt;
+    font-family: 'Kalam', cursive;
 }
 
 div#loginFormContainer img#rightImage {
@@ -36,9 +40,9 @@ div.carousel-item > p {
 }
 
 div#loginFormContainer img#leftImage {
-    height: 80px;
-    width: 80px;
-    margin-left: 35%;
+    height: 90px;
+    width: 100px;
+    margin-left: 31%;
 }
 
 div#loginFormContainer form input[type=text] {
@@ -71,7 +75,7 @@ div#loginFormContainer form input[type=submit] {
 
 .crop {
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     overflow: hidden;
     margin-bottom: 0;
 }
@@ -87,7 +91,7 @@ div#loginFormContainer form input[type=submit] {
     display: inline-block;
     width: 12px;
     height: 12px;
-    margin: 20px 10px 20px 10px;
+    margin: 10px 10px 20px 10px;
     text-indent: 0;
     cursor: pointer;
     border: none;
@@ -98,10 +102,15 @@ div#loginFormContainer form input[type=submit] {
 .carousel-indicators .active {
     width: 12px;
     height: 12px;
-    margin: 20px 10px 20px 10px;
+    margin: 10px 10px 20px 10px;
     background-color: #ac8838;
 }
 
-.carousel-inner {
-    margin-top: 30px;
+.carousel-item p {
+    margin-top: 40px;
+    font-family: 'Kalam', cursive;
+}
+
+.carousel {
+    margin-top: 3vh;
 }
