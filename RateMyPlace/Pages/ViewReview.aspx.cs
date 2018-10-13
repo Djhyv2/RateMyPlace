@@ -15,14 +15,14 @@ namespace RateMyPlace.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            PopulateReviews();
         }
 
-        public static string PopulateReviews()
+        public void PopulateReviews()
         {
             dt = Connection.RunSQL("SELECT * FROM Reviews");
 
-            string html = "<table>";
+            string html = "<div style= \"margin-top: 200px;\"><table>";
             //add header row
             html += "<tr>";
             for (int i = 0; i < dt.Columns.Count; i++)
@@ -40,8 +40,10 @@ namespace RateMyPlace.Pages
                 }
                 html += "</tr>";
             }
-            html += "</table>";
-            return html;
+            html += "</table></div>";
+            MessageBox.Show(html);
+
+            LiteralText.Text = html;
         }
 
     }
