@@ -1,0 +1,158 @@
+﻿a {
+    text-decoration: none;
+    color: white;
+}
+
+div#loginFormContainer {
+    margin: 13% auto 0 auto;
+    position: relative;
+    height: 45vh;
+    width: 42vw;
+    background-color: white;
+    opacity: .9;
+    border-radius: 8px;
+    opacity: .85;
+    box-shadow: 0px 0px 13px 2px;
+}
+body {
+    background-color: #e57e57;
+}
+
+div#loginFormContainer form {
+    position: relative;
+    z-index: 10;
+    top: -25vh;
+    padding: 20px;
+}
+
+div#loginFormContainer h1#welcomeText {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 35pt;
+    font-family: 'Kalam', cursive;
+}
+
+div#loginFormContainer img#rightImage {
+    border-radius: 0 8px 8px 0;
+}
+div.carousel-item > p {
+    text-align: center;
+}
+
+div#loginFormContainer img#leftImage {
+    height: 90px;
+    width: 100px;
+    margin-left: 31%;
+}
+
+div#loginFormContainer form input[type=text] {
+    border-radius: 5px;
+    padding-left: 10px;
+    opacity: .9;
+    border: none;
+}
+
+div#loginFormContainer form input[type=password] {
+    border-radius: 5px;
+    margin-top: 15px;
+    padding-left: 10px;
+    opacity: .9;
+    border: none;
+}
+
+div#loginFormContainer form input[type=submit] {
+    background-color: transparent;
+    padding: 0 15px 0 15px;
+    margin-left: 20px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    border-radius: 20px;
+    border: 1px solid white;
+
+}
+div#loginFormContainer form input[type=submit]:hover {
+    background-color: mediumseagreen;
+    cursor: pointer;
+    padding: 0 15px 0 15px;
+    margin-left: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+div#loginFormContainer form button {
+    background-color: transparent;
+    padding: 0 15px 0 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+div#loginFormContainer form button:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+    padding: 0 15px 0 15px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+div#loginFormContainer form div.row {
+    margin-top: 30px;
+}
+
+div#loginFormContainer .crop {
+    width: 100%;
+    height: 45vh;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+div#loginFormContainer .crop img {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+}
+
+
+div#loginFormContainer .carousel-indicators li {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 10px 10px 20px 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #277851;
+}
+
+div#loginFormContainer .carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 10px 10px 20px 10px;
+    background-color: #ac8838;
+}
+
+div#loginFormContainer .carousel-item p {
+    margin-top: 40px;
+    font-family: 'Kalam', cursive;
+}
+
+div#loginFormContainer .carousel {
+    margin-top: 3vh;
+}
+
+
+nav#topbar {
+    height: 12vh;
+    background-color: white;
+}
+
