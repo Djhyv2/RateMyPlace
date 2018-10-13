@@ -50,7 +50,7 @@ namespace RateMyPlace.Classes
             //Get ID from database and set the variable id equal to it
         }
 
-        public void SendToDatabase( int id )//If the review already exists in the system, overwrites.
+        public void SendToDatabase( Review review )//If the review already exists in the system, overwrites.
         {
             //Overwrite existing database entry at id with this function
         }
