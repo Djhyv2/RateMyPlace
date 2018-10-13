@@ -39,5 +39,35 @@ namespace RateMyPlace
             }
             return dataTable;
         }
+
+        /// <summary>
+        /// Executes the passed SQL non query command
+        /// </summary>
+        /// <param name="SQL">
+        /// Text of SQL to execute
+        /// </param>
+        /// <returns>
+        /// Number of rows affected
+        /// </returns>
+        public static int RunNonQuerySQL(string SQL)
+        {
+            SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);//Gets connection string from Web.Config, requires the System.Configuration
+            SqlCommand sqlCmd = new SqlCommand(SQL, sqlConn);
+            int rowsAffected = -1;
+            try
+            {
+                sqlConn.Open();
+                rowsAffected = sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);//Displays error as alert box
+            }
+            finally
+            {
+                sqlConn.Close();
+            }
+            return rowsAffected;
+        }
     }
 }
