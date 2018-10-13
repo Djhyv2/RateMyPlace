@@ -70,7 +70,7 @@
     <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Web.config" />
     <Content Include="Pages\Login.aspx" />
-    <Content Include="Pages\Styles\EmptyCSSFile.css" />
+    <Content Include="Pages\Styles\myStyle.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
