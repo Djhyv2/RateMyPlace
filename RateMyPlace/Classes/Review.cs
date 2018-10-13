@@ -7,6 +7,7 @@ namespace RateMyPlace.Classes
 {
     public class Review
     {
+        private int id;
         private int overallRating;
         private int noiseRating;
         private int safetyRating;
@@ -31,12 +32,27 @@ namespace RateMyPlace.Classes
 
         public Review()
         {
-
+            studySpace = false;
+            shuttle = false;
+            wifi = false;
+            furnished = false;
+            tv = false;
+            pet = false;
+            trash = false;
+            gym = false;
+            parking = false;
         }
 
-        public void SendToDatabase() //Sends everything to the database.
+        public void SendToDatabase() //Sends everything to the database as a new entry.
         {
+            //Send to database logic here
 
+            //Get ID from database and set the variable id equal to it
+        }
+
+        public void SendToDatabase( Review review )//If the review already exists in the system, overwrites.
+        {
+            //Overwrite existing database entry at id with this function
         }
 
         public int OverallRating { get => overallRating; set => overallRating = value; }
