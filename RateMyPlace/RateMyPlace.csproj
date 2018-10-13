@@ -74,12 +74,16 @@
     <Content Include="Pages\Styles\ReviewDisplay.css" />
     <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Styles\myStyle.css" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\Scripts\myScripts.js" />
     <Content Include="Pages\SingleComplex.aspx" />
     <Content Include="Pages\Layout.master" />
+<<<<<<< HEAD
+=======
+    <Content Include="Pages\test.aspx" />
+    <Content Include="Pages\Login.aspx" />
+>>>>>>> 4a11516066e13a471ef771d9c430cf5de926e90f
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
