@@ -8,15 +8,18 @@ namespace RateMyPlace.Pages
 {
     public partial class Login : System.Web.UI.Page
     {
+        bool isLogin;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["Page"]=="Register")
+            if (false == IsPostBack)
             {
-                txtPasswordRepeat.Visible = true;
-                btnLogin.Visible = false ;
-                Page.Title = "Register";
+                isLogin = true;
+                txtPasswordRepeat.Visible = false;
+                btnLogin.Visible = true;
+                Page.Title = "Login";
             }//Only runs on first page load
-        }//Shows register
+        }//Ensures login is shown on page load, not register
 
 
         protected void handleLogin_click(object sender, EventArgs e)
@@ -53,15 +56,15 @@ namespace RateMyPlace.Pages
 
         protected void handleRegister_click(object sender, EventArgs e)
         {
-            if (Request.QueryString["Page"] != "Register")
+            if (true == isLogin)
             {
-                Response.Redirect("Login.aspx?Page=Register");
+                isLogin = false;
+                txtPasswordRepeat.Visible = true;
+                btnLogin.Visible = false;
+                Page.Title = "Register";
+                return;
             }
 
-            if (txtPassword.Text == txtPasswordRepeat.Text)
-            {
-
-            }
 
             byte[] salt = new byte[16];
             new RNGCryptoServiceProvider().GetBytes(salt);
