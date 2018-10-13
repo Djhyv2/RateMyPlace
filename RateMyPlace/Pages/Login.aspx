@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="RateMyPlace.Pages.ReviewPopup"  %>
+﻿<%@ Page Language="C#"  AutoEventWireup="True" CodeBehind="Login.aspx.cs" Inherits="RateMyPlace.Pages.Login"  %>
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -59,18 +59,19 @@
                 <img id="rightImage" src="https://i.pinimg.com/236x/45/2c/f6/452cf6fa0c09c607617ea55e8c5a1362--adobe-lightroom-missouri.jpg" alt="">
    
             </figure>
-            <form>
+            <form runat="server">
                 
-                <input type="text" name="username" placeholder="Username">
+                <asp:TextBox runat="server" id="txtUsername" placeholder="Username"></asp:TextBox>
                 
-                <input type="password" name="password" placeholder="Password">
+                <asp:TextBox runat="server" id="txtPassword" TextMode="password" placeholder="Password"></asp:TextBox>
+                
                 
                 <div class="row">
                     <div class="col-6">
-                        <button href="">Register</button>
+                        <asp:button runat="server" text="Register"  OnClick="handleRegister_click"/>
                     </div>
                     <div class="col-6">
-                        <input type="submit" value="Login">
+                        <asp:button runat="server" Text="Login" OnClick="handleLogin_click" />
                     </div>
                 </div>
             </form>

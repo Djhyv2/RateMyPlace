@@ -80,6 +80,9 @@
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ReviewPopup.aspx.cs">
       <DependentUpon>ReviewPopup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

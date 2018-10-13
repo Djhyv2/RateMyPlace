@@ -26,7 +26,7 @@ namespace RateMyPlace
             try
             {
                 sqlConn.Open();
-                sqlDataAdapter.Fill(dataTable);
+                sqlDataAdapter.Fill(dataTable);//Fills table using result of executed query
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace RateMyPlace
             try
             {
                 sqlConn.Open();
-                rowsAffected = sqlCmd.ExecuteNonQuery();
+                rowsAffected = sqlCmd.ExecuteNonQuery();//Executes query with no return table
             }
             catch (Exception ex)
             {
