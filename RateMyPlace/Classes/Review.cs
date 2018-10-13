@@ -31,7 +31,15 @@ namespace RateMyPlace.Classes
 
         public Review()
         {
-
+            studySpace = false;
+            shuttle = false;
+            wifi = false;
+            furnished = false;
+            tv = false;
+            pet = false;
+            trash = false;
+            gym = false;
+            parking = false;
         }
 
         public void SendToDatabase() //Sends everything to the database.
