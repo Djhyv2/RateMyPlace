@@ -209,26 +209,10 @@ nav#topbar #userIcon:hover {
 .navBackground {
     background-color: #e57e57 !important;
     width: 100vw;
-    position:absolute;
+    position: absolute;
     left: 0;
     padding-left: 15px;
 }
-
-/*ul.navBackground > li.nav-item > a#logout {
-    position: absolute;
-    top: 70px;
-    right: 80px;
-}
-
-ul.navBackground > li.nav-item > i#userIcon {
-    background-color: white;
-    padding: 10px;
-    border-radius: 40px;
-    position: absolute;
-    top: 70px;
-    right: 40px;
-}*/
-
 
 div#homePageBox {
     margin: 3% auto 0 auto;
@@ -428,4 +412,8 @@ div#homePageCarousel img#homePageCarouselSubImage2:hover {
 
 div#homePageCarousel img#homePageCarouselSubImage1:hover {
     transform: scale(1.1);
+}
+
+body#compareHousingBody {
+    background-color: navajowhite;
 }
