@@ -39,15 +39,20 @@
                 <figure class="crop">
                     <img id="rightImage" src="https://i.pinimg.com/236x/45/2c/f6/452cf6fa0c09c607617ea55e8c5a1362--adobe-lightroom-missouri.jpg" alt="">
                 </figure>
-                <form runat="server">
+                <form runat="server" defaultbutton="btnLogin">
+                
                     <asp:TextBox runat="server" id="txtUsername" placeholder="Username"></asp:TextBox>
+                    
                     <asp:TextBox runat="server" id="txtPassword" TextMode="password" placeholder="Password"></asp:TextBox>
+
+                    <asp:TextBox runat="server" id="txtPasswordRepeat" TextMode="password" placeholder="Repeat Password" Visible="false"></asp:TextBox>
+                    
                     <div class="row">
                         <div class="col-6">
-                            <asp:button runat="server" text="Register"  OnClick="handleRegister_click"/>
+                            <asp:button runat="server" id="btnRegister" text="Register"  OnClick="handleRegister_click"/>
                         </div>
                         <div class="col-6">
-                            <asp:button runat="server" Text="Login" OnClick="handleLogin_click" />
+                            <asp:button runat="server" id="btnLogin" Text="Login" OnClick="handleLogin_click" />
                         </div>
                     </div>
                 </form>
