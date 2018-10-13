@@ -1,0 +1,25 @@
+﻿body {
+}
+
+th {
+    background-color: #e57e57;
+    font-family: 'Kalam', cursive;
+}
+
+td {
+    text-align: center;
+    font-family: 'Kalam', cursive;
+    background-color: navajowhite;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 2px solid #e57e57;
+}
+
+table + table {
+    margin-top: 5px;
+}
