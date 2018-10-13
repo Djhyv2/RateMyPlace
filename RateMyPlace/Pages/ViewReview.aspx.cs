@@ -11,7 +11,7 @@ namespace RateMyPlace.Pages
 {
     public partial class SearchResults : System.Web.UI.Page
     {
-        private static DataTable dt;
+        private static DataTable table;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,28 +20,33 @@ namespace RateMyPlace.Pages
 
         public void PopulateReviews()
         {
-            dt = Connection.RunSQL("SELECT * FROM Reviews");
+            table = Connection.RunSQL("SELECT * FROM Reviews");
 
-            string html = "<div style= \"margin-top: 200px;\"><table>";
-            //add header row
-            html += "<tr>";
-            for (int i = 0; i < dt.Columns.Count; i++)
-            {
-                html += "<td>" + dt.Columns[i].ColumnName + "</td>";
-            }
-            html += "</tr>";
-            //add rows
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                html += "<tr>";
-                for (int j = 0; j < dt.Columns.Count; j++)
+            string html = "<div style= \"margin-top: 90px;\"><table>";
+            html += "<th>Username</th><th>Overall Rating</th><th>Noise Rating</th><th>Safety Rating</th>" +
+                "<th>Maintenance</th><th>Lease Start Date</th><th>Lease End Date</th><th>Distance from Campus</th>" +
+                "<th>Pros</th><th>Cons</th><th>Study Space</th><th>Shuttle</th><th>Wifi</th>" +
+                "<th>Wifi</th><th>Furnished</th><th>Cable</th><th>Trash Services</th>" +
+                "<th>Gym</th><th>Parking</th><th>Parking Fee</th><th>Pets</th><th>Pets Fee</th>" +
+                "<th>Misc Fees</th><th>Rent</th><th>Utilities</th><th>Housing Complex</th>";
+
+                for ( int row = 0; row < table.Rows.Count; row++)
                 {
-                    html += "<td>" + dt.Rows[i][j].ToString() + "</td>";
+                    html += "<tr>";
+
+                    for( int col = 1; col < table.Columns.Count; col++)
+                    {
+                            html += "<td>";
+
+                            html += table.Rows[row][col].ToString();
+
+                            html += "</td>";
+                    }
+
+                    html += "</tr>";
                 }
-                html += "</tr>";
-            }
+
             html += "</table></div>";
-            MessageBox.Show(html);
 
             LiteralText.Text = html;
         }
