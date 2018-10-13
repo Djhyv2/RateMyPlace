@@ -73,6 +73,7 @@
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Styles\myStyle.css" />
     <Content Include="Pages\HomePage.aspx" />
+    <Content Include="Pages\Scripts\myScripts.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
@@ -101,6 +102,9 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Pages\Scripts\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
