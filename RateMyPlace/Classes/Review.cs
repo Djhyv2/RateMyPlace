@@ -30,6 +30,8 @@ namespace RateMyPlace.Classes
         private bool gym;
         private bool parking;
         private float parkingCost;
+        private float petFee;
+        private float miscFee;
 
         public Review()
         {
@@ -84,5 +86,7 @@ namespace RateMyPlace.Classes
         public bool Gym { get => gym; set => gym = value; }
         public float ParkingCost { get => parkingCost; set => parkingCost = value; }
         public bool Parking { get => parking; set => parking = value; }
+        public float PetFee { get => petFee; set => petFee = value; }
+        public float MiscFee { get => miscFee; set => miscFee = value; }
     }
 }
