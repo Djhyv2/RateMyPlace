@@ -67,11 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Web.config" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Styles\myStyle.css" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Review.cs" />
+    <Compile Include="Pages\ReviewPopup.aspx.cs">
+      <DependentUpon>ReviewPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReviewPopup.aspx.designer.cs">
+      <DependentUpon>ReviewPopup.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -83,10 +92,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\" />
-    <Folder Include="Pages\Styles\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
