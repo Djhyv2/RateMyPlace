@@ -414,64 +414,60 @@ div#homePageCarousel img#homePageCarouselSubImage1:hover {
     transform: scale(1.1);
 }
 
-body#compareHousingBody {
+div#compareHousingBody {
     background-color: navajowhite;
+    height: 100vh;
+    padding: 0 40px;
+    position: absolute;
+    top: 20px;
 }
 
-body#compareHousingBody {
-    background-color: navajowhite;
-}
-
-body#compareHousingBody table{
+div#compareHousingBody table{
     border-collapse: collapse;
 }
 
-body#compareHousingBody div#content {
-    padding: 0 40px;
-}
-
-body#compareHousingBody table {
+div#compareHousingBody table {
     table-layout: fixed;
     width: 100%;
 }
 
-    body#compareHousingBody div#tableBox {
+    div#compareHousingBody div#tableBox {
         overflow: hidden;
         border: 1px solid #428bca;
         margin-top: 100px;
         border-radius: 5px;
     }
 
-    body#compareHousingBody tr:nth-child(even) {
+    div#compareHousingBody tr:nth-child(even) {
         background-color: #E0EEEE;
     }
 
-    body#compareHousingBody tr:nth-child(odd) {
+    div#compareHousingBody tr:nth-child(odd) {
         background-color: #C5E3BF;
     }
 
-    body#compareHousingBody h1#tableHeading {
+    div#compareHousingBody h1#tableHeading {
         width: 100%;
         background-color: #428bca;
         text-align: center;
         margin-bottom: 0;
         font-family: 'Kalam', cursive;
     }
-    body#compareHousingBody table tr {
+    div#compareHousingBody table tr {
         border: 1px solid #428bca;
         border-style: solid none none none;
     }
 
-    body#compareHousingBody table tr#firstRow {
+    div#compareHousingBody table tr#firstRow {
         border: 2px solid #428bca;
         border-style: none none solid none;
     }
-    body#compareHousingBody table td {
+    div#compareHousingBody table td {
         text-align: center;
     }
-    body#compareHousingBody table th {
+    div#compareHousingBody table th {
         text-align: center;
     }
-    body#compareHousingBody table tr {
+    div#compareHousingBody table tr {
         height: 50px;
     }
