@@ -14,8 +14,21 @@ div#loginFormContainer {
     box-shadow: 0px 0px 13px 2px;
 }
 
-body#loginBody {
+div#loginBody {
     background-color: #e57e57;
+    height: 100vh;
+    padding: 0 40px;
+    width: 100vw;
+    position: absolute;
+    top: 20px;
+}
+
+div#loginBody hr {
+    width: 80%;
+    position: fixed;
+    top: 65px;
+    left: 10vw;
+    z-index: 100000;
 }
 
 div#loginFormContainer form {
@@ -244,7 +257,7 @@ div#homePageBox .item:hover img {
 
 div#homePageBox div.item + p {
     position: relative;
-    top: -15%;
+    margin-top: -40px; 
     left: 3%;
     font-family: 'Kalam', cursive;
     font-size: 30px;
@@ -273,16 +286,24 @@ div#homePageBox .item:hover + p {
     color: white;
 }
 
+div#homePageBox .item:hover .overlay {
+    opacity: .7;
+}
+
+div#homePageBox .item:hover + p {
+    color: white;
+}
+
+div#homePageBox div.item + p:hover {
+    color: white;
+    cursor: pointer;
+}
+
 div#homePageBox div.row {
-    margin-bottom: 5%;
     padding: 0;
 }
 
-div#homePageBox div#row2 {
-    margin-top: -100px;
-}
-
-body#homeBody {
+div#homeBody {
     background-color: navajowhite;
 }
 
@@ -431,43 +452,43 @@ div#compareHousingBody table {
     width: 100%;
 }
 
-    div#compareHousingBody div#tableBox {
-        overflow: hidden;
-        border: 1px solid #428bca;
-        margin-top: 100px;
-        border-radius: 5px;
-    }
+div#compareHousingBody div#tableBox {
+    overflow: hidden;
+    border: 1px solid #428bca;
+    margin-top: 100px;
+    border-radius: 5px;
+}
 
-    div#compareHousingBody tr:nth-child(even) {
-        background-color: #E0EEEE;
-    }
+div#compareHousingBody tr:nth-child(even) {
+    background-color: #E0EEEE;
+}
 
-    div#compareHousingBody tr:nth-child(odd) {
-        background-color: #C5E3BF;
-    }
+div#compareHousingBody tr:nth-child(odd) {
+    background-color: #C5E3BF;
+}
 
-    div#compareHousingBody h1#tableHeading {
-        width: 100%;
-        background-color: #428bca;
-        text-align: center;
-        margin-bottom: 0;
-        font-family: 'Kalam', cursive;
-    }
-    div#compareHousingBody table tr {
-        border: 1px solid #428bca;
-        border-style: solid none none none;
-    }
+div#compareHousingBody h1#tableHeading {
+    width: 100%;
+    background-color: #428bca;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: 'Kalam', cursive;
+}
+div#compareHousingBody table tr {
+    border: 1px solid #428bca;
+    border-style: solid none none none;
+}
 
-    div#compareHousingBody table tr#firstRow {
-        border: 2px solid #428bca;
-        border-style: none none solid none;
-    }
-    div#compareHousingBody table td {
-        text-align: center;
-    }
-    div#compareHousingBody table th {
-        text-align: center;
-    }
-    div#compareHousingBody table tr {
-        height: 50px;
-    }
+div#compareHousingBody table tr#firstRow {
+    border: 2px solid #428bca;
+    border-style: none none solid none;
+}
+div#compareHousingBody table td {
+    text-align: center;
+}
+div#compareHousingBody table th {
+    text-align: center;
+}
+div#compareHousingBody table tr {
+    height: 50px;
+}

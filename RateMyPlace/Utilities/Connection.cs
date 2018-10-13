@@ -66,17 +66,36 @@ namespace RateMyPlace
         /// <summary>
         /// Executes the passed SQL non query command
         /// </summary>
-        /// <param name="SQL">
+        /// <param name="sql">
         /// Text of SQL to execute
         /// </param>
         /// <returns>
         /// Number of rows affected
         /// </returns>
-        public static int RunNonQuerySQL(string SQL)
+        public static int RunNonQuerySQL(string sql)
+        {
+            return RunNonQuerySQL(sql, null);//Chains constructors from less to more specific
+        }
+
+
+        /// <summary>
+        /// Executes the passed SQL non query command
+        /// </summary>
+        /// <param name="sql">
+        /// Text of SQL to execute
+        /// </param>
+        /// <returns>
+        /// Number of rows affected
+        /// </returns>
+        public static int RunNonQuerySQL(string sql,List<SqlParameter> parameters)
         {
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);//Gets connection string from Web.Config, requires the System.Configuration
-            SqlCommand sqlCmd = new SqlCommand(SQL, sqlConn);
+            SqlCommand sqlCmd = new SqlCommand(sql, sqlConn);
             int rowsAffected = -1;
+            if (null != parameters)
+            {
+                sqlCmd.Parameters.AddRange(parameters.ToArray());//Converts list to array and adds all to sql parameters
+            }
             try
             {
                 sqlConn.Open();
