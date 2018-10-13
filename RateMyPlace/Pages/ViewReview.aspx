@@ -54,8 +54,8 @@
       </div>
     </nav>
     <form id="form1" runat="server">       
-    </form>           
-    <% string str = PopulateReviews(); %> <!--Figure out how to get this string from code to run in HTML-->
-    eval(str);
+    </form>
+
+   <asp:Literal id="LiteralText" runat="server" Text=""></asp:Literal> <!--Figure out how to get this string from code to run in HTML-->
 </body>
 </html>
