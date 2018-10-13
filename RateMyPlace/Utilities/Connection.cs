@@ -63,8 +63,6 @@ namespace RateMyPlace
             return dataTable;
         }
 
-
-
         /// <summary>
         /// Executes the passed SQL non query command
         /// </summary>
