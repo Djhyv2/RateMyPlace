@@ -1,0 +1,107 @@
+﻿a {
+    text-decoration: none;
+    color: white;
+}
+
+div#loginFormContainer {
+    margin: 13% auto 0 auto;
+    position: relative;
+    height: 40vh;
+    width: 42vw;
+    background-color: #fafafa;
+    opacity: .9;
+    border-radius: 8px;
+}
+body {
+    background-color: #af5931;
+}
+
+div#loginFormContainer form {
+    position: relative;
+    z-index: 10;
+    top: -25vh;
+    padding: 20px;
+}
+
+h1#welcomeText {
+    margin-top: 10%;
+    text-align: center;
+}
+
+div#loginFormContainer img#rightImage {
+    border-radius: 0 8px 8px 0;
+}
+div.carousel-item > p {
+    text-align: center;
+}
+
+div#loginFormContainer img#leftImage {
+    height: 80px;
+    width: 80px;
+    margin-left: 35%;
+}
+
+div#loginFormContainer form input[type=text] {
+    border-radius: 5px;
+    padding-left: 10px;
+    opacity: .9;
+    border: none;
+}
+
+div#loginFormContainer form input[type=password] {
+    border-radius: 5px;
+    margin-top: 15px;
+    padding-left: 10px;
+    opacity: .9;
+    border: none;
+}
+
+div#loginFormContainer form input[type=submit] {
+    background-color: transparent;
+    margin-top: 40px;
+    margin-left: 155px;
+    padding: 0 15px 0 15px;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13pt;
+    border-radius: 20px;
+    border: 1px solid white;
+
+}
+
+.crop {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.crop img {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+}
+
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 20px 10px 20px 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #277851;
+}
+
+.carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 20px 10px 20px 10px;
+    background-color: #ac8838;
+}
+
+.carousel-inner {
+    margin-top: 30px;
+}
