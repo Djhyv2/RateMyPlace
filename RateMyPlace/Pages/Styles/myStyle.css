@@ -414,6 +414,60 @@ div#homePageCarousel img#homePageCarouselSubImage1:hover {
     transform: scale(1.1);
 }
 
-body#compareHousingBody {
+div#compareHousingBody {
     background-color: navajowhite;
+    height: 100vh;
+    padding: 0 40px;
+    position: absolute;
+    top: 20px;
 }
+
+div#compareHousingBody table{
+    border-collapse: collapse;
+}
+
+div#compareHousingBody table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+    div#compareHousingBody div#tableBox {
+        overflow: hidden;
+        border: 1px solid #428bca;
+        margin-top: 100px;
+        border-radius: 5px;
+    }
+
+    div#compareHousingBody tr:nth-child(even) {
+        background-color: #E0EEEE;
+    }
+
+    div#compareHousingBody tr:nth-child(odd) {
+        background-color: #C5E3BF;
+    }
+
+    div#compareHousingBody h1#tableHeading {
+        width: 100%;
+        background-color: #428bca;
+        text-align: center;
+        margin-bottom: 0;
+        font-family: 'Kalam', cursive;
+    }
+    div#compareHousingBody table tr {
+        border: 1px solid #428bca;
+        border-style: solid none none none;
+    }
+
+    div#compareHousingBody table tr#firstRow {
+        border: 2px solid #428bca;
+        border-style: none none solid none;
+    }
+    div#compareHousingBody table td {
+        text-align: center;
+    }
+    div#compareHousingBody table th {
+        text-align: center;
+    }
+    div#compareHousingBody table tr {
+        height: 50px;
+    }

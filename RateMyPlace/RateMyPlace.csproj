@@ -78,6 +78,8 @@
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\Scripts\myScripts.js" />
     <Content Include="Pages\SingleComplex.aspx" />
+    <Content Include="Pages\Layout.master" />
+    <Content Include="Pages\test.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
