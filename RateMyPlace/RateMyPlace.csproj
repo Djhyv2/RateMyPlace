@@ -71,6 +71,7 @@
     <Content Include="Web.config" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Styles\myStyle.css" />
+    <Content Include="Pages\HomePage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />

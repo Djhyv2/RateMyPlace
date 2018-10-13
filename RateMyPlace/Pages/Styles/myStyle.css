@@ -9,7 +9,6 @@ div#loginFormContainer {
     height: 45vh;
     width: 42vw;
     background-color: white;
-    opacity: .9;
     border-radius: 8px;
     opacity: .85;
     box-shadow: 0px 0px 13px 2px;
@@ -152,7 +151,110 @@ div#loginFormContainer .carousel {
 
 
 nav#topbar {
-    height: 12vh;
+    height: 10vh;
+    background-color: black;
+    font-family: 'Kalam', cursive;
+}
+
+nav#topbar a.nav-link {
+    color: white;
+}
+
+nav#topbar a.navbar-brand:hover {
+    color: cadetblue;
+}
+
+nav#topbar #userIcon {
     background-color: white;
+    padding: 10px;
+    border-radius: 40px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+nav#topbar a#logout {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+}
+
+nav#topbar a.nav-link:hover {
+    color: cadetblue;
+}
+
+nav#topbar #userIcon:hover {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+
+div#homePageBox {
+    margin: 8% auto 0 auto;
+    height: 85vh;
+    width: 100%;
+    padding: 0 25px 0 25px ;
+}
+
+div#homePageBox .item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+}
+
+div#homePageBox .item img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+div#homePageBox .item:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+div#homePageBox div.item + p {
+    position: relative;
+    top: -15%;
+    left: 3%;
+    font-family: 'Kalam', cursive;
+    font-size: 30px;
+    color: black;
+    transition: color .7s ease;
+}
+
+div#homePageBox .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .7s ease;
+    background-color: #277851;
+}
+
+div#homePageBox .item:hover .overlay {
+    opacity: .7;
+}
+
+div#homePageBox .item:hover + p {
+    color: white;
+}
+
+div#homePageBox div.row {
+    margin-bottom: 5%;
+}
+
+div#homePageBox div#row2 {
+    margin-top: -100px;
 }
 
