@@ -8,7 +8,7 @@ namespace RateMyPlace.Classes
 
         public User(string username, string password)
         {
-            this.username = username;
+            
         }
 
         public User(string username, string password, string firstName) {

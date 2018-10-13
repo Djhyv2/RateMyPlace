@@ -1,15 +1,10 @@
 ﻿using System;
-using RateMyPlace.Classes;
-using System.Data;
-
 namespace RateMyPlace.Pages
 {
-    public partial class SingleComplex : System.Web.UI.Page
+    public class SingleComplex
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public SingleComplex()
         {
-
         }
     }
 }
-
