@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using System.Data;
 
 namespace RateMyPlace
 {
-    using System;
-    using System.Data.SqlClient;
-    using System.Configuration;
-
     public class Connection
     {
         /// <summary>
@@ -23,15 +17,16 @@ namespace RateMyPlace
         /// <returns>
         /// Table of values from executed SQL
         /// </returns>
-        public static SqlDataReader RunSQL(string SQL)
+        public static DataTable RunSQL(string SQL)
         {
             SqlConnection sqlConn = new SqlConnection(ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString);//Gets connection string from Web.Config, requires the System.Configuration
             SqlCommand sqlCmd = new SqlCommand(SQL, sqlConn);
-            SqlDataReader sqlDataReader;
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCmd);
+            DataTable dataTable = new DataTable();
             try
             {
                 sqlConn.Open();
-                sqlDataReader = sqlCmd.ExecuteReader();
+                sqlDataAdapter.Fill(dataTable);
             }
             catch (Exception ex)
             {
@@ -42,7 +37,7 @@ namespace RateMyPlace
             {
                 sqlConn.Close();
             }
-            return sqlDataReader;
+            return dataTable;
         }
     }
 }
