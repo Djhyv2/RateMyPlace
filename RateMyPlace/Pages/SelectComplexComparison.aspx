@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ViewReview.aspx.cs" Inherits="RateMyPlace.Pages.SearchResults" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SelectComplexComparison.aspx.cs" Inherits="RateMyPlace.Pages.SelectComplexComparison" %>
 
 <!DOCTYPE html>
 
@@ -55,12 +55,10 @@
         </ul>
       </div>
     </nav>
-    <form id="form1" runat="server">       
+    <form id="form1" runat="server">
+        <div class="TableDiv">
+            <asp:Literal id="HTMLInsert" runat="server" Text=""></asp:Literal>
+        </div>
     </form>
-
-   <asp:Literal id="LiteralText" runat="server" Text=""></asp:Literal>
-
 </body>
 </html>
-
-
