@@ -19,6 +19,7 @@ namespace RateMyPlace.Pages
                 Page.Title = "Register";
                 lblError.Visible = false;
             }//Shows register if specified in get array
+
         }
 
 

@@ -177,9 +177,10 @@ nav#topbar {
     font-family: 'Kalam', cursive;
 }
 
-nav#topbar a.nav-link, nav#topbar span.navbar-text
+nav#topbar .nav-link, nav#topbar span.navbar-text
 {
     color: white;
+    cursor: pointer;
 }
 
 nav#topbar a.navbar-brand:hover {
@@ -194,18 +195,15 @@ nav#topbar #userIcon {
     background-color: white;
     padding: 10px;
     border-radius: 40px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
 }
 
-nav#topbar a#logout {
-    position: absolute;
-    top: 20px;
-    right: 80px;
+nav#topbar .navbar-text
+{
+    padding-left: .5rem;
+    padding-right: .5rem;
 }
 
-nav#topbar a.nav-link:hover, nav#topbar navbar-text:hover 
+nav#topbar .nav-link:hover, nav#topbar navbar-text:hover 
 {
     color: cadetblue;
 }
@@ -216,6 +214,12 @@ nav#topbar #userIcon:hover {
     padding: 10px;
     cursor: pointer;
     border-radius: 40px;
+}
+
+nav#topbar button.nav-link
+{
+    background: none;
+    border: none;
 }
 
 .navbar .navbar-toggler-icon {
