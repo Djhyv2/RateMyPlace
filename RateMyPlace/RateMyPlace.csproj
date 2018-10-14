@@ -75,6 +75,7 @@
     <Content Include="Pages\SelectComplexComparison.aspx" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\UserProfile.aspx" />
+    <Content Include="Pages\ViewComplex.aspx" />
     <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Pages\AddReview.aspx" />
     <Content Include="Web.config" />
@@ -135,6 +136,13 @@
     </Compile>
     <Compile Include="Pages\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewComplex.aspx.cs">
+      <DependentUpon>ViewComplex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewComplex.aspx.designer.cs">
+      <DependentUpon>ViewComplex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ViewReview.aspx.cs">
       <DependentUpon>ViewReview.aspx</DependentUpon>
