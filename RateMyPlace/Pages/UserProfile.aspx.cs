@@ -16,7 +16,8 @@ namespace RateMyPlace.Pages
 
             DataTable table = Connection.RunSQL("SELECT * FROM Reviews");
 
-         
+
+
 
             userProfileText.Text = "<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td><button class=\"editButton\">Edit</button><button class=\"deleteButton\">Delete</button></td></tr>";
         }
