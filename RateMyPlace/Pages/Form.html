@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="Form.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <title>Form</title>
+</head>
+
+<body>
+
+    <!-- Button trigger modal -->    
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newReview">
+        Add Review
+    </button>
+
+
+    <!-- large modal -->
+        <div class="modal fade bd-example-modal-lg" id="newReview" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Review</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        
+                        <div class="form-housing-complex-name">
+                            <label for="complex-name-text">Name of Housing Complex:</label>
+                            <input id="complex-name-text" type="text" placeholder="Todd">
+                        </div>
+                                
+                        <div class="form-star-ratings">
+                            <label for="overall-rating">Overall Rating:</label>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <br>
+                            <label for="noise-rating">Noise Rating:</label>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <i id="overall-rating" class="fas fa-star"></i>
+                                <br>
+                            <label for="saftey-rating">Safety Rating:</label>
+                                <i id="safety-rating" class="fas fa-star"></i>
+                                <i id="safety-rating" class="fas fa-star"></i>
+                                <i id="safety-rating" class="fas fa-star"></i>
+                                <i id="safety-rating" class="fas fa-star"></i>
+                                <i id="safety-rating" class="fas fa-star"></i>
+                                <br>
+                            <label for="maintenance-rating">Maintenance Rating:</label>
+                                <i id="maintenance-rating" class="fas fa-star"></i>
+                                <i id="maintenance-rating" class="fas fa-star"></i>
+                                <i id="maintenance-rating" class="fas fa-star"></i>
+                                <i id="maintenance-rating" class="fas fa-star"></i>
+                                <i id="maintenance-rating" class="fas fa-star"></i>
+                        </div>
+                                
+                        <!--  div class = form-checkboxes form-group  -->
+                        <!-- input class form-check -->
+
+                        <div class="custom-control custom-checkbox">
+
+                            <input type="checkbox" class="custom-control-input" id="study-space">
+                            <label class="custom-control-label" for="study-space">Study Space</label>
+
+                            <input type="checkbox" class="custom-control-input" id="shuttle">
+                            <label class="custom-control-label" for="shuttle">Shutlle</label>
+
+                            <input type="checkbox" class="custom-control-input" id="furnished">
+                            <label class="custom-control-label" for="furnished">Furnished</label>
+
+                            <input type="checkbox" class="custom-control-input" id="pet-friendly">
+                            <label class="custom-control-label" for="pet-friendly">Pet Friendly</label>
+
+                            <input type="checkbox" class="custom-control-input" id="gym">
+                            <label class="custom-control-label" for="gym">Gym</label>
+                            
+                            <input type="checkbox" class="custom-control-input" id="wifi">
+                            <label class="custom-control-label" for="wifi">Wi-Fi</label>
+
+                            <input type="checkbox" class="custom-control-input" id="cable">
+                            <label class="custom-control-label" for="cable">Cable</label>   
+                            
+                            <input type="checkbox" class="custom-control-input" id="trash">
+                            <label class="custom-control-label" for="trash">Trash/Recycle Service</label>
+                
+                        </div>
+                        
+                        <div class="form-parking">
+                                <label for="parking">Parking</label>
+                                <input id="parking" type="checkbox">
+                                <input id="parking" type="text" placeholder="100.00"> 
+                                <small class="form-text text-muted">
+                                    If checked, please provide your average monthly rate (USD).
+                                </small>
+                        </div>
+
+                        <div class="form-texts">
+                            <label for="average-monthly-utilities">Avg. Monthly Utilities ($USD)</label> 
+                            <input id="average-monthly-utilities" type="text" placeholder="120.00"> <br>
+                            <label for="distance-from-campus">Distance From Campus (mi)</label>
+                            <input  id="distance-from-campus" type="text" placeholder="0.10"> <br>
+                        </div>
+                                
+                        <div class="form-lease-length">
+                            <label for="lease-start-date">Lease Start Date</label>
+                            <input type="date" id="lease-start-date">
+                            <br>
+                            <label for="lease-end-date">Lease End Date</label>
+                            <input type="date" id="lease-end-date">
+                            <br>
+                        </div>
+                        
+                        <div class="form-pros-cons">
+                            <label for="pros-textarea">Pros:</label>    
+                            <textarea rows="4" cols="50" id="pros-textarea" maxlength="500" placeholder="I really liked..."></textarea>    
+                            <br>
+                            <label for="cons-textarea">Cons:</label>
+                            <textarea rows="4" cols="50" id="pros-textarea" maxlength="500" placeholder="I did not like..."></textarea>    
+                        </div>
+                    </div>
+                
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
