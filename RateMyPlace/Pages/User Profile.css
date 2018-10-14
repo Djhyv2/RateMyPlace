@@ -1,0 +1,18 @@
+body{
+    font-family: Arial, Helvetica, sans-serif; /*applies font to whole document*/
+    background-color: rgb(202, 159, 65);
+}
+
+#profile {
+    position: relative;
+    top: 15px;
+    left: 23%;
+}
+
+.user-profile-header{
+    border: 20px solid #bdc3c7;
+    padding: 20px;
+    margin: 20px auto; /*centers the border*/
+    max-width: 700px;   /*when possible display at 700px*/
+    width: 80%; /*when 700px is no longer possible, shrink to 80% of the screen size*/
+}
