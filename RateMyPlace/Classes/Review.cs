@@ -73,7 +73,7 @@ namespace RateMyPlace.Classes
             return html;
         }
 
-        public static string GetHTMLTable(string sqlStatement, string headers, bool button, string interactWith ) //button = true if button is to be shown, false if a checkbox. interactWith is the name of the element being interacted with in the .js file.
+        public static string GetHTMLTable(string sqlStatement, string headers, bool button, int num, string interactWith ) //button = true if button is to be shown, false if a checkbox. num is the number of buttons to add. interactWith is the name of the element being interacted with in the .js file.
         {
             string html = "";
             DataTable table = new DataTable();
@@ -93,11 +93,13 @@ namespace RateMyPlace.Classes
 
                 if (button)
                 {
-                    html += "<td><button id=\'" + row.ToString() + "\' class=\'AdditionalReviewInfo\' onclick=\'" + interactWith + "(" + row.ToString() + ")\'>...</button></td>";
+                    for( int i = 0; i < num; i++ )
+                        html += "<td><button id=\'" + row.ToString() + "\' class=\'AdditionalReviewInfo\' onclick=\'" + interactWith + "(" + row.ToString() + ")\'>...</button></td>";
                 }
                 else if( !button)
                 {
-                    html += "<td><input type=\'checkbox\' name=\'Compare\' value=\'\'></td>";
+                    for (int i = 0; i < num; i++)
+                        html += "<td><input type=\'checkbox\' name=\'Compare\' value=\'\'></td>";
                 }
 
                 html += "</tr>";

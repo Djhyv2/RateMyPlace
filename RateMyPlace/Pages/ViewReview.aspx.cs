@@ -18,15 +18,15 @@ namespace RateMyPlace.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PopulateReviews();
+            PopulateReviews("SELECT * FROM Reviews");
         }
 
-        public void PopulateReviews()
+        public void PopulateReviews( string statement )
         {
-            DataTable table = Connection.RunSQL( "SELECT * FROM Reviews" );
+            DataTable table = Connection.RunSQL( statement );
 
             string html = GetHTMLTable("SELECT HousingComplex, OverallRating, Rent, Pets, Furnished, Parking, StudySpace, Shuttle, Gym FROM Reviews",
-                "<th>Complex</th><th>Overall Rating</th><th>Rent</th><th>Pets</th><th>Furnished</th><th>Parking</th><th>StudySpace</th><th>Shuttle</th><th>Gym</th><th>Details</th>", true, "DetailReviewClick");
+                "<th>Complex</th><th>Overall Rating</th><th>Rent</th><th>Pets</th><th>Furnished</th><th>Parking</th><th>StudySpace</th><th>Shuttle</th><th>Gym</th><th>Details</th>", true, 1, "DetailReviewClick");
 
             LiteralText.Text = "<div class=\"TableDiv\">" + html + "</div>";
         }

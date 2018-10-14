@@ -3,7 +3,7 @@
     alert(id);
 }
 
-function DetailReviewClick(id)
+function DetailReviewClick( complexName )
 {
-    alert(id);
+    
 }
