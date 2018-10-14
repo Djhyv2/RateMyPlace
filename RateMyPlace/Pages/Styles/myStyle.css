@@ -1,4 +1,8 @@
-﻿a {
+﻿* {
+    font-family: 'Kalam', cursive;
+}
+
+a {
     text-decoration: none;
     color: white;
 }
@@ -491,4 +495,160 @@ div#compareHousingBody table th {
 }
 div#compareHousingBody table tr {
     height: 50px;
+}
+
+
+
+
+
+div#compareReviewBody {
+    background-color: navajowhite;
+    height: auto;
+    width: 100vw;
+    padding: 0 40px 40px 40px;
+    position: absolute;
+    top: 20px;
+}
+
+div#compareReviewBody div#contentContainer {
+    overflow: hidden;
+    border: 1px solid #428bca;
+    margin-top: 100px;
+    border-radius: 5px;
+
+}
+
+div#compareReviewBody table {
+    border-collapse: collapse;
+}
+
+div#compareReviewBody table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+div#compareReviewBody div#contentContainer {
+    overflow: hidden;
+    border: 1px solid #428bca;
+    margin-top: 100px;
+    border-radius: 5px;
+}
+
+div#compareReviewBody tr:nth-child(even) {
+    background-color: #E0EEEE;
+}
+
+div#compareReviewBody tr:nth-child(odd) {
+    background-color: #C5E3BF;
+}
+
+div#compareReviewBody h1#tableHeading {
+    width: 100%;
+    background-color: #428bca;
+    text-align: center;
+    margin-bottom: 0;
+    font-family: 'Kalam', cursive;
+}
+
+div#compareReviewBody table tr {
+    border: 1px solid #428bca;
+    border-style: solid none none none;
+}
+
+div#compareReviewBody table tr#firstRow {
+    border: 2px solid #428bca;
+    border-style: none none solid none;
+}
+
+div#compareReviewBody table td {
+    text-align: center;
+}
+
+div#compareReviewBody table th {
+    padding-left: 15px;
+}
+
+div#compareReviewBody table tr {
+    height: 50px;
+}
+
+div#compareReviewBody table .complexName button {
+    color: white;
+}
+
+div#compareReviewBody table .complexName:last-of-type button{
+    background-color: rebeccapurple;
+}
+
+div#compareReviewBody #exampleModalLongTitle {
+    color: white;
+}
+
+div#compareReviewBody .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+div#compareReviewBody .modal-title {
+    color: white;
+}
+
+div#compareReviewBody .modal-body {
+    padding: 0;
+}
+
+
+.tooltip1 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    text-align: center;
+}
+
+
+.tooltip1 .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: whitesmoke;
+    color: blue;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 10000;
+    top: 50%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip1:hover .tooltiptext {
+    visibility: visible;
+    opacity: .7;
+}
+
+.tooltip1:hover .tooltiptext img {
+    width: 90px;
+    height: 50px;
+    border-radius: 6px;
+}
+
+.tooltip1:hover .tooltiptext > span {
+    position: absolute;
+    z-index: 100000;
+    left: 5%;
+    font-weight: 600;
+}
+
+
+div#compareReviewBody .crop {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+div#compareReviewBody .crop img {
+    width: 100%;
+    height: auto;
+    margin: -10% 0 0 0;
 }
