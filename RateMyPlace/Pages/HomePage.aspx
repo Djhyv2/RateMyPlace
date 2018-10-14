@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Pages/Layout.master" Title="Content Page" CodeBehind="Login.aspx.cs" Inherits="RateMyPlace.Pages.Login"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/Pages/Layout.master" Title="Content Page" CodeBehind="Homepage.aspx.cs" Inherits="RateMyPlace.Pages.HomePage"%>
 
 <asp:Content id="Content1" ContentPlaceHolderID="title" runat="server">
    Home Page
 </asp:Content>
 
 <asp:Content id="Content2" ContentPlaceHolderID="contentBody" runat="server">
+    <form runat="server"></form>
     <div id="homeBody">    
         
         <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
