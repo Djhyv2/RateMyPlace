@@ -346,6 +346,7 @@ div#homePageCarousel .crop .overlay {
     height: 100%;
     width: 100%;
     opacity: .75;
+    /*277851*/
     background-image: linear-gradient(transparent, #277851);
     transition: .7s ease;
 }
@@ -606,16 +607,14 @@ div#compareReviewBody .modal-body {
     padding: 0;
 }
 
-
-.tooltip1 {
+div#compareReviewBody .tooltip1 {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
     text-align: center;
 }
 
-
-.tooltip1 .tooltiptext {
+div#compareReviewBody .tooltip1 .tooltiptext {
     visibility: hidden;
     width: auto;
     background-color: whitesmoke;
@@ -630,18 +629,18 @@ div#compareReviewBody .modal-body {
     transition: opacity 1s;
 }
 
-.tooltip1:hover .tooltiptext {
+div#compareReviewBody .tooltip1:hover .tooltiptext {
     visibility: visible;
     opacity: .7;
 }
 
-.tooltip1:hover .tooltiptext img {
+div#compareReviewBody .tooltip1:hover .tooltiptext img {
     width: 90px;
     height: 50px;
     border-radius: 6px;
 }
 
-.tooltip1:hover .tooltiptext > span {
+div#compareReviewBody .tooltip1:hover .tooltiptext > span {
     position: absolute;
     z-index: 100000;
     left: 5%;
@@ -672,4 +671,62 @@ div#compareReviewBody .crop img {
     padding-left: 10px;
     border-radius: 5px;
     opacity: .9;
+}
+
+div#userProfileBody {
+    background-color: navajowhite;
+    height: 100%;
+    width: 100vw;
+    padding: 0 40px 40px 40px;
+    position: absolute;
+}
+
+div#userProfileBody div#contentContainer {
+    margin-top: 120px;
+    height: 550px;
+    border-radius: 5px;
+}
+
+div#userProfileBody div#contentContainer table, div#userProfileBody div#contentContainer td {
+    border: 2px solid #e57e57;
+}
+
+div#userProfileBody div#contentContainer table {
+    border-collapse: collapse;
+    background-color: #e57e57;
+    table-layout: fixed;
+    width: 100%;
+}
+
+div#userProfileBody div#contentContainer th {
+    text-align: center;
+    height: 40px;
+}
+
+div#userProfileBody div#contentContainer td {
+    background-color: navajowhite;
+    height: 60px;
+    text-align: center;
+}
+
+div#userProfileBody div#contentContainer #headerTable {
+    position: relative;
+    z-index: 100;
+}
+
+div#userProfileBody div#contentContainer #innerTable {
+    height: 460px;
+    overflow-y: scroll;
+}
+
+div#userProfileBody div#contentContainer .editButton {
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5px 10px;
+}
+
+div#userProfileBody div#contentContainer .deleteButton {
+    background-color: mediumvioletred;
+    border: none;
+    border-radius: 5px 10px;
 }

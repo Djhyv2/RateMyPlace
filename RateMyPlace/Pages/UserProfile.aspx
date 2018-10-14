@@ -1,15 +1,36 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="RateMyPlace.Pages.UserProfile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserProfile.aspx.cs" Inherits="RateMyPlace.Pages.UserProfileResults" MasterPageFile="~/Pages/Layout.master" Title="Content Page"  %>
 
-<!DOCTYPE html>
+<asp:Content id="Content1" ContentPlaceHolderID="title" runat="server">
+   Compare Housing
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content id="Content2" ContentPlaceHolderID="contentBody" runat="server">
+   
+    <div id="userProfileBody">
+        <div id="contentContainer">
+            <table id="headerTable">
+                <tr>
+                    <th>Complex</th>
+                    <th>Overall Rating</th>
+                    <th>Rent</th>
+                    <th>Pets</th>
+                    <th>Furnished</th>
+                    <th>Parking</th>
+                    <th>Study Space</th>
+                    <th>Shuttle</th>
+                    <th>Gym</th>
+                    <th>Details</th>
+                </tr>
+            </table>
+            <div id="innerTable">
+                <table>
+                    
+                    
+                    <asp:Literal id="userProfileText" runat="server" Text=""></asp:Literal>
+
+                </table>
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+    
+</asp:Content>
