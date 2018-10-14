@@ -26,7 +26,7 @@ namespace RateMyPlace.Pages
             DataTable table = Connection.RunSQL( "SELECT * FROM Reviews" );
 
             string html = GetHTMLTable("SELECT HousingComplex, OverallRating, Rent, Pets, Furnished, Parking, StudySpace, Shuttle, Gym FROM Reviews",
-                "<th>Complex</th><th>Overall Rating</th><th>Rent</th><th>Pets</th><th>Furnished</th><th>Parking</th><th>StudySpace</th><th>Shuttle</th><th>Gym</th><th>Details</th>", true);
+                "<th>Complex</th><th>Overall Rating</th><th>Rent</th><th>Pets</th><th>Furnished</th><th>Parking</th><th>StudySpace</th><th>Shuttle</th><th>Gym</th><th>Details</th>", true, "DetailReviewClick");
 
             LiteralText.Text = "<div class=\"TableDiv\">" + html + "</div>";
         }
