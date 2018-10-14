@@ -47,6 +47,23 @@ namespace RateMyPlace.Classes
             parking = false;
         }
 
+        /* HOW TO USE: GetHTMLTable
+         * 
+         * If you would not like a button or checkbox in your resulting table, use first consctructor.
+         * For the first constructor, pass your sql statement and the headers for the table in HTML
+         * For example:
+         * 
+         *  GetHTMLTable( SELECT name, age FROM table, <th>Name</th><th>Age</th>)
+         *  
+         * If you would like to have buttons or checkboxes included, there are a few more parameters.
+         * bool button is for whether you want a button or a checkbox (true for button, false for checkbox).
+         * int num is the number of buttons or checkboxes on each row
+         * string interactWith is for the name of the button function in the javascript file.
+         * For example:
+         *  GetHTMLTable( SELECT name, age FROM table, <th>Name</th><th>Age</th>, true, 2, MyClickFunction ) 
+         * 
+         */
+
         public static string GetHTMLTable( string sqlStatement, string headers )
         {
             string html = "";

@@ -55,10 +55,12 @@
         </ul>
       </div>
     </nav>
-    <form id="form1" runat="server">
-        <div class="TableDiv">
+
+            <div class="TableDiv">
             <asp:Literal id="HTMLInsert" runat="server" Text=""></asp:Literal>
         </div>
+
+    <form id="form1" runat="server">
     </form>
 </body>
 </html>

@@ -12,7 +12,7 @@ namespace RateMyPlace.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            HTMLInsert.Text = GetHTMLTable( "SELECT HousingComplex FROM Reviews", "<th>Complex</th><th>Select</th>", true, 1, "DetailReviewClick" );
+            HTMLInsert.Text = GetHTMLTable( "SELECT HousingComplex FROM Reviews", "<th>Complex</th><th>Select</th>", true, 1, "CompareComplexReviewsClick");
 
 
         }
