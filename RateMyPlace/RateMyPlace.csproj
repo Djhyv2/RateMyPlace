@@ -98,6 +98,13 @@
     <Compile Include="Pages\CompareReview.aspx.designer.cs">
       <DependentUpon>CompareReview.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Layout.master.cs">
+      <DependentUpon>Layout.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Layout.master.designer.cs">
+      <DependentUpon>Layout.master</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

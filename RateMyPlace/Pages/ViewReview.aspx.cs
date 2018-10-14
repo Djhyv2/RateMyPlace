@@ -6,22 +6,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using static RateMyPlace.Classes.Review;
 
 namespace RateMyPlace.Pages
 {
     public partial class SearchResults : System.Web.UI.Page
     {
         //Needs complex, overall rating, average rent cost, pet, furnished, parking, study spaces, shuttle, gym
-        private static DataTable table;
-        private string complex;
-        private float rating = 0;
-        private float rent = 0;
-        private string pet = "";
-        private string furnished = "";
-        private string parking = "";
-        private string studySpaces = "";
-        private string shuttle = "";
-        private string gym = "";
+
         System.Web.UI.WebControls.Button btn;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -31,98 +23,12 @@ namespace RateMyPlace.Pages
 
         public void PopulateReviews()
         {
-            table = Connection.RunSQL("SELECT * FROM Reviews");
+            DataTable table = Connection.RunSQL( "SELECT * FROM Reviews" );
 
-            string html = "<div style= \"margin-top: 85px;\">";
+            string html = GetHTMLTable("SELECT HousingComplex, OverallRating, Rent, Pets, Furnished, Parking, StudySpace, Shuttle, Gym FROM Reviews",
+                "<th>Complex</th><th>Overall Rating</th><th>Rent</th><th>Pets</th><th>Furnished</th><th>Parking</th><th>StudySpace</th><th>Shuttle</th><th>Gym</th><th>Details</th>", true);
 
-            for ( int row = 0; row < table.Rows.Count; row++) //For each review
-            {
-                for( int col = 0; col < table.Columns.Count; col++)
-                {
-                    //Needs complex, overall rating, average rent cost, pet, furnished, parking, study spaces, shuttle, gym
-                    switch ( col )
-                    {
-                        case 25:
-                            complex = table.Rows[row][col].ToString();
-                            break;
-                        case 11:
-                            if (table.Rows[row][col].ToString() == "True")
-                                studySpaces = "X";
-                            break;
-                        case 12:
-                            if (table.Rows[row][col].ToString() == "True")
-                                shuttle = "X";
-                            break;
-                        case 14:
-                            if (table.Rows[row][col].ToString() == "True")
-                                furnished = "X";
-                            break;
-                        case 20:
-                            if (table.Rows[row][col].ToString() == "True")
-                                pet = "X";
-                            break;
-                        case 18:
-                            if (table.Rows[row][col].ToString() == "True")
-                                parking = "X";
-                            break;
-                        case 17:
-                            if (table.Rows[row][col].ToString() == "True")
-                                gym = "X";
-                            break;
-                    }
-
-                }
-
-                if (complex != null && rent == 0)
-                {
-                    DataTable temp = Connection.RunSQL("SELECT Rent FROM Reviews WHERE HousingComplex = '" + complex + "';");
-                    float tmp = 0;
-
-                    for (int entries = 0; entries < temp.Rows.Count; entries++)
-                    {
-                        float.TryParse(temp.Rows[entries][0].ToString(), out tmp);
-
-                        rent += tmp;
-
-                        if (entries == temp.Rows.Count - 1)
-                            rent = rent / temp.Rows.Count;
-                    }
-
-                    temp = null;
-                }
-
-                if (complex != null && rating == 0)
-                {
-                    DataTable temp = Connection.RunSQL("SELECT OverallRating FROM Reviews WHERE HousingComplex = '" + complex + "';");
-                    float tmp = 0;
-
-                    for (int entries = 0; entries < temp.Rows.Count; entries++)
-                    {
-                        float.TryParse(temp.Rows[entries][0].ToString(), out rating);
-
-                        rent += tmp;
-
-                        if (entries == temp.Rows.Count - 1)
-                            rent = rent / temp.Rows.Count;
-                    }
-                    temp = null;
-                }
-
-                //Needs complex, overall rating, average rent cost, pet, furnished, parking, study spaces, shuttle, gym
-                html += "<table class=\"ReviewStyle.css\">" +
-                    "<th>Complex Name</th><th>Overall Rating</th><th>Average Rent</th><th>Pet Friendly</th><th>Pre-Furnished</th><th>Available Parking</th><th>Study Spaces</th><th>Free Shuttle</th><th>Free Gym</th><th>More Information<t/h>" +
-                    "<tr><td style=\"min-width:200px\">" + complex + "</td>" + "<td>" + rating.ToString() + "</td>" + "<td>$" + rent.ToString() + "</td>" + "<td>" + pet + "</td>" + "<td>" + furnished + "</td>" +
-                    "<td>" + parking + "</td>" + "<td>" + studySpaces + "</td>" + "<td>" + shuttle + "</td>" + "<td>" + gym + "</td><td><button id=\"Click\" class=\"ReviewStyle\" onclick=\"OnClick(" + table.Rows[row][0].ToString() + ")\">Expand</Button></td></tr>" +
-                    "</table>";
-
-                complex = null;
-                rent = 0;
-                rating = 0;
-            }
-
-            html += "</div>";
-
-            LiteralText.Text = html;
+            LiteralText.Text = "<div class=\"TableDiv\">" + html + "</div>";
         }
 
     }

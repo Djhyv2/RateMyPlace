@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="RateMyPlace.Pages.Layout" Codebehind="Layout.master.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 
     1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -45,6 +45,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="CompareHousing.aspx">Compare Housing</a>
+                </li>
+                <li class="nav-item">
+                    <asp:Label class="navbar-text" ID="lblUsername" runat="server"></asp:Label>
                 </li>
                 <li class="nav-item">
                     <a id="logout" class="nav-link" href="#">Logout</a>

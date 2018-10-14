@@ -47,6 +47,63 @@ namespace RateMyPlace.Classes
             parking = false;
         }
 
+        public static string GetHTMLTable( string sqlStatement, string headers )
+        {
+            string html = "";
+            DataTable table = new DataTable();
+
+            table = Connection.RunSQL(sqlStatement);
+
+            html += "<table class=\"ReviewStyle.css\">" + headers; 
+
+            for( int row = 0; row < table.Rows.Count; row++)
+            {
+                html += "<tr>";
+
+                for( int col = 0; col < table.Columns.Count; col++)
+                {
+                    html += "<td>" + table.Rows[row][col].ToString() + "</td>";
+                }
+
+                html += "</tr>";
+            }
+
+            html += "</table>";
+
+            return html;
+        }
+
+        public static string GetHTMLTable(string sqlStatement, string headers, bool button )
+        {
+            string html = "";
+            DataTable table = new DataTable();
+
+            table = Connection.RunSQL(sqlStatement);
+
+            html += "<table class=\"ReviewStyle.css\">" + headers;
+
+            for (int row = 0; row < table.Rows.Count; row++)
+            {
+                html += "<tr>";
+
+                for (int col = 0; col < table.Columns.Count; col++)
+                {
+                    html += "<td>" + table.Rows[row][col].ToString() + "</td>";
+                }
+
+                if (button)
+                {
+                    html += "<td><button id=\"" + row.ToString() + "\" class=\"AdditionalReviewInfo\" click=\"OnClick\">...</button>";
+                }
+
+                html += "</tr>";
+            }
+
+            html += "</table>";
+
+            return html;
+        }
+
         public void SendToDatabase() //Sends everything to the database as a new entry from anonymous user.
         {
             //RunNonQuerySQL( SQL statement )
