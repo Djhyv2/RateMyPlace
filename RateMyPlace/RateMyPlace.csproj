@@ -72,6 +72,7 @@
     <Content Include="Pages\CompareReview.aspx" />
     <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
+    <Content Include="Pages\SelectComplexComparison.aspx" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Web.config" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="Pages\ReviewPopup.aspx.designer.cs">
       <DependentUpon>ReviewPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SelectComplexComparison.aspx.cs">
+      <DependentUpon>SelectComplexComparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SelectComplexComparison.aspx.designer.cs">
+      <DependentUpon>SelectComplexComparison.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ViewReview.aspx.cs">
       <DependentUpon>ViewReview.aspx</DependentUpon>

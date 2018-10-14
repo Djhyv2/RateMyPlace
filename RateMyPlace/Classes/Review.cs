@@ -73,6 +73,41 @@ namespace RateMyPlace.Classes
             return html;
         }
 
+        public static string GetHTMLTable(string sqlStatement, string headers, bool button, string interactWith ) //button = true if button is to be shown, false if a checkbox. interactWith is the name of the element being interacted with in the .js file.
+        {
+            string html = "";
+            DataTable table = new DataTable();
+
+            table = Connection.RunSQL(sqlStatement);
+
+            html += "<table class=\"ReviewStyle.css\">" + headers;
+
+            for (int row = 0; row < table.Rows.Count; row++)
+            {
+                html += "<tr>";
+
+                for (int col = 0; col < table.Columns.Count; col++)
+                {
+                    html += "<td>" + table.Rows[row][col].ToString() + "</td>";
+                }
+
+                if (button)
+                {
+                    html += "<td><button id=\'" + row.ToString() + "\' class=\'AdditionalReviewInfo\' onclick=\'" + interactWith + "(" + row.ToString() + ")\'>...</button></td>";
+                }
+                else if( !button)
+                {
+                    html += "<td><input type=\'checkbox\' name=\'Compare\' value=\'\'></td>";
+                }
+
+                html += "</tr>";
+            }
+
+            html += "</table>";
+
+            return html;
+        }
+
         public void SendToDatabase() //Sends everything to the database as a new entry from anonymous user.
         {
             //RunNonQuerySQL( SQL statement )

@@ -9,7 +9,7 @@
         
         <div id="homePageCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div id="item1" class="carousel-item active">
                     <figure class="crop">
                         <img class="d-block w-100" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="First slide">
                         <div class="overlay"></div>
@@ -20,7 +20,7 @@
                         <a href="#"><span class="badge badge-pill">Learn More!</span></a>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div id="item2" class="carousel-item">
                     <figure class="crop">
                         <img class="d-block w-100" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="First slide">
                         <div class="overlay"></div>
@@ -31,7 +31,7 @@
                         <a href=""><span class="badge badge-pill">Learn More!</span></a>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div id="item3" class="carousel-item">
                     <figure class="crop">
                         <img class="d-block w-100" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="First slide">
                         <div class="overlay"></div>
@@ -51,7 +51,6 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-            
             <img id="homePageCarouselSubImage1" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="">
             <img id="homePageCarouselSubImage2" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="">
             <img id="homePageCarouselSubImage3" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="">
