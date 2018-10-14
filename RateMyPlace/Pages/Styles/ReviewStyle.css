@@ -1,11 +1,14 @@
 ﻿body {
 }
 
+div.TableDiv {
+    margin-top: 85px;
+}
+
 th {
     background-color: #e57e57;
     font-family: 'Kalam';
     height: 40px;
-    border: 1px solid navajowhite;
 }
 
 td {
@@ -31,4 +34,5 @@ button{
     width: 80px;
     height: 40px;
     background-color: #e57e57;
+    border: 2px solid black;
 }
