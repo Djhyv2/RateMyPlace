@@ -177,7 +177,8 @@ nav#topbar {
     font-family: 'Kalam', cursive;
 }
 
-nav#topbar a.nav-link {
+nav#topbar a.nav-link, nav#topbar span.navbar-text
+{
     color: white;
 }
 
@@ -204,7 +205,8 @@ nav#topbar a#logout {
     right: 80px;
 }
 
-nav#topbar a.nav-link:hover {
+nav#topbar a.nav-link:hover, nav#topbar navbar-text:hover 
+{
     color: cadetblue;
 }
 
