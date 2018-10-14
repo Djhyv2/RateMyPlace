@@ -8,7 +8,7 @@ a {
 }
 
 div#loginFormContainer {
-    margin: 13% auto 0 auto;
+    margin: 14% auto 0 auto;
     position: relative;
     height: 45vh;
     width: 42vw;
@@ -20,11 +20,11 @@ div#loginFormContainer {
 
 div#loginBody {
     background-color: #e57e57;
-    height: 100vh;
+    height: 100%;
     padding: 0 40px;
     width: 100vw;
     position: absolute;
-    top: 20px;
+    overflow: hidden;
 }
 
 div#loginBody hr {
@@ -375,7 +375,7 @@ div#homePageCarousel .carousel-control-prev-icon,
 }
 
 div#homePageCarousel .carousel-control-next-icon:hover {
-opacity: .8;
+    opacity: .8;
 }
 
 div#homePageCarousel .carousel-control-prev-icon:hover {
@@ -384,12 +384,16 @@ div#homePageCarousel .carousel-control-prev-icon:hover {
 
 div#homePageCarousel .carousel-control-next-icon:after {
     content: '>';
+    position: relative;
+    top: 12%;
     font-size: 55px;
     color: #277851;
 }
 
 div#homePageCarousel .carousel-control-prev-icon:after {
     content: '<';
+    position: relative;
+    top: 12%;
     font-size: 55px;
     color: #277851;
 }
