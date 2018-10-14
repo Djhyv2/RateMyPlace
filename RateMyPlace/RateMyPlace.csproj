@@ -71,6 +71,7 @@
     <Content Include="Pages\CompareHousing.aspx" />
     <Content Include="Pages\CompareReview.aspx" />
     <Content Include="Pages\ReviewPopup.aspx" />
+    <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Web.config" />

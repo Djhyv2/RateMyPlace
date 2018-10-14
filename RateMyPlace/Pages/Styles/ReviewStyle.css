@@ -3,13 +3,16 @@
 
 th {
     background-color: #e57e57;
-    font-family: 'Kalam', cursive;
+    font-family: 'Kalam';
+    height: 40px;
+    border: 1px solid navajowhite;
 }
 
 td {
     text-align: center;
     font-family: 'Kalam', cursive;
     background-color: navajowhite;
+    height: 60px;
 }
 
 table {
@@ -22,4 +25,10 @@ table, th, td {
 
 table + table {
     margin-top: 5px;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    background-color: #e57e57;
 }

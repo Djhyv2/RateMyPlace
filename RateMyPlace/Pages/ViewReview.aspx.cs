@@ -22,6 +22,7 @@ namespace RateMyPlace.Pages
         private string studySpaces = "";
         private string shuttle = "";
         private string gym = "";
+        System.Web.UI.WebControls.Button btn;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -109,9 +110,9 @@ namespace RateMyPlace.Pages
 
                 //Needs complex, overall rating, average rent cost, pet, furnished, parking, study spaces, shuttle, gym
                 html += "<table class=\"ReviewStyle.css\">" +
-                    "<th>Complex Name</th><th>Overall Rating</th><th>Average Rent</th><th>Pet Friendly</th><th>Pre-Furnished</th><th>Available Parking</th><th>Study Spaces</th><th>Free Shuttle</th><th>Free Gym</th>" +
-                    "<tr><td style=\"min-width:200px\">" + complex + "</td>" + "<td>" + rating.ToString() + "</td>" + "<td>" + rent.ToString() + "</td>" + "<td>" + pet + "</td>" + "<td>" + furnished + "</td>" +
-                    "<td>" + parking + "</td>" + "<td>" + studySpaces + "</td>" + "<td>" + shuttle + "</td>" + "<td>" + gym + "</td></tr>" +
+                    "<th>Complex Name</th><th>Overall Rating</th><th>Average Rent</th><th>Pet Friendly</th><th>Pre-Furnished</th><th>Available Parking</th><th>Study Spaces</th><th>Free Shuttle</th><th>Free Gym</th><th>More Information<t/h>" +
+                    "<tr><td style=\"min-width:200px\">" + complex + "</td>" + "<td>" + rating.ToString() + "</td>" + "<td>$" + rent.ToString() + "</td>" + "<td>" + pet + "</td>" + "<td>" + furnished + "</td>" +
+                    "<td>" + parking + "</td>" + "<td>" + studySpaces + "</td>" + "<td>" + shuttle + "</td>" + "<td>" + gym + "</td><td><button id=\"Click\" class=\"ReviewStyle\" onclick=\"OnClick(" + table.Rows[row][0].ToString() + ")\">Expand</Button></td></tr>" +
                     "</table>";
 
                 complex = null;
