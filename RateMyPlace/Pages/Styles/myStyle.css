@@ -59,7 +59,8 @@ div.carousel-item > p {
 div#loginFormContainer img#leftImage {
     height: 90px;
     width: 100px;
-    margin-left: 31%;
+    display: block;
+    margin: auto;
 }
 
 div#loginFormContainer form input[type=text] {
