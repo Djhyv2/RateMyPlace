@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace RateMyPlace.Pages
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class ViewComplex : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ratingStars(object sender, EventArgs e)
         {
 
         }

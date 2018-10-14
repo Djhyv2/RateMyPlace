@@ -2,7 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
     Form
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">                  
+<asp:Content ID="Content2" ContentPlaceHolderID="contentBody" runat="server">
+<form runat="server">
 <div class="modal-header">
     <h5 class="modal-title">Add New Review</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -19,12 +20,13 @@
                                 
     <div class="form-star-ratings">
         <label for="overall-rating">Overall Rating:</label>
-            <i id="overall-rating" class="fas fa-star"></i>
-            <i id="overall-rating" class="fas fa-star"></i>
-            <i id="overall-rating" class="fas fa-star"></i>
-            <i id="overall-rating" class="fas fa-star"></i>
-            <i id="overall-rating" class="fas fa-star"></i>
+            <button runat="server"  onserverclick="ratingStars()"><i class="fas fa-star"></i></button>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
             <br>
+        
         <label for="noise-rating">Noise Rating:</label>
             <i id="overall-rating" class="fas fa-star"></i>
             <i id="overall-rating" class="fas fa-star"></i>
@@ -110,11 +112,11 @@
         <label for="cons-textarea">Cons:</label>
         <textarea rows="4" cols="50" id="pros-textarea" maxlength="500" placeholder="I did not like..."></textarea>    
     </div>
-</div>
-                
+</div>  
 <div class="modal-footer">
     <button type="button" class="btn btn-primary">Submit</button>
 </div>
+</form>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="footer" runat="server">
 </asp:Content>
