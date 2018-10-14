@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="~/Pages/Styles/myStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Pages/Styles/ReviewStyle.css"/>
     <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet"/> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous"/>
       
@@ -18,6 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
     <script src="/Pages/Scripts/myScripts.js"></script>
+    <script src="/Pages/Scripts/AdditionalReviewInfo.js"></script>
 	<script runat="server">
 	
 	</script>
@@ -32,10 +34,10 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="HomePage.aspx">Home</a>
+                <a class="nav-link" href="#">Add Review</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Add Review</a>
+                <a class="nav-link" href="ViewReview.aspx">View Review</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="CompareReview.aspx">Compare Reviews</a>
@@ -57,5 +59,8 @@
     </form>
 
    <asp:Literal id="LiteralText" runat="server" Text=""></asp:Literal> <!--Figure out how to get this string from code to run in HTML-->
+
 </body>
 </html>
+
+

@@ -1,0 +1,8 @@
+﻿$(function () {
+
+});
+
+OnClick( string id )
+{
+
+}

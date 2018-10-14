@@ -71,6 +71,8 @@
     <Content Include="Pages\CompareHousing.aspx" />
     <Content Include="Pages\CompareReview.aspx" />
     <Content Include="Pages\ReviewPopup.aspx" />
+    <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
+    <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Web.config" />
     <Content Include="Pages\Styles\myStyle.css" />
@@ -78,7 +80,6 @@
     <Content Include="Pages\Scripts\myScripts.js" />
     <Content Include="Pages\SingleComplex.aspx" />
     <Content Include="Pages\Layout.master" />
-    <Content Include="Pages\test.aspx" />
     <Content Include="Pages\Login.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -138,9 +139,7 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="Pages\Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

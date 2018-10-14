@@ -46,7 +46,9 @@
                     <asp:TextBox runat="server" id="txtPassword" TextMode="password" placeholder="Password"></asp:TextBox>
 
                     <asp:TextBox runat="server" id="txtPasswordRepeat" TextMode="password" placeholder="Repeat Password" Visible="false"></asp:TextBox>
-                    
+
+                    <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
+
                     <div class="row">
                         <div class="col-6">
                             <asp:button runat="server" id="btnRegister" text="Register"  OnClick="handleRegister_click"/>
