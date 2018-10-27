@@ -4,12 +4,22 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="stylesheet" runat="server">
-    <link type="text/css" rel="stylesheet" href="ManageReviewStyle.css" />
+    <link type="text/css" rel="stylesheet" href="Styles/ManageReviewStyle.css" />
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
-    <div>
+    <div id="manageReviewBody">
+        <form class="form" runat="server"> <!-- Bootstrap Horizontal Form -->
+            <asp:ScriptManager ID="requiredScript" runat="server"></asp:ScriptManager>
+            <div class="form-group form-inline">
+                <asp:Label AssociatedControlID="overallRating" class="col-form-label-lg mr-3" runat="server">Overall Rating</asp:Label>
+                <ajaxToolkit:Rating class="" runat="server" id="overallRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+            </div>
 
+            <div class="form-group form-inline">
+                <asp:Button runat="server" Text="Submit Review" id="btnSubmit" class="button" OnClick="btnSubmit_Click" />
+            </div>
+        </form>
     </div>
 </asp:Content>
 

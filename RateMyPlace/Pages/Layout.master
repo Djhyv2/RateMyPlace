@@ -35,7 +35,7 @@
           <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Add Review</a>
+                    <a class="nav-link" href="ManageReview.aspx">Add Review</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="ViewReview.aspx">View Review</a>
@@ -50,6 +50,9 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <button id="btnLogout" runat="server" class="nav-link" onserverclick="logout_Click">Logout</button>
+                </li>
+                <li class="nav-item">
+                    <button id="btnLogin" runat="server" class="nav-link" onserverclick="login_Click">Login</button>
                 </li>
                 <li class="nav-item">
                     <i id="userIcon" class="fas fa-user"></i>
