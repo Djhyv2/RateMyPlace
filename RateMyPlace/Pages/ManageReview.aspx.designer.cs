@@ -31,6 +31,33 @@ namespace RateMyPlace.Pages {
         protected global::AjaxControlToolkit.Rating overallRating;
         
         /// <summary>
+        /// noiseRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating noiseRating;
+        
+        /// <summary>
+        /// safetyRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating safetyRating;
+        
+        /// <summary>
+        /// maintenanceRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.Rating maintenanceRating;
+        
+        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>

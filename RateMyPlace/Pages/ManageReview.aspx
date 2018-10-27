@@ -12,8 +12,20 @@
         <form class="form" runat="server"> <!-- Bootstrap Horizontal Form -->
             <asp:ScriptManager ID="requiredScript" runat="server"></asp:ScriptManager>
             <div class="form-group form-inline">
-                <asp:Label AssociatedControlID="overallRating" class="col-form-label-lg mr-3" runat="server">Overall Rating</asp:Label>
+                <asp:Label AssociatedControlID="overallRating" class="col-form-label-md mr-3" runat="server">Overall Rating:</asp:Label>
                 <ajaxToolkit:Rating class="" runat="server" id="overallRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+            </div>
+            <div class="form-group form-inline">
+                <asp:Label AssociatedControlID="noiseRating" class="col-form-label-md mr-3" runat="server">Noise Rating:</asp:Label>
+                <ajaxToolkit:Rating class="" runat="server" id="noiseRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+            </div>
+            <div class="form-group form-inline">
+                <asp:Label AssociatedControlID="safetyRating" class="col-form-label-md mr-3" runat="server">Safety Rating:</asp:Label>
+                <ajaxToolkit:Rating class="" runat="server" id="safetyRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+            </div>
+            <div class="form-group form-inline">
+                <asp:Label AssociatedControlID="maintenanceRating" class="col-form-label-md mr-3" runat="server">Maintenance Rating:</asp:Label>
+                <ajaxToolkit:Rating class="" runat="server" id="maintenanceRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
             </div>
 
             <div class="form-group form-inline">
