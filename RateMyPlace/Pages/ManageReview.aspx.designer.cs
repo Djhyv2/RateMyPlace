@@ -40,13 +40,13 @@ namespace RateMyPlace.Pages {
         protected global::System.Web.UI.WebControls.DropDownList ddlComplex;
         
         /// <summary>
-        /// divNewComplex control.
+        /// divComplex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divNewComplex;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divComplex;
         
         /// <summary>
         /// txtComplex control.

@@ -14,12 +14,19 @@
             <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
             <div class="row">
                 <div class="col-6">
-                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="ddlComplex">Complex:</asp:Label>
-                    <asp:DropDownList class="textInput" runat="server" ID="ddlComplex"></asp:DropDownList><br />
-                    <div id="divNewComplex" runat="server" visible="false">
-                        <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtComplex">New Complex:</asp:Label>
-                        <asp:TextBox class="textInput" runat="server" ID="txtComplex"></asp:TextBox><br />
-                    </div>
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+                            <asp:Label class="leftColLabel" runat="server" AssociatedControlID="ddlComplex">Complex:</asp:Label>
+                            <asp:DropDownList class="textInput" runat="server" ID="ddlComplex" AutoPostBack="true" OnSelectedIndexChanged="ddlComplex_SelectedIndexChanged"></asp:DropDownList><br />
+                            <div id="divComplex" runat="server" visible="false">
+                                <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtComplex">New Complex:</asp:Label>
+                                <asp:TextBox class="textInput" runat="server" ID="txtComplex"></asp:TextBox><br />
+                            </div>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="ddlComplex" EventName="SelectedIndexChanged" />
+                        </Triggers>
+                    </asp:UpdatePanel>
                     <div class="">
                         <asp:Label AssociatedControlID="overallRating" class="rating" runat="server">Overall Rating:</asp:Label>
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="overallRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
