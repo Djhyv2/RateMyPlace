@@ -77,6 +77,7 @@
     <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
     <Content Include="Pages\SelectComplexComparison.aspx" />
+    <Content Include="Pages\Styles\myStyle.css" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\UserProfile.aspx" />
     <Content Include="Pages\ViewComplex.aspx" />
