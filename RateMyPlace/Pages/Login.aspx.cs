@@ -34,7 +34,7 @@ namespace RateMyPlace.Pages
                 lblError.Visible = true;
                 lblError.Text = "Username or Password incorrect";
                 return;
-            }
+            }//If unable to find username in database, return
 
             //Turn input password into hash
             string password = credentials.Rows[0]["Password"].ToString();
@@ -52,7 +52,7 @@ namespace RateMyPlace.Pages
                     lblError.Visible = true;
                     lblError.Text = "Username or Password incorrect";
                     return;
-                }//If passwords don't match
+                }//If passwords don't match, return
             }
 
             //Reached successful login
@@ -79,14 +79,14 @@ namespace RateMyPlace.Pages
                 lblError.Visible = true;
                 lblError.Text = "Username must not be blank";
                 return;
-            }//If Username blank
+            }//If Username blank, return
 
             if (null == txtPassword.Text || "" == txtPassword.Text || null == txtPasswordRepeat.Text || "" == txtPasswordRepeat.Text)
             {
                 lblError.Visible = true;
                 lblError.Text = "Password must not be blank";
                 return;
-            }
+            }//If Password Blank, return
 
             List<SqlParameter> getUsernameParameter = new List<SqlParameter>();
             getUsernameParameter.Add(new SqlParameter("@Username", txtUsername.Text));
@@ -96,7 +96,7 @@ namespace RateMyPlace.Pages
                 lblError.Visible = true;
                 lblError.Text = "Username in use";
                 return;
-            }//If Username already exists
+            }//If Username already exists, return
 
             //Turns password into hash
             byte[] salt = new byte[16];

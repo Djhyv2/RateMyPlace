@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.1\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -70,6 +73,7 @@
   <ItemGroup>
     <Content Include="Pages\CompareHousing.aspx" />
     <Content Include="Pages\CompareReview.aspx" />
+    <Content Include="Pages\ManageReview.aspx" />
     <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
     <Content Include="Pages\SelectComplexComparison.aspx" />
@@ -77,9 +81,8 @@
     <Content Include="Pages\UserProfile.aspx" />
     <Content Include="Pages\ViewComplex.aspx" />
     <Content Include="Pages\ViewReview.aspx" />
-    <Content Include="Pages\AddReview.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Pages\Styles\myStyle.css" />
+    <Content Include="Pages\Styles\StyleSheet.css" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\Scripts\myScripts.js" />
     <Content Include="Pages\SingleComplex.aspx" />
@@ -116,6 +119,13 @@
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ManageReview.aspx.cs">
+      <DependentUpon>ManageReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ManageReview.aspx.designer.cs">
+      <DependentUpon>ManageReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ReviewPopup.aspx.cs">
       <DependentUpon>ReviewPopup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,13 +160,6 @@
     </Compile>
     <Compile Include="Pages\ViewReview.aspx.designer.cs">
       <DependentUpon>ViewReview.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AddReview.aspx.cs">
-      <DependentUpon>AddReview.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\AddReview.aspx.designer.cs">
-      <DependentUpon>AddReview.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Classes\User.cs" />
