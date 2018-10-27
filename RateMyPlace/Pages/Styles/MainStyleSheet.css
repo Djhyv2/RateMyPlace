@@ -1,4 +1,5 @@
-﻿* {
+﻿/*Universal font and links*/
+* {
     font-family: 'Kalam', cursive;
 }
 
@@ -7,6 +8,7 @@ a {
     color: white;
 }
 
+/* Login*/
 div#loginFormContainer {
     margin: 14% auto 0 auto;
     position: relative;
@@ -169,7 +171,8 @@ div#loginFormContainer .carousel-item p {
 div#loginFormContainer .carousel {
     margin-top: 3vh;
 }
-
+  
+/* Master Page*/
 
 nav#topbar {
     height: 80px;
@@ -239,6 +242,8 @@ nav#topbar button.nav-link
     left: 0;
     padding-left: 15px;
 }
+
+/* Home Page */
 
 div#homePageBox {
     margin: 3% auto 0 auto;
@@ -453,6 +458,8 @@ div#homePageCarousel img#homePageCarouselSubImage1:hover {
     transform: scale(1.1);
 }
 
+/* Compare */
+
 div#compareHousingBody {
     background-color: navajowhite;
     height: 100vh;
@@ -661,6 +668,7 @@ div#compareReviewBody .crop img {
     margin: -10% 0 0 0;
 }
 
+/* */
 .error {
     color: red;
     border: 1px solid red;
