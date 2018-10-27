@@ -11,9 +11,15 @@
     <div id="manageReviewBody">
         <form runat="server">
             <asp:ScriptManager ID="requiredScript" runat="server"></asp:ScriptManager>
-            <asp:Label runat="server" ID="lblError" CssClass="error" Visible="true"></asp:Label>
+            <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
             <div class="row">
                 <div class="col-6">
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="ddlComplex">Complex:</asp:Label>
+                    <asp:DropDownList class="textInput" runat="server" ID="ddlComplex"></asp:DropDownList><br />
+                    <div id="divNewComplex" runat="server" visible="false">
+                        <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtComplex">New Complex:</asp:Label>
+                        <asp:TextBox class="textInput" runat="server" ID="txtComplex"></asp:TextBox><br />
+                    </div>
                     <div class="">
                         <asp:Label AssociatedControlID="overallRating" class="rating" runat="server">Overall Rating:</asp:Label>
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="overallRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
@@ -30,9 +36,43 @@
                         <asp:Label AssociatedControlID="maintenanceRating" class="rating" runat="server">Maintenance Rating:</asp:Label>
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="maintenanceRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtRent">Monthly Rent:</asp:Label>
+                    <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtRent"></asp:TextBox><br />
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtUtilities">Monthly Utilities:</asp:Label>
+                    <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtUtilities"></asp:TextBox><br />
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtDistance">Distance From Campus (Mi):</asp:Label>
+                    <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtDistance"></asp:TextBox><br />
                 </div>
                 <div class="col-6">
-                    <asp:CheckBox runat="server" Text=""/>
+                    <asp:CheckBox class="checkbox" runat="server" Text="Study Space" ID="chkStudySpace"/><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Shuttle" ID="chkShuttle" /><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Wifi" ID="chkWiFi" /><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Furnished" ID="chkFurnished" /><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="TV" ID="chkTV" /><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Trash Service" ID="chkTrashService" /><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Gym" ID="chkGym" /><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Parking" ID="chkParking" />
+                    <asp:Label class="fee" runat="server" AssociatedControlID="txtParking">Parking Fee:</asp:Label>
+                    <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtParking"></asp:TextBox><br />
+                    <asp:CheckBox class="checkbox" runat="server" Text="Pets" ID="chkPets" />
+                    <asp:Label class="fee" runat="server" AssociatedControlID="txtPets">Pets Fee:</asp:Label>
+                    <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtPets"></asp:TextBox><br />
+                    <asp:Label class="miscFees" id="lblMiscFees" runat="server" AssociatedControlID="txtMiscFees">Misc Fees:</asp:Label>
+                    <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtMiscFees"></asp:TextBox><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <asp:Label class="" type="date" runat="server" AssociatedControlID="txtPros">Pros:</asp:Label><br />
+                    <asp:TextBox class="textArea" textMode="MultiLine" Rows="5" Columns="40" runat="server" ID="txtPros"></asp:TextBox><br />
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtLeaseStart">Lease Start Date:</asp:Label>
+                    <asp:TextBox class="textInput" type="date" runat="server" ID="txtLeaseStart"></asp:TextBox><br />
+                </div>
+                <div class="col-6">
+                    <asp:Label class="" type="date" runat="server" AssociatedControlID="txtPros">Cons:</asp:Label><br />
+                    <asp:TextBox class="textArea" textMode="MultiLine" Rows="5" Columns="160" runat="server" ID="txtCons"></asp:TextBox><br />
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtLeaseEnd">Lease End Date:</asp:Label>
+                    <asp:TextBox class="textInput" runat="server" type="date" ID="txtLeaseEnd"></asp:TextBox><br />
                 </div>
             </div>
             <div class="form-group form-inline">

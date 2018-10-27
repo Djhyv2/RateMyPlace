@@ -21,6 +21,17 @@
     opacity: .8;
 }
 
+.textInput 
+{
+    background-color: beige;
+    width: 176px;
+}
+
+.complex
+{
+    
+}
+
 label.rating
 {
     width: 140px;
@@ -53,9 +64,39 @@ label.rating
     height: auto;
 }
 
+.leftColLabel
+{
+    width: 140px;
+    text-align: right;
+}
+
+
+.checkbox label
+{
+    width: 90px;
+}
+
+label.fee
+{
+    width: 90px;
+    text-align: right
+}
+
+label.miscFees
+{
+    width: 200px;
+    text-align: right;
+}
+
+.textArea
+{
+    background-color: beige;
+    width: 360px;
+}
+
 .button 
 {
-    background-color: white;
+    background-color: beige;
     padding: 0 15px 0 15px;
     margin-right: 40px;
     margin-left: auto;
