@@ -1,4 +1,5 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="RateMyPlace.Pages.Layout" Codebehind="Layout.master.cs" %>
+﻿<!-- Created by: Dustin Hengel -->
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="RateMyPlace.Pages.Layout" Codebehind="Layout.master.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 
     1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">

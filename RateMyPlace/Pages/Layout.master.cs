@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Created by: Dustin Hengel
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,7 @@ namespace RateMyPlace.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Username"] != null)
+            if (null != Session["Username"])
             {
                 lblUsername.Text = "Hello, " + Session["Username"].ToString() + "! ";//Say hello username
                 btnLogin.Visible = false;//Disable login

@@ -58,40 +58,40 @@ namespace RateMyPlace.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtComplex;
         
         /// <summary>
-        /// overallRating control.
+        /// ratingOverall control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Rating overallRating;
+        protected global::AjaxControlToolkit.Rating ratingOverall;
         
         /// <summary>
-        /// noiseRating control.
+        /// ratingNoise control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Rating noiseRating;
+        protected global::AjaxControlToolkit.Rating ratingNoise;
         
         /// <summary>
-        /// safetyRating control.
+        /// ratingSafety control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Rating safetyRating;
+        protected global::AjaxControlToolkit.Rating ratingSafety;
         
         /// <summary>
-        /// maintenanceRating control.
+        /// ratingMaintenance control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Rating maintenanceRating;
+        protected global::AjaxControlToolkit.Rating ratingMaintenance;
         
         /// <summary>
         /// txtRent control.

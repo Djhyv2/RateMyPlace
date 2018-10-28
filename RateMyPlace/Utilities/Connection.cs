@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Created by: Dustin Hengel
+using System;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;

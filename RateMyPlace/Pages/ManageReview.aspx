@@ -8,6 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
+    <!-- Created by: Dustin Hengel -->
     <div id="manageReviewBody">
         <form runat="server">
             <asp:ScriptManager ID="requiredScript" runat="server"></asp:ScriptManager>
@@ -28,20 +29,20 @@
                         </Triggers>
                     </asp:UpdatePanel>
                     <div class="">
-                        <asp:Label AssociatedControlID="overallRating" class="rating" runat="server">Overall Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="overallRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <asp:Label AssociatedControlID="ratingOverall" class="rating" runat="server">Overall Rating:</asp:Label>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingOverall" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
-                        <asp:Label AssociatedControlID="noiseRating" class="rating" runat="server">Noise Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="noiseRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Noise Rating:</asp:Label>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
-                        <asp:Label AssociatedControlID="safetyRating" class="rating" runat="server">Safety Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="safetyRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <asp:Label AssociatedControlID="ratingSafety" class="rating" runat="server">Safety Rating:</asp:Label>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
-                        <asp:Label AssociatedControlID="maintenanceRating" class="rating" runat="server">Maintenance Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="maintenanceRating" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Maintenance Rating:</asp:Label>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtRent">Monthly Rent:</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtRent"></asp:TextBox><br />

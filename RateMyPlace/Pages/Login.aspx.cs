@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Created by: Dustin Hengel
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace RateMyPlace.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["Page"] == "Register")
+            if ("Register" == Request.QueryString["Page"])
             {
                 txtPasswordRepeat.Visible = true;
                 btnLogin.Visible = false;

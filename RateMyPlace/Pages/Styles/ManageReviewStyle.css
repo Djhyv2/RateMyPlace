@@ -1,4 +1,6 @@
-﻿body
+﻿/*Created by: Dustin Hengel*/
+
+body
 {
     background-color: navajowhite;
 }
@@ -27,10 +29,6 @@
     width: 176px;
 }
 
-.complex
-{
-    
-}
 
 label.rating
 {
