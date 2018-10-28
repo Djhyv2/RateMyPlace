@@ -73,10 +73,14 @@
   <ItemGroup>
     <Content Include="Pages\CompareHousing.aspx" />
     <Content Include="Pages\CompareReview.aspx" />
+    <Content Include="Pages\List.aspx" />
     <Content Include="Pages\ManageReview.aspx" />
     <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
     <Content Include="Pages\SelectComplexComparison.aspx" />
+    <Content Include="Pages\Styles\EmptyStar.png" />
+    <Content Include="Pages\Styles\FullStar.png" />
+    <Content Include="Pages\Styles\ListStyle.css" />
     <Content Include="Pages\Styles\MainStyleSheet.css" />
     <Content Include="Pages\Styles\ManageReviewStyle.css" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
@@ -112,6 +116,13 @@
     </Compile>
     <Compile Include="Pages\Layout.master.designer.cs">
       <DependentUpon>Layout.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -167,9 +178,11 @@
     <Compile Include="Utilities\Connection.cs" />
     <Compile Include="Pages\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\SingleComplex.aspx.cs">
       <DependentUpon>SingleComplex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

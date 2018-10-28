@@ -1,0 +1,10 @@
+﻿/*Created by: Dustin Hengel*/
+
+body {
+    background-color: navajowhite;
+}
+
+#listBody {
+    width: 95%;
+    margin: 100px auto auto auto;
+}
