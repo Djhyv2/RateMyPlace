@@ -13,6 +13,7 @@ namespace RateMyPlace.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.Title = "Login";//Default page title
             if ("Register" == Request.QueryString["Page"])
             {
                 txtPasswordRepeat.Visible = true;

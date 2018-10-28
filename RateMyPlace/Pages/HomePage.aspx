@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Pages/Layout.master" Title="Content Page" CodeBehind="Homepage.aspx.cs" Inherits="RateMyPlace.Pages.HomePage"%>
 
 <asp:Content id="Content1" ContentPlaceHolderID="title" runat="server">
-   Home Page
+   <title>Home Page</title>
 </asp:Content>
 
 <asp:Content id="Content2" ContentPlaceHolderID="contentBody" runat="server">

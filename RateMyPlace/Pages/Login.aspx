@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Pages/Layout.master" Title="Content Page" CodeBehind="Login.aspx.cs" Inherits="RateMyPlace.Pages.Login"%>
 <asp:Content id="Content1" ContentPlaceHolderID="title" runat="server">
-   Login
+
 </asp:Content>
 
 <asp:Content id="Content2" ContentPlaceHolderID="contentBody" runat="server">
