@@ -1,10 +1,35 @@
 ﻿/*Created by: Dustin Hengel*/
 
-body {
+body 
+{
     background-color: navajowhite;
 }
 
-#listBody {
+#listBody 
+{
     width: 95%;
     margin: 100px auto auto auto;
+}
+
+th 
+{
+    background-color: #e57e57;
+}
+
+
+table 
+{
+    border-collapse: collapse;
+}
+
+table, th, td 
+{
+    border: 2px solid #e57e57;
+}
+
+
+tr.bottomRow
+{
+    border: 0px;
+    height: 15px;
 }

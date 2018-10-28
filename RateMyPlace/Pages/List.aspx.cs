@@ -30,17 +30,29 @@ namespace RateMyPlace.Pages
         private void DisplayAll()
         {
             DataTable Reviews = Connection.RunSQL("SELECT PK_ReviewID, FK_Username, OverallRating, Noise, Safety, Maintenance, LeaseStartDate, LeaseEndDate, CampusDistance, StudySpace, Shuttle, Wifi, Furnished, TV, TrashService, Gym, Parking, ParkingFee, Pets, PetsFee, MiscFee, Rent, Utilities, HousingComplex FROM Reviews ORDER BY LeaseEndDate DESC, PK_ReviewID DESC;");//Gets all reviews from database
-            listViewList.DataSource = Reviews;
-            listViewList.DataBind();//Binds sql return to listview
+            repeaterList.DataSource = Reviews;
+            repeaterList.DataBind();//Binds SQL Return to Repeater
         }
 
-        protected void listViewList_ItemDataBound(object sender, ListViewItemEventArgs e)
+        protected void repeaterList_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            Label overallRating = (Label)e.Item.FindControl("lblOverallRating");//Finds overallRating in specific list element
-            for (int iterations = 0; (int)(((DataRowView)e.Item.DataItem)["OverallRating"]) > iterations; iterations++)
+            if(ListItemType.Header == e.Item.ItemType || ListItemType.Footer == e.Item.ItemType)
             {
-                overallRating.Text += "*";//Shows a star for each
-            }//For overall rating given to review
-        }//Called each time an item is added to the list
+                return;
+            }//No data to specifically bind on header or footer
+
+            Label overallRating = (Label)e.Item.FindControl("lblOverallRating");//Finds overallRating in specific list element
+            
+            //Replaces the integer with out of 5 stars
+            int iterations;
+            for (iterations = 0; (int)(((DataRowView)e.Item.DataItem)["OverallRating"]) > iterations; iterations++)
+            {
+                overallRating.Text += "&#x2605";//Shows a full star for each given out of 5
+            }
+            for (; 5 > iterations; iterations++)
+            {
+                overallRating.Text += "&#x2606";//Shows an empty star for each remaining out of 5
+            }
+        }//For each item in repeater when bound with datasource
     }
 }

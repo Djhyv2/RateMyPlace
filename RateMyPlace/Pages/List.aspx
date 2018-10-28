@@ -8,15 +8,19 @@
     <div id="listBody">
         <h1 id="heading"></h1>
         <form runat="server">
-            <asp:ListView runat="server" ID="listViewList" OnItemDataBound="listViewList_ItemDataBound">
+            <asp:Repeater runat="server" ID="repeaterList" OnItemDataBound="repeaterList_ItemDataBound">
+                <HeaderTemplate>
+                    <table>
+                </HeaderTemplate>
                 <ItemTemplate>
-                    <asp:Table runat="server">
-                        <asp:TableRow><asp:TableHeaderCell ColumnSpan="2"><%#Eval("HousingComplex")%></asp:TableHeaderCell><asp:TableCell><asp:Label runat="server" ID="lblOverallRating"></asp:Label></asp:TableCell></asp:TableRow>
-                        <asp:TableRow><asp:TableCell></asp:TableCell></asp:TableRow>
-                    </asp:Table>
-                    <br />
+                    <tr><td RowSpan="2"><%#Eval("HousingComplex")%></td><td><asp:Label runat="server" ID="lblOverallRating">Rating: </asp:Label></td></tr>
+                    <tr><td><%#Eval("Rent","Rent: ${0:0.00}")%></td></tr>
+                    <tr class="bottomRow"></tr>
                 </ItemTemplate>
-            </asp:ListView>
+                <FooterTemplate>
+                    </table>
+                </FooterTemplate>
+            </asp:Repeater>
         </form>
     </div>
 </asp:Content>
