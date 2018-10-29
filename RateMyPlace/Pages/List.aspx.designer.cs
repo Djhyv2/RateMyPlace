@@ -13,12 +13,30 @@ namespace RateMyPlace.Pages {
     public partial class List {
         
         /// <summary>
-        /// repeaterList control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repeaterList;
+        protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
+        /// repeaterListComplexes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterListComplexes;
+        
+        /// <summary>
+        /// repeaterListAll control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterListAll;
     }
 }

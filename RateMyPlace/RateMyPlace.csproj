@@ -85,6 +85,7 @@
     <Content Include="Pages\Styles\ManageReviewStyle.css" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\UserProfile.aspx" />
+    <Content Include="Pages\View.aspx" />
     <Content Include="Pages\ViewComplex.aspx" />
     <Content Include="Pages\ViewReview.aspx" />
     <Content Include="Web.config" />
@@ -158,6 +159,13 @@
     </Compile>
     <Compile Include="Pages\UserProfile.aspx.designer.cs">
       <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ViewComplex.aspx.cs">
       <DependentUpon>ViewComplex.aspx</DependentUpon>

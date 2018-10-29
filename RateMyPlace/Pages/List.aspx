@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Layout.master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="RateMyPlace.Pages.List" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Layout.master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="RateMyPlace.Pages.List" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="stylesheet" runat="server">
@@ -8,7 +8,37 @@
     <div id="listBody">
         <h1 id="heading"></h1>
         <form runat="server">
-            <asp:Repeater runat="server" ID="repeaterList" OnItemDataBound="repeaterList_ItemDataBound">
+            <div class="errorContainer">
+                <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
+            </div>
+            <asp:Repeater runat="server" ID="repeaterListComplexes" Visible="false" OnItemDataBound="repeaterListOverallRating_ItemDataBound" >
+                <HeaderTemplate>
+                    <table>
+                        <tr>
+                            <th class="centered">Housing Complex</th>
+                            <th class="centered">Average Rating</th>
+                            <th class="centered">Average Rent</th>
+                            <th class="centered">Average Utilities</th>
+                            <th class="centered">Select for Comparison</th>
+                        </tr>
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <tr>
+                        <td ><%#Eval("HousingComplex")%></td>
+                        <td class="centered"><asp:Label runat="server" ID="lblOverallRating"></asp:Label></td>
+                        <td><%#Eval("AverageRent","${0:0.00}")%></td>
+                        <td><%#Eval("AverageUtilities","${0:0.00}")%></td>
+                        <td class="centered"><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
+                    </tr>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </table>
+                    <div class="form-group form-inline">
+                        <asp:Button runat="server" Text="Compare Selected" id="btnSubmit" class="button" OnClick="btnSubmit_Click" />
+                    </div>
+                </FooterTemplate>
+            </asp:Repeater>
+            <asp:Repeater runat="server" ID="repeaterListAll" Visible="false" OnItemDataBound="repeaterListOverallRating_ItemDataBound">
                 <HeaderTemplate>
                     <table>
                 </HeaderTemplate>
@@ -29,7 +59,7 @@
                         <td class="centered">
                             <asp:CheckBox runat="server" onclick="return false" checked='<%#(DBNull.Value == Eval("Pets")?false:Convert.ToBoolean(Eval("Pets")))%>'/>
                         </td>
-                        <th rowspan="2"><asp:Button runat="server" Text="View"/></th>
+                        <th rowspan="2"><asp:Button runat="server" id="btnView" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnView_Command" /></th>
                     </tr>
                     <tr>
                         <td ><%#Eval("HousingComplex")%></td>

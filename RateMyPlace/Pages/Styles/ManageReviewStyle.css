@@ -91,20 +91,3 @@ label.miscFees
     background-color: beige;
     width: 360px;
 }
-
-.button 
-{
-    background-color: beige;
-    padding: 0 15px 0 15px;
-    margin-right: 40px;
-    margin-left: auto;
-    color: black;
-    font-size: 13pt;
-    border-radius: 20px;
-    border: 1px solid black;
-}
-
-.button:hover
-{
-    background-color: #e57e57;
-}

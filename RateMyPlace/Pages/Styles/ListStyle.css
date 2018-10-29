@@ -11,6 +11,12 @@ body
     margin: 100px auto auto auto;
 }
 
+.errorContainer
+{
+    width: 50%;
+    margin: auto auto 50px auto;
+}
+
 th 
 {
     background-color: #e57e57;
@@ -28,6 +34,11 @@ table, th, td
     border: 2px solid #e57e57;
 }
 
+th, td
+{
+    padding: 5px;
+}
+
 
 tr.bottomRow
 {
@@ -43,4 +54,9 @@ tr.bottomRow
 .right
 {
     text-align: right;
+}
+
+.checkbox
+{
+    transform: scale(2);
 }

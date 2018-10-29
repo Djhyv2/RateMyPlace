@@ -738,3 +738,21 @@ div#userProfileBody div#contentContainer .deleteButton {
     border: none;
     border-radius: 5px 10px;
 }
+
+/* Buttons */
+.button 
+{
+    background-color: beige;
+    padding: 0 15px 0 15px;
+    margin-right: 40px;
+    margin-left: auto;
+    color: black;
+    font-size: 13pt;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.button:hover 
+{
+    background-color: #e57e57;
+}
