@@ -57,15 +57,15 @@ namespace RateMyPlace.Pages
 
             System.Web.UI.WebControls.Label overallRating = (System.Web.UI.WebControls.Label)e.Item.FindControl("lblOverallRating");//Finds overallRating in specific list element
 
-            //Replaces the integer with out of 5 stars
+            //Replaces the integer with out of 10 stars
             int iterations;
             for (iterations = 0; (int)(((DataRowView)e.Item.DataItem)["OverallRating"]) > iterations; iterations++)
             {
-                overallRating.Text += "&#x2605";//Shows a full star for each given out of 5
+                overallRating.Text += "&#x2605";//Shows a full star for each given out of 10
             }
-            for (; 5 > iterations; iterations++)
+            for (; 10 > iterations; iterations++)
             {
-                overallRating.Text += "&#x2606";//Shows an empty star for each remaining out of 5
+                overallRating.Text += "&#x2606";//Shows an empty star for each remaining out of 10
             }
         }//For each item in repeater when bound with datasource
 

@@ -10,7 +10,7 @@
         <div class="errorContainer">
                 <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
         </div>
-        <asp:DataGrid runat="server" ID="tblCompare" Visible="false" UseAccessibleHeader="true"></asp:DataGrid>
+        <asp:DataGrid runat="server" ID="tblCompare" Visible="false" UseAccessibleHeader="true" OnItemDataBound="tblCompare_ItemDataBound"></asp:DataGrid>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" runat="server">

@@ -32,7 +32,7 @@ body
 
 label.rating
 {
-    width: 140px;
+    width: 200px;
     text-align: right;
     display: inline-block;
 }
@@ -64,7 +64,7 @@ label.rating
 
 .leftColLabel
 {
-    width: 140px;
+    width: 200px;
     text-align: right;
 }
 
@@ -76,13 +76,13 @@ label.rating
 
 label.fee
 {
-    width: 90px;
+    width: 130px;
     text-align: right
 }
 
 label.miscFees
 {
-    width: 200px;
+    width: 240px;
     text-align: right;
 }
 

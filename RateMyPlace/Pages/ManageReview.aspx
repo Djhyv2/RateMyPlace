@@ -30,23 +30,23 @@
                     </asp:UpdatePanel>
                     <div class="">
                         <asp:Label AssociatedControlID="ratingOverall" class="rating" runat="server">Overall Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingOverall" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingOverall" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
                         <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Noise Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
                         <asp:Label AssociatedControlID="ratingSafety" class="rating" runat="server">Safety Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
                         <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Maintenance Rating:</asp:Label>
-                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" CurrentRating="0" MaxRating="5" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
-                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtRent">Monthly Rent:</asp:Label>
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtRent">Monthly Rent ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtRent"></asp:TextBox><br />
-                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtUtilities">Monthly Utilities:</asp:Label>
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtUtilities">Monthly Utilities ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtUtilities"></asp:TextBox><br />
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtDistance">Distance From Campus (Mi):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtDistance"></asp:TextBox><br />
@@ -60,12 +60,12 @@
                     <asp:CheckBox class="checkbox" runat="server" Text="Trash Service" ID="chkTrashService" /><br />
                     <asp:CheckBox class="checkbox" runat="server" Text="Gym" ID="chkGym" /><br />
                     <asp:CheckBox class="checkbox" runat="server" Text="Parking" ID="chkParking" />
-                    <asp:Label class="fee" runat="server" AssociatedControlID="txtParking">Parking Fee:</asp:Label>
+                    <asp:Label class="fee" runat="server" AssociatedControlID="txtParking">Parking Fee ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtParking"></asp:TextBox><br />
                     <asp:CheckBox class="checkbox" runat="server" Text="Pets" ID="chkPets" />
-                    <asp:Label class="fee" runat="server" AssociatedControlID="txtPets">Pets Fee:</asp:Label>
+                    <asp:Label class="fee" runat="server" AssociatedControlID="txtPets">Pets Fee ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtPets"></asp:TextBox><br />
-                    <asp:Label class="miscFees" id="lblMiscFees" runat="server" AssociatedControlID="txtMiscFees">Misc Fees:</asp:Label>
+                    <asp:Label class="miscFees" id="lblMiscFees" runat="server" AssociatedControlID="txtMiscFees">Misc Fees ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtMiscFees"></asp:TextBox><br />
                 </div>
             </div>
