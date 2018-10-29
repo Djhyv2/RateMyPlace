@@ -7,22 +7,10 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
     <div id="CompareBody">
-        <asp:DataList id="dataListComplex" RepeatDirection="Horizontal" RepeatLayout="Table" runat="server">
-            <HeaderTemplate>
-                <table>
-                    <tr>
-                        <th>Housing Complex</th>
-                    </tr>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <tr>
-                    
-                </tr>
-            </ItemTemplate>
-            <FooterTemplate>
-                </table>
-            </FooterTemplate>
-        </asp:DataList>
+        <div class="errorContainer">
+                <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
+        </div>
+        <asp:DataGrid runat="server" ID="tblCompare" Visible="false" UseAccessibleHeader="true"></asp:DataGrid>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" runat="server">

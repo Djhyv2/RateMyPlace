@@ -83,8 +83,9 @@ namespace RateMyPlace.Pages
                 lblError.Visible = true;
                 return;
             }//If selected <2 complexes
-
-            MessageBox.Show(Request.Form.GetValues("Complexes")[1].ToString() + " " + Request.Form.GetValues("Complexes")[0].ToString(), "Error", MessageBoxButtons.OK);
+            
+            Session["Compared"] = Request.Form.GetValues("Complexes");//Stores values to be compared
+            Response.Redirect("Compare.aspx?Page=Complexes");//Redirects to compare
 
         }//Submit Button for compare complex
     }

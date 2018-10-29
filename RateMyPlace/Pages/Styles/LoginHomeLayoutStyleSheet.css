@@ -172,17 +172,7 @@ div#loginFormContainer .carousel {
     margin-top: 3vh;
 }
 
-.error {
-    color: red;
-    border: 1px solid red;
-    background-color: #262626;
-    margin-top: 15px;
-    display: inline-block;
-    width: 100%;
-    padding-left: 10px;
-    border-radius: 5px;
-    opacity: .9;
-}
+
   
 /* Master Page*/
 
@@ -739,26 +729,3 @@ div#userProfileBody div#contentContainer .deleteButton {
     border-radius: 5px 10px;
 }
 
-/* Buttons */
-.button 
-{
-    background-color: beige;
-    padding: 0 15px 0 15px;
-    margin-right: 40px;
-    margin-left: auto;
-    color: black;
-    font-size: 13pt;
-    border-radius: 20px;
-    border: 1px solid black;
-}
-
-.button:hover 
-{
-    background-color: #e57e57;
-}
-
-/* Body */
-body 
-{
-    background-color: navajowhite;
-}

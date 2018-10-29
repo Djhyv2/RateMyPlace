@@ -82,8 +82,9 @@
     <Content Include="Pages\Styles\CompareStyle.css" />
     <Content Include="Pages\Styles\EmptyStar.png" />
     <Content Include="Pages\Styles\FullStar.png" />
+    <Content Include="Pages\Styles\GenericStyle.css" />
     <Content Include="Pages\Styles\ListStyle.css" />
-    <Content Include="Pages\Styles\MainStyleSheet.css" />
+    <Content Include="Pages\Styles\LoginHomeLayoutStyleSheet.css" />
     <Content Include="Pages\Styles\ManageReviewStyle.css" />
     <Content Include="Pages\Styles\ReviewStyle.css" />
     <Content Include="Pages\UserProfile.aspx" />

@@ -126,7 +126,7 @@ namespace RateMyPlace
         {
             DataTable newTable = new DataTable();
 
-            newTable.Columns.Add();//First Column on New Table will Store Headers of Old Table
+            newTable.Columns.Add(" ");//First Column on New Table will Store Headers of Old Table
             for (int i=0; i < input.Rows.Count; i++)
             {
                 newTable.Columns.Add(input.Rows[i].ItemArray[0].ToString());//Adds column to new table with name of associated row in old table
