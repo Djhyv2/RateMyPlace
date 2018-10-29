@@ -756,3 +756,9 @@ div#userProfileBody div#contentContainer .deleteButton {
 {
     background-color: #e57e57;
 }
+
+/* Body */
+body 
+{
+    background-color: navajowhite;
+}

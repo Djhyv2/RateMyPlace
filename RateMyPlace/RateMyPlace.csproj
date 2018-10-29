@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\Compare.aspx" />
     <Content Include="Pages\CompareHousing.aspx" />
     <Content Include="Pages\CompareReview.aspx" />
     <Content Include="Pages\List.aspx" />
@@ -78,6 +79,7 @@
     <Content Include="Pages\ReviewPopup.aspx" />
     <Content Include="Pages\Scripts\AdditionalReviewInfo.js" />
     <Content Include="Pages\SelectComplexComparison.aspx" />
+    <Content Include="Pages\Styles\CompareStyle.css" />
     <Content Include="Pages\Styles\EmptyStar.png" />
     <Content Include="Pages\Styles\FullStar.png" />
     <Content Include="Pages\Styles\ListStyle.css" />
@@ -97,6 +99,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Review.cs" />
+    <Compile Include="Pages\Compare.aspx.cs">
+      <DependentUpon>Compare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Compare.aspx.designer.cs">
+      <DependentUpon>Compare.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CompareHousing.aspx.cs">
       <DependentUpon>CompareHousing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

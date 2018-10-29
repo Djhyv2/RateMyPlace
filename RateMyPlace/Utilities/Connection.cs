@@ -112,5 +112,38 @@ namespace RateMyPlace
             }
             return rowsAffected;
         }
+
+        /// <summary>
+        /// Rotates SQL Table around first column
+        /// </summary>
+        /// <param name="input">
+        /// Table to Transpose
+        /// </param>
+        /// <returns>
+        /// Transposed Table
+        /// </returns>
+        public static DataTable TransposeTable (DataTable input)
+        {
+            DataTable newTable = new DataTable();
+
+            newTable.Columns.Add();//First Column on New Table will Store Headers of Old Table
+            for (int i=0; i < input.Rows.Count; i++)
+            {
+                newTable.Columns.Add(input.Rows[i].ItemArray[0].ToString());//Adds column to new table with name of associated row in old table
+            }//Create a column for each row in put
+
+            for (int k = 1; k < input.Columns.Count; k++)
+            {
+                DataRow newRow = newTable.NewRow();//Creates row of format of new table
+                newRow[0] = input.Columns[k].ToString();//Copies old column name into new first column
+                for (int j=1;j <= input.Rows.Count; j++)
+                {
+                    newRow[j] = input.Rows[j - 1][k];
+                }//For each item in old column, add to new row
+                newTable.Rows.Add(newRow);//Adds new row to new table
+            }//Create New Row for Each Column in Old Table
+
+            return newTable;
+        }
     }
 }

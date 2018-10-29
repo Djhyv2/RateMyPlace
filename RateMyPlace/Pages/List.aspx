@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Layout.master" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="RateMyPlace.Pages.List" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="title" runat="server">
+    <!-- Created by: Dustin Hengel -->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="stylesheet" runat="server">
     <link type="text/css" rel="stylesheet" href="Styles/ListStyle.css" />
