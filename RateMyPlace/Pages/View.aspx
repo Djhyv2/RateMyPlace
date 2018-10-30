@@ -14,6 +14,8 @@
                 <ItemTemplate>
                     <div class="row">
                         <div class="col-6">
+                            <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblAuthor">Author:</asp:Label>
+                            <asp:Label runat="server" ID="lblAuthor"><%#(DBNull.Value == Eval("FK_Username")?"Anonymous":(Eval("FK_Username")))%></asp:Label><br />
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblComplex">Complex:</asp:Label>
                             <asp:Label runat="server" ID="lblComplex"><%#Eval("HousingComplex") %></asp:Label><br />
                             <div class="">
