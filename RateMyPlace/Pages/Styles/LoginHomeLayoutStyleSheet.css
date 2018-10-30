@@ -236,6 +236,23 @@ nav#topbar button.nav-link
     padding-left: 15px;
 }
 
+@media (max-width: 992px) 
+{
+    .navbar-collapse 
+    {
+        background-color: #e57e57;
+        padding-left: 5px;
+        border-radius: 0 0 5% 5%;
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+
+    .navbar-collapse .headerButton 
+    {
+        border-left: 0;
+    }
+}
+
 .headerButton
 {
     border-left: 1px solid #dd5442
