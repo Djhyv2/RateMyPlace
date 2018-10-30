@@ -80,7 +80,7 @@
     <Content Include="Pages\Styles\GenericStyle.css" />
     <Content Include="Pages\Styles\ListStyle.css" />
     <Content Include="Pages\Styles\LoginHomeLayoutStyleSheet.css" />
-    <Content Include="Pages\Styles\ManageReviewStyle.css" />
+    <Content Include="Pages\Styles\ManageReviewViewStyle.css" />
     <Content Include="Pages\View.aspx" />
     <Content Include="Web.config" />
     <Content Include="Pages\HomePage.aspx" />

@@ -36,6 +36,7 @@ namespace RateMyPlace.Pages
                 return;
             }//If invalid session data
 
+            Page.Title = "Compare Complexes";
             List<SqlParameter> Parameters = new List<SqlParameter>();
             Parameters.Add(new SqlParameter("@Complexes", Connection.StringsToDataTable((String[])Session["Compared"])));//Adds Table of strings as parameter
             Parameters[0].SqlDbType = SqlDbType.Structured;//Sets new parameter to be structured
@@ -74,6 +75,7 @@ Parameters);//Gets selected complexes from database using table as parameter to 
         {
             lblError.Text = "Nothing selected to compare, Please try again from the beginning";
             lblError.Visible = true;
+            Page.Title = "Compare Error";
             return;
         }//Errors if nothing to compare
 

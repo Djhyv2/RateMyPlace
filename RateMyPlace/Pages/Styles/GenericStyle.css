@@ -74,6 +74,11 @@ th, td
     transform: scale(2);
 }
 
+.checkbox > label
+{
+    margin-left: 10px;
+}
+
 /* Error */
 
 .errorContainer 
