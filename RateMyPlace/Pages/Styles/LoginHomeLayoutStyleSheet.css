@@ -245,6 +245,11 @@ nav#topbar button.nav-link
     padding-left: 15px;
 }
 
+.headerButton
+{
+    border-left: 1px solid #dd5442
+}
+
 /* Home Page */
 
 div#homePageBox {
