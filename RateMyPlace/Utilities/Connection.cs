@@ -145,5 +145,25 @@ namespace RateMyPlace
 
             return newTable;
         }
+
+        /// <summary>
+        /// Converts array of strings into single column datatable
+        /// </summary>
+        /// <param name="Strings">
+        /// List of strings to be converted into a datatable
+        /// </param>
+        /// <returns>
+        /// Datatable with single column called Strings
+        /// </returns>
+        public static DataTable StringsToDataTable (String[] Strings)
+        {
+            DataTable stringTable = new DataTable();
+            stringTable.Columns.Add("Strings", typeof(string));//Creates datatable column
+            foreach (string listString in Strings)
+            {
+                stringTable.Rows.Add(listString);//Adds row to table
+            }//For each string in array
+            return stringTable;//Returns table of strings
+        }
     }
 }

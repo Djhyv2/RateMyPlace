@@ -1,7 +1,8 @@
 ﻿/* Created By: Dustin Hengel */
 
 /* Buttons */
-.button {
+.button 
+{
     background-color: beige;
     padding: 0 15px 0 15px;
     margin-right: 40px;
@@ -12,54 +13,65 @@
     border: 1px solid black;
 }
 
-    .button:hover {
-        background-color: #e57e57;
-    }
+.button:hover 
+{
+    background-color: #e57e57;
+}
 
 /* Body */
-body {
+body 
+{
     background-color: navajowhite;
 }
 
 /* Tables */
 
-th {
+th 
+{
     background-color: #e57e57;
 }
 
 
-table {
+table 
+{
     border-collapse: collapse;
     margin: auto;
 }
 
-table, th, td {
+table, th, td
+{
     border: 2px solid #e57e57;
 }
 
-th, td {
+th, td 
+{
     padding: 5px;
 }
 
-.centered {
+.centered 
+{
     text-align: center;
 }
 
-.right {
+.right 
+{
     text-align: right;
 }
 
-.checkbox {
+.checkbox, .checkbox > input {
     transform: scale(2);
 }
+
 /* Error */
 
-.errorContainer {
+.errorContainer 
+{
     width: 50%;
     margin: auto auto 50px auto;
 }
 
-.error {
+.error 
+{
     color: red;
     border: 1px solid red;
     background-color: #262626;

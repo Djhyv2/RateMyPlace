@@ -33,7 +33,7 @@
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingOverall" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
-                        <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Noise Rating:</asp:Label>
+                        <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Noise Amount:</asp:Label>
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
@@ -41,7 +41,7 @@
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <div class="">
-                        <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Maintenance Rating:</asp:Label>
+                        <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Maintenance Quality:</asp:Label>
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtRent">Monthly Rent ($):</asp:Label>

@@ -7,10 +7,12 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contentBody" runat="server">
     <div id="CompareBody">
-        <div class="errorContainer">
-                <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
-        </div>
-        <asp:DataGrid runat="server" ID="tblCompare" Visible="false" UseAccessibleHeader="true" OnItemDataBound="tblCompare_ItemDataBound"></asp:DataGrid>
+        <form runat="server">
+            <div class="errorContainer">
+                    <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
+            </div>
+            <asp:DataGrid runat="server" ID="tblCompare" Visible="false" UseAccessibleHeader="true" OnItemDataBound="tblCompare_ItemDataBound"></asp:DataGrid>
+        </form>
     </div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="footer" runat="server">
