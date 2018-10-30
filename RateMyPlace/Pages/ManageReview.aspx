@@ -48,7 +48,7 @@
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtRent"></asp:TextBox><br />
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtUtilities">Monthly Utilities ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtUtilities"></asp:TextBox><br />
-                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtDistance">Distance From Campus (Mi):</asp:Label>
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtDistance">Distance From Campus (mi):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtDistance"></asp:TextBox><br />
                 </div>
                 <div class="col-6">
@@ -65,7 +65,7 @@
                     <asp:CheckBox class="checkbox" runat="server" Text="Pets" ID="chkPets" />
                     <asp:Label class="fee" runat="server" AssociatedControlID="txtPets">Pets Fee ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtPets"></asp:TextBox><br />
-                    <asp:Label class="miscFees" id="lblMiscFees" runat="server" AssociatedControlID="txtMiscFees">Misc Fees ($):</asp:Label>
+                    <asp:Label class="rightColAlign" id="lblMiscFees" runat="server" AssociatedControlID="txtMiscFees">Misc Fees ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtMiscFees"></asp:TextBox><br />
                 </div>
             </div>
@@ -77,9 +77,9 @@
                     <asp:TextBox class="textInput" type="date" runat="server" ID="txtLeaseStart"></asp:TextBox><br />
                 </div>
                 <div class="col-6">
-                    <asp:Label class="" type="date" runat="server" AssociatedControlID="txtPros">Cons:</asp:Label><br />
+                    <asp:Label class="" type="date" runat="server" AssociatedControlID="txtCons">Cons:</asp:Label><br />
                     <asp:TextBox class="textArea" textMode="MultiLine" Rows="5" Columns="160" runat="server" ID="txtCons"></asp:TextBox><br />
-                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtLeaseEnd">Lease End Date:</asp:Label>
+                    <asp:Label class="rightColAlign" runat="server" AssociatedControlID="txtLeaseEnd">Lease End Date:</asp:Label>
                     <asp:TextBox class="textInput" runat="server" type="date" ID="txtLeaseEnd"></asp:TextBox><br />
                 </div>
             </div>

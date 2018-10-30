@@ -63,7 +63,8 @@ namespace RateMyPlace.Pages
 
         protected void btnView_Command(object sender, CommandEventArgs e)
         {
-
+            Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
+            Response.Redirect("View.aspx?Page=Review");//Redirects to view page
         }//Buttonhandler for each item in repeater of RepeaterAll to view specific
 
         protected void btnSubmit_Click(object sender, EventArgs e)

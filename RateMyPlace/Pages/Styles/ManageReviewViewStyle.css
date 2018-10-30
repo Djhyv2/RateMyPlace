@@ -5,7 +5,7 @@ body
     background-color: navajowhite;
 }
 
-#manageReviewBody
+#manageReviewBody, #viewBody
 {
     width: 90%;
     margin: 85px auto auto auto;
@@ -14,7 +14,7 @@ body
 .error {
     color: red;
     border: 1px solid red;
-    background-color: white;
+    background-color: #272727;
     margin-bottom: 15px;
     display: inline-block;
     width: 100%;
@@ -80,7 +80,7 @@ label.fee
     text-align: right
 }
 
-label.miscFees
+label.rightColAlign
 {
     width: 250px;
     text-align: right;
@@ -90,4 +90,12 @@ label.miscFees
 {
     background-color: beige;
     width: 360px;
+}
+
+.viewParagraph
+{
+    width: 360px;
+    border: 3px solid #e57e57;
+    min-height: 8em;
+    padding: 4px;
 }
