@@ -4,7 +4,11 @@
    <title>Home Page</title>
 </asp:Content>
 
-<asp:Content id="Content2" ContentPlaceHolderID="contentBody" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="javascript" runat="server">
+    <script src="/Pages/Scripts/Homepage.js"></script>
+</asp:Content>
+
+<asp:Content id="Content3" ContentPlaceHolderID="contentBody" runat="server">
     <form runat="server"></form>
     <div id="homeBody">    
         
