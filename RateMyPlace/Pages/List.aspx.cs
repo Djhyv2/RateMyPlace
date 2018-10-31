@@ -33,7 +33,7 @@ namespace RateMyPlace.Pages
         private void DisplayAll()
         {
             Page.Title = "All Reviews";
-            DataTable Reviews = Connection.RunSQL("SELECT PK_ReviewID, FK_Username, OverallRating, Noise, Safety, Maintenance, LeaseStartDate, LeaseEndDate, CampusDistance, StudySpace, Shuttle, Wifi, Furnished, TV, TrashService, Gym, Parking, ParkingFee, Pets, PetsFee, MiscFee, Rent, Utilities, HousingComplex FROM Reviews ORDER BY LeaseEndDate DESC, PK_ReviewID DESC;");//Gets all reviews from database
+            DataTable Reviews = Connection.RunSQL("SELECT * FROM Reviews ORDER BY LeaseEndDate DESC, PK_ReviewID DESC;");//Gets all reviews from database
             repeaterListAll.DataSource = Reviews;
             repeaterListAll.DataBind();//Binds SQL Return to Repeater
             repeaterListAll.Visible = true;//Displays this repeater

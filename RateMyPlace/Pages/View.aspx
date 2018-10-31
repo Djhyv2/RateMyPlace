@@ -39,7 +39,7 @@
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblUtilities">Monthly Utilities ($):</asp:Label>
                             <asp:Label runat="server" ID="lblUtilities"><%#Eval("Utilities","${0:0.00}") %></asp:Label><br />
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblDistance">Distance From Campus:</asp:Label>
-                            <asp:Label runat="server" ID="lblDistance"><%#Eval("CampusDistance","{0} mi") %></asp:Label><br />
+                            <asp:Label runat="server" ID="lblDistance"><%#DBNull.Value == Eval("CampusDistance")?"Unspecified":Eval("CampusDistance","{0} mi") %></asp:Label><br />
                         </div>
                         <div class="col-6">
                             <asp:CheckBox class="checkbox" runat="server" Text="Study Space" ID="chkStudySpace" onclick="return false" checked='<%#(DBNull.Value == Eval("StudySpace")?false:Convert.ToBoolean(Eval("StudySpace")))%>'/><br />
@@ -64,13 +64,13 @@
                             <asp:Label class="" type="date" runat="server" AssociatedControlID="paraPros">Pros:</asp:Label><br />
                             <p class="viewParagraph" runat="server" id="paraPros"><%#Eval("Pros") %></p>
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblLeaseStart">Lease Start Date:</asp:Label>
-                            <asp:Label runat="server" ID="lblLeaseStart"><%#((DateTime)Eval("LeaseStartDate")).ToString("MM/dd/yyyy")%></asp:Label>
+                            <asp:Label runat="server" ID="lblLeaseStart"><%#(DBNull.Value == Eval("LeaseStartDate")?"Unspecified":((DateTime)Eval("LeaseStartDate")).ToString("MM/dd/yyyy"))%></asp:Label>
                         </div>
                         <div class="col-6">
                             <asp:Label class="" type="date" runat="server" AssociatedControlID="paraCons">Cons:</asp:Label><br />
                             <p class="viewParagraph" runat="server" id="paraCons"><%#Eval("Cons") %></p>
                             <asp:Label class="rightColAlign" runat="server" AssociatedControlID="lblLeaseEnd">Lease End Date:</asp:Label>
-                            <asp:Label runat="server" ID="lblLeaseEnd"><%#((DateTime)Eval("LeaseEndDate")).ToString("MM/dd/yyyy")%></asp:Label>
+                            <asp:Label runat="server" ID="lblLeaseEnd"><%#(DBNull.Value == Eval("LeaseEndDate")?"Unspecified":((DateTime)Eval("LeaseEndDate")).ToString("MM/dd/yyyy"))%></asp:Label>
                         </div>
                     </div>
                 </ItemTemplate>
