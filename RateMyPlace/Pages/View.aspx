@@ -38,6 +38,8 @@
                             <asp:Label runat="server" ID="lblRent"><%#Eval("Rent","${0:0.00}") %></asp:Label><br />
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblUtilities">Monthly Utilities ($):</asp:Label>
                             <asp:Label runat="server" ID="lblUtilities"><%#Eval("Utilities","${0:0.00}") %></asp:Label><br />
+                            <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblSqFoot">Square Footage:</asp:Label>
+                            <asp:Label runat="server" ID="lblSqFoot"><%#DBNull.Value == Eval("SquareFootage")?"Unspecified":Eval("SquareFootage","{0} sq. ft.") %></asp:Label><br />
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblDistance">Distance From Campus:</asp:Label>
                             <asp:Label runat="server" ID="lblDistance"><%#DBNull.Value == Eval("CampusDistance")?"Unspecified":Eval("CampusDistance","{0} mi") %></asp:Label><br />
                         </div>

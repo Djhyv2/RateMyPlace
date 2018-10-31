@@ -103,7 +103,7 @@ namespace RateMyPlace.Pages
         private void AddReview()
         {
             List<SqlParameter> Parameters = GenerateParameters();//Gets Parameters from Page
-            Connection.RunSQL("INSERT INTO REVIEWS (FK_Username,OverallRating,Noise,Safety,Maintenance,LeaseStartDate,LeaseEndDate,CampusDistance,Pros,Cons,StudySpace,Shuttle,Wifi,Furnished,TV,TrashService,Gym,Parking,ParkingFee,Pets,PetsFee,MiscFee,Rent,Utilities,HousingComplex) VALUES (@Username, @OverallRating, @Noise, @Safety, @Maintenance, @LeaseStartDate, @LeaseEndDate, @CampusDistance, @Pros, @Cons, @StudySpace, @Shuttle, @Wifi, @Furnished, @TV, @TrashService, @Gym, @Parking, @ParkingFee, @Pets, @PetsFee, @MiscFee, @Rent, @Utilities, @HousingComplex);",Parameters);//Adds Review to Database
+            Connection.RunSQL("INSERT INTO REVIEWS (FK_Username,OverallRating,Noise,Safety,Maintenance,LeaseStartDate,LeaseEndDate,CampusDistance,SquareFootage,Pros,Cons,StudySpace,Shuttle,Wifi,Furnished,TV,TrashService,Gym,Parking,ParkingFee,Pets,PetsFee,MiscFee,Rent,Utilities,HousingComplex) VALUES (@Username, @OverallRating, @Noise, @Safety, @Maintenance, @LeaseStartDate, @LeaseEndDate, @CampusDistance, @SquareFootage, @Pros, @Cons, @StudySpace, @Shuttle, @Wifi, @Furnished, @TV, @TrashService, @Gym, @Parking, @ParkingFee, @Pets, @PetsFee, @MiscFee, @Rent, @Utilities, @HousingComplex);",Parameters);//Adds Review to Database
             Response.Redirect("HomePage.aspx");//Redirects to homepage
         }
 
@@ -166,6 +166,14 @@ namespace RateMyPlace.Pages
             else
             {
                 Parameters.Add(new SqlParameter("@CampusDistance", txtDistance.Text));
+            }//If text doesn't exist, use null, else use text
+            if ("" == txtSqFoot.Text)
+            {
+                Parameters.Add(new SqlParameter("@SquareFootage", DBNull.Value));
+            }
+            else
+            {
+                Parameters.Add(new SqlParameter("@SquareFootage", txtSqFoot.Text));
             }//If text doesn't exist, use null, else use text
             Parameters.Add(new SqlParameter("@Pros",txtPros.Text));
             Parameters.Add(new SqlParameter("@Cons",txtCons.Text));

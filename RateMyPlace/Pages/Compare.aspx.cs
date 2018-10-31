@@ -49,6 +49,7 @@ ROUND(AVG(Noise),2) AS 'Average Noise Amount',
 ROUND(AVG(Safety),2) AS 'Average Safety',
 ROUND(AVG(Maintenance),2) AS 'Average Maintenance Quality',
 ROUND(AVG(CampusDistance),2) AS 'Average Campus Distance',
+ROUND(AVG(SquareFootage),2) AS 'Average Square Footage',
 ROUND(AVG(CAST(StudySpace AS INT)),0) AS 'Study Space',
 ROUND(AVG(CAST(Shuttle AS INT)),0) AS 'Shuttle',
 ROUND(AVG(CAST(Wifi AS INT)),0) AS 'Wifi',
@@ -85,6 +86,7 @@ Parameters);//Gets selected complexes from database using table as parameter to 
             string[] checkboxes = new string[] { "Study Space", "Shuttle", "Wifi","Furnished","TV","Trash Service","Gym","Parking","Pets" };
             string[] currency = new string[] { "Average Rent", "Average Utilities", "Average Parking Fee", "Average Pets Fee", "Average Misc Fees" };
             string[] stars = new string[] { "Overall Rating","Average Noise Amount","Average Safety","Average Maintenance Quality"};
+            string[] sqFoot = new string[] { "Average Square Footage" };
             //Arrays of which row headers are to be what format
 
             if ( 0 <= Array.IndexOf(stars,e.Item.Cells[0].Text))
@@ -127,8 +129,8 @@ Parameters);//Gets selected complexes from database using table as parameter to 
                     }//If not null
                     else
                     {
-                        e.Item.Cells[i].Text = "0 mi.";
-                    }//Default to 0 miles   
+                        e.Item.Cells[i].Text = "Unspecified";
+                    }//Default to unspecified   
                 }//For each column after header column
             }//If row is to be miles
 
@@ -145,6 +147,21 @@ Parameters);//Gets selected complexes from database using table as parameter to 
                     e.Item.Cells[i].Controls.Add(newCheckBox);//Adds checkbox to cell
                 }//For each column after header column
             }//If row is to be a checkbox
+
+            if (0 <= Array.IndexOf(sqFoot, e.Item.Cells[0].Text))
+            {
+                for (int i = 1; e.Item.Cells.Count > i; i++)
+                {
+                    if ("&nbsp;" != e.Item.Cells[i].Text)
+                    {
+                        e.Item.Cells[i].Text += " sq. ft.";//Converts float value to sq ft
+                    }//If not null
+                    else
+                    {
+                        e.Item.Cells[i].Text = "Unspecified";
+                    }//Default to unspecified sq foot   
+                }//For each column after header column
+            }//If row is to be square footage
         }//Called for each row added to table
     }
 }

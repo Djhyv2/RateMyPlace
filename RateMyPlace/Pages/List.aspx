@@ -12,6 +12,8 @@
             <div class="errorContainer">
                 <asp:Label runat="server" ID="lblError" CssClass="error" Visible="false"></asp:Label>
             </div>
+
+
             <asp:Repeater runat="server" ID="repeaterListComplexes" Visible="false" OnItemDataBound="repeaterListOverallRating_ItemDataBound" >
                 <HeaderTemplate>
                     <table>
@@ -20,6 +22,7 @@
                             <th class="centered">Average Rating</th>
                             <th class="centered">Average Rent</th>
                             <th class="centered">Average Utilities</th>
+                            <th class="right">Square Footage</th>
                             <th class="centered">Select for Comparison</th>
                         </tr>
                 </HeaderTemplate>
@@ -29,6 +32,7 @@
                         <td class="centered"><asp:Label runat="server" ID="lblOverallRating"></asp:Label></td>
                         <td><%#Eval("AverageRent","${0:0.00}")%></td>
                         <td><%#Eval("AverageUtilities","${0:0.00}")%></td>
+                        <td><%#(DBNull.Value == Eval("AverageSquareFootage"))?"Unspecified":Eval("AverageSquareFootage","{0:0} sq. ft.")%></td>
                         <td class="centered"><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
                     </tr>
                 </ItemTemplate>
@@ -39,6 +43,9 @@
                     </div>
                 </FooterTemplate>
             </asp:Repeater>
+
+
+
             <asp:Repeater runat="server" ID="repeaterListAll" Visible="false" OnItemDataBound="repeaterListOverallRating_ItemDataBound">
                 <HeaderTemplate>
                     <table>
@@ -52,10 +59,8 @@
                         <td>
                             <asp:Label runat="server" ID="lblOverallRating"></asp:Label>
                         </td>
-                        <th class="right">Parking:</th>
-                        <td class="centered">
-                            <asp:CheckBox runat="server" onclick="return false" checked='<%#(DBNull.Value == Eval("Parking")?false:Convert.ToBoolean(Eval("Parking")))%>'/>
-                        </td>
+                        <th class="right">Square Footage:</th>
+                        <td><%#(DBNull.Value == Eval("SquareFootage"))?"Unspecified":Eval("SquareFootage","{0:0} sq. ft.")%></td>
                         <th class="right">Pets Allowed:</th>
                         <td class="centered">
                             <asp:CheckBox runat="server" onclick="return false" checked='<%#(DBNull.Value == Eval("Pets")?false:Convert.ToBoolean(Eval("Pets")))%>'/>
@@ -83,6 +88,8 @@
                     </table>
                 </FooterTemplate>
             </asp:Repeater>
+
+
         </form>
     </div>
 </asp:Content>

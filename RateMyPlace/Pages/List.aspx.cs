@@ -42,7 +42,7 @@ namespace RateMyPlace.Pages
         private void DisplayAllComplexes()
         {
             Page.Title = "All Complexes";
-            DataTable Complexes = Connection.RunSQL("SELECT HousingComplex, AVG(OverallRating) AS OverallRating, AVG(Rent) AS AverageRent , AVG(Utilities) AS AverageUtilities FROM Reviews GROUP BY HousingComplex;");//Gets all unique data complexes
+            DataTable Complexes = Connection.RunSQL("SELECT HousingComplex, AVG(OverallRating) AS OverallRating, AVG(Rent) AS AverageRent , AVG(Utilities) AS AverageUtilities, AVG(SquareFootage) AS AverageSquareFootage FROM Reviews GROUP BY HousingComplex;");//Gets all unique data complexes
             repeaterListComplexes.DataSource = Complexes;
             repeaterListComplexes.DataBind();//Binds SQL Return to Repeater
             repeaterListComplexes.Visible = true;//Displays this repeater
