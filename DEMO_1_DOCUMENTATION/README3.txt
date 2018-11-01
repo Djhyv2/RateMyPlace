@@ -1,0 +1,4 @@
+﻿README3
+
+
+Integration testing was manually done in a bottom up fashion. Each individual class was manually tested by unit testing before being used for integration testing. Much of our system is used in a linear fashion made for a very simple approach to integration testing. However, much in the same way as our unit testing, manual testing was done due to the challenges of dealing with web forms. The general flow of our integration testing will be as follows assuming each class has passed its unit testing; connection, then layout, then manage review, then list review, then compare review or view review in either order. This will follow all of the major use cases in our system and ensure that all classes can successfully interact with each other as specified in our interaction diagrams. This form of integration testing worked well for our system as the majority of classes can be easily tested with unit testing, making the integration less vital.
