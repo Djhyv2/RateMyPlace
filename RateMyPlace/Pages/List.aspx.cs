@@ -11,8 +11,13 @@ using System.Windows.Forms;
 
 namespace RateMyPlace.Pages
 {
+    
+
     public partial class List : System.Web.UI.Page
     {
+        public enum DisplayType { View, Compare };
+        public DisplayType displayType;//Stores whether will be displaying the view page or compare page when listing all complexes
+
         protected void Page_Load(object sender, EventArgs e)
         {
             switch (Request.QueryString["Page"])
@@ -20,33 +25,60 @@ namespace RateMyPlace.Pages
                 case "User":
                     break;
                 case "AllComplex":
-                    DisplayAllComplexes();
+                    DisplayAllComplexes(Request.QueryString["Type"]);
                     break;
                 case "SpecificComplex":
                     break;
-                default: //Default is All Reviews
+                case "AllReview":
                     DisplayAll();
+                    break;
+                default:
+                    DisplayNothing("Nothing selected to list, Please try again from the beginning");
                     break;
             }//Switch on what list to display
         }
 
         private void DisplayAll()
         {
-            Page.Title = "All Reviews";
+            Page.Title = "All Reviews View";
             DataTable Reviews = Connection.RunSQL("SELECT * FROM Reviews ORDER BY LeaseEndDate DESC, PK_ReviewID DESC;");//Gets all reviews from database
             repeaterListAll.DataSource = Reviews;
             repeaterListAll.DataBind();//Binds SQL Return to Repeater
             repeaterListAll.Visible = true;//Displays this repeater
         }
 
-        private void DisplayAllComplexes()
+        private void DisplayNothing(string error)
         {
-            Page.Title = "All Complexes";
+            lblError.Text = error;
+            lblError.Visible = true;
+            Page.Title = "List Error";
+            return;
+        }//Errors if nothing to compare
+
+        private void DisplayAllComplexes(String type)
+        {
+            switch (type)
+            {
+                case "Compare":
+                    Page.Title = "List Complexes to Compare";
+                    displayType = DisplayType.Compare;//Will be checked before showing compare checkboxes
+
+                    break;
+                case "View":
+                    Page.Title = "List Complexes to View";
+                    displayType = DisplayType.View;//Will be checked before showing view buttons
+                    break;
+                default:
+                    DisplayNothing("No type specified, Please try again from the beginning");//Default error and show nothing
+                    break;
+            }//Switch on Page Following List
+            
             DataTable Complexes = Connection.RunSQL("SELECT HousingComplex, AVG(OverallRating) AS OverallRating, AVG(Rent) AS AverageRent , AVG(Utilities) AS AverageUtilities, AVG(SquareFootage) AS AverageSquareFootage FROM Reviews GROUP BY HousingComplex;");//Gets all unique data complexes
             repeaterListComplexes.DataSource = Complexes;
             repeaterListComplexes.DataBind();//Binds SQL Return to Repeater
             repeaterListComplexes.Visible = true;//Displays this repeater
         }
+
 
         protected void repeaterListOverallRating_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -61,7 +93,7 @@ namespace RateMyPlace.Pages
             overallRating.Text += RateMyPlaceDisplayUtilities.generateStars((int)(((DataRowView)e.Item.DataItem)["OverallRating"]));
         }//For each item in repeater when bound with datasource
 
-        protected void btnView_Command(object sender, CommandEventArgs e)
+        protected void btnViewReview_Command(object sender, CommandEventArgs e)
         {
             Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
             Response.Redirect("View.aspx?Page=Review");//Redirects to view page
@@ -81,5 +113,11 @@ namespace RateMyPlace.Pages
             Response.Redirect("Compare.aspx?Page=Complexes");//Redirects to compare
 
         }//Submit Button for compare complex
+
+        protected void btnViewComplex_Command(object sender, CommandEventArgs e)
+        {
+            Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
+            Response.Redirect("View.aspx?Page=Complex");//Redirects to view page
+        }
     }
 }

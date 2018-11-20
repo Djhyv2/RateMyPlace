@@ -48,7 +48,7 @@
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtRent"></asp:TextBox><br />
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtUtilities">Monthly Utilities ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtUtilities"></asp:TextBox><br />
-                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtSqFoot">Square Footage (sq. ft.):</asp:Label>
+                    <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtSqFoot">Square Footage:</asp:Label>
                     <asp:TextBox Class="textInput" type="number" min="0" step=".01" runat="server" ID="txtSqFoot"></asp:TextBox><br />
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtDistance">Distance From Campus (mi):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtDistance"></asp:TextBox><br />

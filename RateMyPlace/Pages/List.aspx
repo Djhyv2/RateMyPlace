@@ -23,7 +23,8 @@
                             <th class="centered">Average Rent</th>
                             <th class="centered">Average Utilities</th>
                             <th class="right">Square Footage</th>
-                            <th class="centered">Select for Comparison</th>
+                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.Compare)?"":"display:none"); %>'>Select for Comparison</th>
+                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.View)?"":"display:none"); %>'>Select to View</th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -33,12 +34,13 @@
                         <td><%#Eval("AverageRent","${0:0.00}")%></td>
                         <td><%#Eval("AverageUtilities","${0:0.00}")%></td>
                         <td><%#(DBNull.Value == Eval("AverageSquareFootage"))?"Unspecified":Eval("AverageSquareFootage","{0:0} sq. ft.")%></td>
-                        <td class="centered"><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
+                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.Compare)?"":"display:none"); %>'><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
+                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.View)?"":"display:none"); %>'><asp:Button runat="server" id="btnViewComplex" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("HousingComplex")%>'  OnCommand="btnViewComplex_Command" /></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
                     </table>
-                    <div class="form-group form-inline">
+                    <div class="form-group form-inline" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.Compare)?"":"display:none"); %>'>
                         <asp:Button runat="server" Text="Compare Selected" id="btnSubmit" class="button" OnClick="btnSubmit_Click" />
                     </div>
                 </FooterTemplate>
@@ -65,7 +67,7 @@
                         <td class="centered">
                             <asp:CheckBox runat="server" onclick="return false" checked='<%#(DBNull.Value == Eval("Pets")?false:Convert.ToBoolean(Eval("Pets")))%>'/>
                         </td>
-                        <th rowspan="2"><asp:Button runat="server" id="btnView" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnView_Command" /></th>
+                        <th rowspan="2"><asp:Button runat="server" id="btnViewReview" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnViewReview_Command" /></th>
                     </tr>
                     <tr>
                         <td ><%#Eval("HousingComplex")%></td>
