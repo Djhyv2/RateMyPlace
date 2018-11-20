@@ -17,6 +17,7 @@ namespace RateMyPlace.Pages
             switch (Request.QueryString["Page"])
             {
                 case "Complex"://If viewing a complex
+                    DisplayComplex();
                     break;
                 case "Review"://If viewing a page
                     DisplayReview();
@@ -44,15 +45,57 @@ namespace RateMyPlace.Pages
             }//If invalid session data
 
             Page.Title = "View Review";
+            repeaterViewReview.Visible = true;//Make correct repeater visible
             List<SqlParameter> Parameters = new List<SqlParameter>();
             Parameters.Add(new SqlParameter("@ReviewID", Session["Viewed"]));//Adds Viewed Review as parameter
             DataTable Complexes = Connection.RunSQL("SELECT * FROM Reviews WHERE PK_ReviewID = @ReviewID",
 Parameters);//Gets selected review from database
-            repeaterView.DataSource = Complexes;
-            repeaterView.DataBind();//Binds SQL Return to Repeater
+            repeaterViewReview.DataSource = Complexes;
+            repeaterViewReview.DataBind();//Binds SQL Return to Repeater
         }
 
-        protected void repeaterView_DataBinding(object sender, EventArgs e)
+        private void DisplayComplex()
+        {
+            if (null == Session["Viewed"])
+            {
+                DisplayNothing();
+                return;
+            }//If invalid session data
+
+            Page.Title = "View Complex";
+            repeaterViewComplex.Visible = true;//Make correct repeater visible
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@HousingComplex", Session["Viewed"]));//Adds Viewed Review as parameter
+            DataTable Complexes = Connection.RunSQL(@"SELECT HousingComplex,
+ROUND(AVG(OverallRating),2) AS 'OverallRating',
+ROUND(AVG(Rent),2) AS 'Rent',
+ROUND(AVG(Utilities),2) AS 'Utilities',
+ROUND(AVG(Noise),2) AS 'Noise',
+ROUND(AVG(Safety),2) AS 'Safety',
+ROUND(AVG(Maintenance),2) AS 'Maintenance',
+ROUND(AVG(CampusDistance),2) AS 'CampusDistance',
+ROUND(AVG(SquareFootage),2) AS 'SquareFootage',
+ROUND(AVG(CAST(StudySpace AS INT)),0) AS 'StudySpace',
+ROUND(AVG(CAST(Shuttle AS INT)),0) AS 'Shuttle',
+ROUND(AVG(CAST(Wifi AS INT)),0) AS 'Wifi',
+ROUND(AVG(CAST(Furnished AS INT)),0) AS 'Furnished',
+ROUND(AVG(CAST(TV AS INT)),0) AS 'TV',
+ROUND(AVG(CAST(TrashService AS INT)),0) AS 'TrashService',
+ROUND(AVG(CAST(Gym AS INT)),0) AS 'Gym',
+ROUND(AVG(CAST(Parking AS INT)),0) AS 'Parking',
+ROUND(AVG(ParkingFee),2) AS 'ParkingFee',
+ROUND(AVG(CAST(Pets AS INT)),0) AS 'Pets',
+ROUND(AVG(PetsFee),2) AS 'PetsFee',
+ROUND(AVG(MiscFee),2) AS 'MiscFee'
+FROM Reviews 
+WHERE HousingComplex = @HousingComplex
+GROUP BY HousingComplex",Parameters);//Gets selected complex from database
+            repeaterViewComplex.DataSource = Complexes;
+            repeaterViewComplex.DataBind();//Binds SQL Return to Repeater
+        }
+
+
+        protected void repeaterViewReview_DataBinding(object sender, EventArgs e)
         {
 
         }

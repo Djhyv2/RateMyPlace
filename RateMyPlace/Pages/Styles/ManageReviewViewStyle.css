@@ -86,6 +86,16 @@ label.rightColAlign
     text-align: right;
 }
 
+label.avgFee {
+    width: 150px;
+    text-align: right
+}
+
+label.avgRightColAlign {
+    width: 270px;
+    text-align: right;
+}
+
 .textArea
 {
     background-color: beige;
