@@ -44,6 +44,10 @@
                         <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Maintenance Quality:</asp:Label>
                         <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                     </div>
+                    <div class="">
+                        <asp:Label AssociatedControlID="ratingLocation" class="rating" runat="server">Location Rating:</asp:Label>
+                        <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingLocation" CurrentRating="0" MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                    </div>
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtRent">Monthly Rent ($):</asp:Label>
                     <asp:TextBox class="textInput" type="number" min=0 step=".01" runat="server" ID="txtRent"></asp:TextBox><br />
                     <asp:Label class="leftColLabel" runat="server" AssociatedControlID="txtUtilities">Monthly Utilities ($):</asp:Label>

@@ -73,6 +73,7 @@ ROUND(AVG(Utilities),2) AS 'Utilities',
 ROUND(AVG(Noise),2) AS 'Noise',
 ROUND(AVG(Safety),2) AS 'Safety',
 ROUND(AVG(Maintenance),2) AS 'Maintenance',
+ROUND(AVG(Location),2) AS 'Location',
 ROUND(AVG(CampusDistance),2) AS 'CampusDistance',
 ROUND(AVG(SquareFootage),2) AS 'SquareFootage',
 ROUND(AVG(CAST(StudySpace AS INT)),0) AS 'StudySpace',
@@ -89,7 +90,7 @@ ROUND(AVG(PetsFee),2) AS 'PetsFee',
 ROUND(AVG(MiscFee),2) AS 'MiscFee'
 FROM Reviews 
 WHERE HousingComplex = @HousingComplex
-GROUP BY HousingComplex",Parameters);//Gets selected complex from database
+GROUP BY HousingComplex", Parameters);//Gets selected complex from database
             repeaterViewComplex.DataSource = Complexes;
             repeaterViewComplex.DataBind();//Binds SQL Return to Repeater
         }

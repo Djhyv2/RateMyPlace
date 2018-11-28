@@ -48,6 +48,7 @@ ROUND(AVG(Utilities),2) AS 'Average Utilities',
 ROUND(AVG(Noise),2) AS 'Average Noise Amount',
 ROUND(AVG(Safety),2) AS 'Average Safety',
 ROUND(AVG(Maintenance),2) AS 'Average Maintenance Quality',
+ROUND(AVG(Location),2) AS 'Average Location Rating',
 ROUND(AVG(CampusDistance),2) AS 'Average Campus Distance',
 ROUND(AVG(SquareFootage),2) AS 'Average Square Footage',
 ROUND(AVG(CAST(StudySpace AS INT)),0) AS 'Study Space',
@@ -85,7 +86,7 @@ Parameters);//Gets selected complexes from database using table as parameter to 
             string[] miles = new string[] { "Average Campus Distance" };
             string[] checkboxes = new string[] { "Study Space", "Shuttle", "Wifi","Furnished","TV","Trash Service","Gym","Parking","Pets" };
             string[] currency = new string[] { "Average Rent", "Average Utilities", "Average Parking Fee", "Average Pets Fee", "Average Misc Fees" };
-            string[] stars = new string[] { "Overall Rating","Average Noise Amount","Average Safety","Average Maintenance Quality"};
+            string[] stars = new string[] { "Overall Rating","Average Noise Amount","Average Safety","Average Maintenance Quality","Average Location Rating"};
             string[] sqFoot = new string[] { "Average Square Footage" };
             //Arrays of which row headers are to be what format
 

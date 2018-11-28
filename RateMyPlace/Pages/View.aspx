@@ -23,16 +23,20 @@
                                 <ajaxToolkit:Rating class="ratingControl" readonly="true" runat="server" id="ratingOverall" CurrentRating='<%#Eval("OverallRating") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <div class="">
-                                <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Noise Amount:</asp:Label>
-                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" readonly="true" CurrentRating='<%#Eval("Noise") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                                <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Average Noise Amount:</asp:Label>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Noise")?0:Eval("Noise") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <div class="">
-                                <asp:Label AssociatedControlID="ratingSafety" class="rating" runat="server">Safety Rating:</asp:Label>
-                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" readonly="true" CurrentRating='<%#Eval("Safety") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                                <asp:Label AssociatedControlID="ratingSafety" class="rating" runat="server">Average Safety Rating:</asp:Label>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Safety")?0:Eval("Safety") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <div class="">
-                                <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Maintenance Quality:</asp:Label>
-                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" readonly="true" CurrentRating='<%#Eval("Maintenance") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                                <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Average Maintenance Quality:</asp:Label>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Maintenance")?0:Eval("Maintenance") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                            </div>
+                            <div class="">
+                                <asp:Label AssociatedControlID="ratingLocation" class="rating" runat="server">Location Rating:</asp:Label>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingLocation" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Location")?0:Eval("Location") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblRent">Monthly Rent:</asp:Label>
                             <asp:Label runat="server" ID="lblRent"><%#Eval("Rent","${0:0.00}") %></asp:Label><br />
@@ -90,15 +94,19 @@
                             </div>
                             <div class="">
                                 <asp:Label AssociatedControlID="ratingNoise" class="rating" runat="server">Average Noise Amount:</asp:Label>
-                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" readonly="true" CurrentRating='<%#Eval("Noise") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingNoise" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Noise")?0:Eval("Noise") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <div class="">
                                 <asp:Label AssociatedControlID="ratingSafety" class="rating" runat="server">Average Safety Rating:</asp:Label>
-                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" readonly="true" CurrentRating='<%#Eval("Safety") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingSafety" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Safety")?0:Eval("Safety") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <div class="">
                                 <asp:Label AssociatedControlID="ratingMaintenance" class="rating" runat="server">Average Maintenance Quality:</asp:Label>
-                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" readonly="true" CurrentRating='<%#Eval("Maintenance") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingMaintenance" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Maintenance")?0:Eval("Maintenance") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
+                            </div>
+                            <div class="">
+                                <asp:Label AssociatedControlID="ratingLocation" class="rating" runat="server">Location Rating:</asp:Label>
+                                <ajaxToolkit:Rating class="ratingControl" runat="server" id="ratingLocation" readonly="true" CurrentRating='<%#DBNull.Value == Eval("Location")?0:Eval("Location") %>' MaxRating="10" EmptyStarCssClass="emptyStar" FilledStarCssClass="fullStar" StarCssClass="fullstar" WaitingStarCssClass="fullstar"></ajaxToolkit:Rating>
                             </div>
                             <asp:Label class="leftColLabel" runat="server" AssociatedControlID="lblRent">Average Monthly Rent:</asp:Label>
                             <asp:Label runat="server" ID="lblRent"><%#Eval("Rent","${0:0.00}") %></asp:Label><br />

@@ -41,7 +41,7 @@ namespace RateMyPlace.Pages
         private void DisplayAll()
         {
             Page.Title = "All Reviews View";
-            DataTable Reviews = Connection.RunSQL("SELECT * FROM Reviews ORDER BY LeaseEndDate DESC, PK_ReviewID DESC;");//Gets all reviews from database
+            DataTable Reviews = Connection.RunSQL("SELECT * FROM Reviews ORDER BY HousingComplex ASC, LeaseEndDate DESC, PK_ReviewID DESC;");//Gets all reviews from database
             repeaterListAll.DataSource = Reviews;
             repeaterListAll.DataBind();//Binds SQL Return to Repeater
             repeaterListAll.Visible = true;//Displays this repeater
@@ -73,7 +73,7 @@ namespace RateMyPlace.Pages
                     break;
             }//Switch on Page Following List
             
-            DataTable Complexes = Connection.RunSQL("SELECT HousingComplex, AVG(OverallRating) AS OverallRating, AVG(Rent) AS AverageRent , AVG(Utilities) AS AverageUtilities, AVG(SquareFootage) AS AverageSquareFootage FROM Reviews GROUP BY HousingComplex;");//Gets all unique data complexes
+            DataTable Complexes = Connection.RunSQL("SELECT HousingComplex, AVG(OverallRating) AS OverallRating, AVG(Rent) AS AverageRent , AVG(Utilities) AS AverageUtilities, AVG(SquareFootage) AS AverageSquareFootage FROM Reviews GROUP BY HousingComplex ORDER BY HousingComplex ASC;");//Gets all unique data complexes
             repeaterListComplexes.DataSource = Complexes;
             repeaterListComplexes.DataBind();//Binds SQL Return to Repeater
             repeaterListComplexes.Visible = true;//Displays this repeater

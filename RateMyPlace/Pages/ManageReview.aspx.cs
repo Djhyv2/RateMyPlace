@@ -103,7 +103,7 @@ namespace RateMyPlace.Pages
         private void AddReview()
         {
             List<SqlParameter> Parameters = GenerateParameters();//Gets Parameters from Page
-            Connection.RunSQL("INSERT INTO REVIEWS (FK_Username,OverallRating,Noise,Safety,Maintenance,LeaseStartDate,LeaseEndDate,CampusDistance,SquareFootage,Pros,Cons,StudySpace,Shuttle,Wifi,Furnished,TV,TrashService,Gym,Parking,ParkingFee,Pets,PetsFee,MiscFee,Rent,Utilities,HousingComplex) VALUES (@Username, @OverallRating, @Noise, @Safety, @Maintenance, @LeaseStartDate, @LeaseEndDate, @CampusDistance, @SquareFootage, @Pros, @Cons, @StudySpace, @Shuttle, @Wifi, @Furnished, @TV, @TrashService, @Gym, @Parking, @ParkingFee, @Pets, @PetsFee, @MiscFee, @Rent, @Utilities, @HousingComplex);",Parameters);//Adds Review to Database
+            Connection.RunSQL("INSERT INTO REVIEWS (FK_Username,OverallRating,Noise,Safety,Maintenance,Location,LeaseStartDate,LeaseEndDate,CampusDistance,SquareFootage,Pros,Cons,StudySpace,Shuttle,Wifi,Furnished,TV,TrashService,Gym,Parking,ParkingFee,Pets,PetsFee,MiscFee,Rent,Utilities,HousingComplex) VALUES (@Username, @OverallRating, @Noise, @Safety, @Maintenance, @Location, @LeaseStartDate, @LeaseEndDate, @CampusDistance, @SquareFootage, @Pros, @Cons, @StudySpace, @Shuttle, @Wifi, @Furnished, @TV, @TrashService, @Gym, @Parking, @ParkingFee, @Pets, @PetsFee, @MiscFee, @Rent, @Utilities, @HousingComplex);",Parameters);//Adds Review to Database
             Response.Redirect("HomePage.aspx");//Redirects to homepage
         }
 
@@ -142,6 +142,14 @@ namespace RateMyPlace.Pages
             else
             {
                 Parameters.Add(new SqlParameter("@Maintenance", ratingMaintenance.CurrentRating));
+            }////If rating not set, use null, else use rating
+            if (0 == ratingLocation.CurrentRating)
+            {
+                Parameters.Add(new SqlParameter("@Location", DBNull.Value));
+            }
+            else
+            {
+                Parameters.Add(new SqlParameter("@Location", ratingLocation.CurrentRating));
             }////If rating not set, use null, else use rating 
             if ("" == txtLeaseStart.Text)
             {
