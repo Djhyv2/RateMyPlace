@@ -17,7 +17,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img id="leftImage" src="https://understanding-home-insurance.com/wp-content/uploads/2016/12/cropped-Logo-No-Background.png" alt="">
+                            <img id="leftImage" src="https://openclipart.org/image/2400px/svg_to_png/68863/sweet-home.png" alt="">
                             <p>Where Is Your Best Fit?</p>
                         </div>
                         <div class="carousel-item">

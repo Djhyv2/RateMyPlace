@@ -236,6 +236,12 @@ nav#topbar button.nav-link
     padding-left: 15px;
 }
 
+#btnUserIcon
+{
+    background-color: transparent;
+    border: 0px;
+}
+
 @media (max-width: 992px) 
 {
     .navbar-collapse 

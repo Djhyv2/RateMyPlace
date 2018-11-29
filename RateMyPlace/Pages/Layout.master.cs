@@ -12,7 +12,7 @@ namespace RateMyPlace.Pages
         {
             if (null != Session["Username"])
             {
-                lblUsername.Text = "Hello, " + Session["Username"].ToString() + "! ";//Say hello username
+                btnUsername.InnerHtml = "Hello, " + Session["Username"].ToString() + "! ";//Say hello username
                 btnLogin.Visible = false;//Disable login
             }//If logged in
             else
@@ -32,5 +32,17 @@ namespace RateMyPlace.Pages
         {
             Response.Redirect("Login.aspx");//Redirects to login 
         }//Redirects to login
+
+        protected void user_Click(object sender, EventArgs e)
+        {
+            if(null != Session["Username"])
+            {
+                Response.Redirect("List.aspx?Page=User");//Redirects to Users Reviews
+            }//If Username set
+            else
+            {
+                Response.Redirect("Login.aspx");//Redirects to Login if not logged in
+            }//Else Not logged in
+        }//Redirects to Users Reviews or Login
     }
 }

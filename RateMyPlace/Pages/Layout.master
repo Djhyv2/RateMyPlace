@@ -59,10 +59,10 @@
                     <button id="btnLogin" runat="server" class="nav-link" onserverclick="login_Click">Login</button>
                 </li>
                 <li class="nav-item">
-                    <i id="userIcon" class="fas fa-user"></i>
+                    <button id="btnUserIcon" runat="server" onserverclick="user_Click"><i id="userIcon" class="fas fa-user"></i></button>
                 </li> 
                 <li class="nav-item ml-2">
-                    <asp:Label class="navbar-text" ID="lblUsername" runat="server"></asp:Label>
+                    <button class="nav-link" ID="btnUsername" runat="server" onserverclick="user_Click"></button>
                 </li>
             </ul>
           </div>
