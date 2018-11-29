@@ -37,7 +37,7 @@ namespace RateMyPlace.Pages
         {
             if(null != Session["Username"])
             {
-                Response.Redirect("List.aspx?Page=User");//Redirects to Users Reviews
+                Response.Redirect("List.aspx?Page=Review&Type=User");//Redirects to Users Reviews
             }//If Username set
             else
             {

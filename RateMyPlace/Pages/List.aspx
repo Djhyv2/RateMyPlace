@@ -14,7 +14,7 @@
             </div>
 
 
-            <asp:Repeater runat="server" ID="repeaterListComplexes" Visible="false" OnItemDataBound="repeaterListOverallRating_ItemDataBound" >
+            <asp:Repeater runat="server" ID="repeaterListComplexes" Visible="false" OnItemDataBound="repeaterListRating_ItemDataBound" >
                 <HeaderTemplate>
                     <table>
                         <tr>
@@ -23,8 +23,8 @@
                             <th class="centered">Average Rent</th>
                             <th class="centered">Average Utilities</th>
                             <th class="right">Square Footage</th>
-                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.Compare)?"":"display:none"); %>'>Select for Comparison</th>
-                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.View)?"":"display:none"); %>'>Select to View</th>
+                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.CompareComplex)?"":"display:none"); %>'>Select for Comparison</th>
+                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ViewComplex)?"":"display:none"); %>'>Select to View</th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -34,32 +34,36 @@
                         <td><%#Eval("AverageRent","${0:0.00}")%></td>
                         <td><%#Eval("AverageUtilities","${0:0.00}")%></td>
                         <td><%#(DBNull.Value == Eval("AverageSquareFootage"))?"Unspecified":Eval("AverageSquareFootage","{0:0} sq. ft.")%></td>
-                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.Compare)?"":"display:none"); %>'><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
-                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.View)?"":"display:none"); %>'><asp:Button runat="server" id="btnViewComplex" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("HousingComplex")%>'  OnCommand="btnViewComplex_Command" /></td>
+                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.CompareComplex)?"":"display:none"); %>'><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
+                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ViewComplex)?"":"display:none"); %>'><asp:Button runat="server" id="btnViewComplex" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("HousingComplex")%>'  OnCommand="btnViewComplex_Command" /></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
                     </table>
-                    <div class="form-group form-inline" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.Compare)?"":"display:none"); %>'>
-                        <asp:Button runat="server" Text="Compare Selected" id="btnSubmit" class="button" OnClick="btnSubmit_Click" />
+                    <div class="form-group form-inline" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.CompareComplex)?"":"display:none"); %>'>
+                        <asp:Button runat="server" Text="Compare Selected" id="btnSubmitCompareComplex" class="button" OnClick="btnSubmitCompareComplex_Click" />
                     </div>
                 </FooterTemplate>
             </asp:Repeater>
 
 
 
-            <asp:Repeater runat="server" ID="repeaterListAll" Visible="false" OnItemDataBound="repeaterListOverallRating_ItemDataBound">
+            <asp:Repeater runat="server" ID="repeaterListReview" Visible="false" OnItemDataBound="repeaterListRating_ItemDataBound">
                 <HeaderTemplate>
                     <table>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
                         <th class="centered">Housing Complex:</th>
-                        <th>Author:</th>
-                        <td><%# ((DBNull.Value == Eval("FK_Username")) || ("" == (String)Eval("FK_Username"))?"Anonymous":Eval("FK_Username")) %></td>
+                        <th Style='<% Response.Write((displayType != RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>'>Author:</th>
+                        <td Style='<% Response.Write((displayType != RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>'><%# ((DBNull.Value == Eval("FK_Username")) || ("" == (String)Eval("FK_Username"))?"Anonymous":Eval("FK_Username")) %></td>
                         <th class="right">Rating:</th>
                         <td>
                             <asp:Label runat="server" ID="lblOverallRating"></asp:Label>
+                        </td>
+                        <th Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>' class="right">Location:</th>
+                        <td Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>'>
+                            <asp:Label runat="server" ID="lblLocation"></asp:Label>
                         </td>
                         <th class="right">Square Footage:</th>
                         <td><%#(DBNull.Value == Eval("SquareFootage"))?"Unspecified":Eval("SquareFootage","{0:0} sq. ft.")%></td>
@@ -89,6 +93,7 @@
                 <FooterTemplate>
                     </table>
                 </FooterTemplate>
+                
             </asp:Repeater>
 
 
