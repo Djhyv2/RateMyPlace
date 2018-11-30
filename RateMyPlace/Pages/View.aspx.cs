@@ -48,9 +48,9 @@ namespace RateMyPlace.Pages
             repeaterViewReview.Visible = true;//Make correct repeater visible
             List<SqlParameter> Parameters = new List<SqlParameter>();
             Parameters.Add(new SqlParameter("@ReviewID", Session["Viewed"]));//Adds Viewed Review as parameter
-            DataTable Complexes = Connection.RunSQL("SELECT * FROM Reviews WHERE PK_ReviewID = @ReviewID",
+            DataTable Review = Connection.RunSQL("SELECT * FROM Reviews WHERE PK_ReviewID = @ReviewID",
 Parameters);//Gets selected review from database
-            repeaterViewReview.DataSource = Complexes;
+            repeaterViewReview.DataSource = Review;
             repeaterViewReview.DataBind();//Binds SQL Return to Repeater
         }
 

@@ -15,8 +15,8 @@ namespace RateMyPlace.Pages
 
     public partial class List : System.Web.UI.Page
     {
-        public enum DisplayType { ViewComplex, CompareComplex, ListComplex, AllReview, ComplexReview, UserReview};
-        public DisplayType displayType;//Stores whether will be displaying the view page or compare page when listing all complexes
+        public enum DisplayType { ViewComplex, CompareComplex, ListComplex, AllReview, ComplexReview, UserReview};//Used to show or hide elements based on what should be displayed
+        public DisplayType displayType;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -135,6 +135,18 @@ namespace RateMyPlace.Pages
             Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
             Response.Redirect("View.aspx?Page=Review");//Redirects to view page
         }//Buttonhandler for each item in repeater to view specific review
+
+        protected void btnEditReview_Command(object sender, CommandEventArgs e)
+        {
+            Session["Edited"] = e.CommandArgument;//Sets reviw to be edited
+            Response.Redirect("ManageReview.aspx?Page=Edit");//Redirects to edit page
+        }//Buttonhandler for each item in repeater to edit specific review
+
+        protected void btnDeleteReview_Command(object sender, CommandEventArgs e)
+        {
+            Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
+            Response.Redirect("View.aspx?Page=Review");//Redirects to view page
+        }//Buttonhandler for each item in repeater to delete specific review
 
         protected void btnSubmitCompareComplex_Click(object sender, EventArgs e)
         {

@@ -72,6 +72,8 @@
                             <asp:CheckBox runat="server" onclick="return false" checked='<%#(DBNull.Value == Eval("Pets")?false:Convert.ToBoolean(Eval("Pets")))%>'/>
                         </td>
                         <th rowspan="2"><asp:Button runat="server" id="btnViewReview" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnViewReview_Command" /></th>
+                        <td Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>' rowspan="2"><asp:Button runat="server" id="btnEdit" Text="Edit" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnEditReview_Command" /></td>
+                        <th Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>' rowspan="2"><asp:Button runat="server" id="btnDelete" Text="Delete" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnDeleteReview_Command" /></th>
                     </tr>
                     <tr>
                         <td ><%#Eval("HousingComplex")%></td>
