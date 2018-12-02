@@ -27,23 +27,21 @@ namespace RateMyPlace.Pages
                 ddlComplex.DataTextField = "Name";
                 ddlComplex.DataValueField = "Value";
                 ddlComplex.DataBind();//Binds the sql return to the drop down list
-            }//Only generates drop down list on first load
 
-
-            switch (Request.QueryString["Page"])
-            {
-                case "Edit":
-                    btnSubmit.Text = "Edit Review";
-                    Page.Title = "Edit Review";
-                    displayType = DisplayType.Edit;
-                    PopulateReview(Request.QueryString["Edited"]);//Populates Existing Review
-                    break;
-                default://Default is add a review
-                    Page.Title = "Add Review";//Default title
-                    displayType = DisplayType.Add;
-                    break;
-            }
-            
+                switch (Request.QueryString["Page"])
+                {
+                    case "Edit":
+                        btnSubmit.Text = "Edit Review";
+                        Page.Title = "Edit Review";
+                        displayType = DisplayType.Edit;
+                        PopulateReview(Request.QueryString["Edited"]);//Populates Existing Review
+                        break;
+                    default://Default is add a review
+                        Page.Title = "Add Review";//Default title
+                        displayType = DisplayType.Add;
+                        break;
+                }
+            }//Only populates on first load           
         }
 
         private void PopulateReview(string ID)
@@ -65,7 +63,7 @@ Parameters);//Gets selected review from database
         }
 
 
-        protected void btnSubmit_Command(object sender, CommandEventArgs e)
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
             if (false == ValidateForm())
             {
@@ -74,7 +72,7 @@ Parameters);//Gets selected review from database
 
             if ("Edit" == Request.QueryString["Page"])
             {
-                EditReview((int)e.CommandArgument);
+                EditReview();
             }
             else
             {
@@ -128,12 +126,13 @@ Parameters);//Gets selected review from database
             return true;//Return true if no errors found
         }
 
-        private void EditReview(int reviewID)
+        private void EditReview()
         {
             List<SqlParameter> Parameters = GenerateParameters();//Gets Parameters from Page
-            Parameters.Add(new SqlParameter("@PK_ReviewID", reviewID));//Adds Review ID as Parameter
-            //Session["Viewed"] = reviewID;
-            //Response.Redirect("View.aspx?Page=Review");//Redirects to view page
+            Parameters.Add(new SqlParameter("@PK_ReviewID", Session["Edited"]));//Adds Review ID as Parameter
+            int test = Connection.RunNonQuerySQL("UPDATE Reviews SET OverallRating = @OverallRating, Noise = @Noise, Safety = @Safety, Maintenance = @Maintenance, Location = @Location, LeaseStartDate = @LeaseStartDate, LeaseEndDate = @LeaseEndDate, CampusDistance = @CampusDistance, SquareFootage = @SquareFootage, Pros = @Pros, Cons = @Cons, StudySpace = @StudySpace, Shuttle = @Shuttle, Wifi = @Wifi, Furnished = @Furnished, TV= @TV, TrashService = @TrashService, Gym = @Gym, Parking = @Parking, ParkingFee = @ParkingFee, Pets = @Pets, PetsFee = @PetsFee, MiscFee = @MiscFee, Rent = @Rent, Utilities = @Utilities, HousingComplex = @HousingComplex WHERE PK_ReviewID = @PK_ReviewID", Parameters);//Edits existing review
+            Session["Viewed"] = Session["Edited"];
+            Response.Redirect("View.aspx?Page=Review");//Redirects to view page
         }
 
         private void AddReview()
