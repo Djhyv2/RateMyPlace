@@ -21,29 +21,29 @@
                     </figure>
                     <div class="carousel-caption d-none d-md-block">
                         <h1>Brookside Apt</h1>
-                        <p>This is a description</p>
+                        <p>Brookside Apartments have three different locations throughout Columbia, including downtown, midtown, and townhouses</p>
                         <a href="#"><span class="badge badge-pill">Learn More!</span></a>
                     </div>
                 </div>
                 <div id="item2" class="carousel-item">
                     <figure class="crop">
-                        <img class="d-block w-100" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="First slide">
+                        <img class="d-block w-100" src="https://www.opus-group.com/Media/ProjectImages/District-Flats-Student-Housing_3235_1000x667.jpg" alt="First slide">
                         <div class="overlay"></div>
                     </figure>  
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Brookside Apt</h1>
-                        <p>This is a description</p>
+                        <h1>District Flats Apt</h1>
+                        <p>The District Flats are located on Stadium, a short drive to the University of Missouri campus</p>
                         <a href=""><span class="badge badge-pill">Learn More!</span></a>
                     </div>
                 </div>
                 <div id="item3" class="carousel-item">
                     <figure class="crop">
-                        <img class="d-block w-100" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="First slide">
+                        <img class="d-block w-100" src="https://www.americancampus.com/assets/653-ucentreonturner/gallery/galleryslider/02-Hot-Tub.jpg" alt="First slide">
                         <div class="overlay"></div>
                     </figure>
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Brookside Apt</h1>
-                        <p>This is a description</p>
+                        <h1>UCentre On Turner Apt</h1>
+                        <p>UCentre on Turner Apartments are located conveniently right by campus</p>
                         <a href=""><span class="badge badge-pill">Learn More!</span></a>
                     </div>
                 </div>
@@ -57,8 +57,8 @@
                 <span class="sr-only">Next</span>
             </a>
             <img id="homePageCarouselSubImage1" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="">
-            <img id="homePageCarouselSubImage2" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="">
-            <img id="homePageCarouselSubImage3" src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" alt="">
+            <img id="homePageCarouselSubImage2" src="https://www.opus-group.com/Media/ProjectImages/District-Flats-Student-Housing_3235_1000x667.jpg" alt="">
+            <img id="homePageCarouselSubImage3" src="https://www.americancampus.com/assets/653-ucentreonturner/gallery/galleryslider/02-Hot-Tub.jpg" alt="">
            
         </div>
         
@@ -78,22 +78,22 @@
                 </div>
                 <div class="col-4">
                     <div class="item">
-                        <img src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" class="image" alt="">
+                        <img src="https://images1.forrent.com/i2/Z4KVZzdDObT72uJCx1GnOBnV5c06CiLl9vB7nfBp3bo/110/image.jpg" class="image" alt="">
                         <div class="overlay">
                             
                         </div>
                     </div>
-                    <p>Brookside</p>
+                    <p>The Lyfe at Missouri</p>
                     
                 </div>
                 <div class="col-4">
                     <div class="item">
-                        <img src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" class="image" alt="">
+                        <img src="https://s3.amazonaws.com/cdn.ucribs.com/images/listings/110972/1438873279-The%20Reserve%20at%20Columbia%201.jpg" class="image" alt="">
                         <div class="overlay">
                             
                         </div>
                     </div>
-                    <p>Brookside</p>
+                    <p>The Reserve</p>
                     
                 </div>
             </div> 
@@ -102,32 +102,32 @@
                 
                 <div class="col-4">
                     <div class="item">
-                        <img src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" class="image" alt="">
+                        <img src="http://themaneater.com/media/2015/0506/photos/Domain030.jpg" class="image" alt="">
                         <div class="overlay">
                             
                         </div>
                     </div>
-                    <p>Brookside</p>
+                    <p>The Domain</p>
                     
                 </div>
                 <div class="col-4">
                     <div class="item">
-                        <img src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" class="image" alt="">
+                        <img src="https://mizzoumag.missouri.edu/wp-content/uploads/2012/10/20120904_sigma-sigma-sigma003.jpg" class="image" alt="">
                         <div class="overlay">
                             
                         </div>
                     </div>
-                    <p>Brookside</p>
+                    <p>Sorority Housing</p>
                     
                 </div>
                 <div class="col-4">
                     <div class="item">
-                        <img src="https://image4.apartmentfinder.com/i2/lACuFrTj0gHzz6O3Puo3LaWcpyCjs7QgPeSjidBohDc/110/midtown-by-brookside-columbia-mo-building-photo.jpg" class="image" alt="">
+                        <img src="http://themaneater.com/media/2016/0410/longread/galena.jpg" class="image" alt="">
                         <div class="overlay">
                             
                         </div>
                     </div>
-                    <p>Brookside</p>
+                    <p>Galena</p>
                     
                 </div>
             </div>
