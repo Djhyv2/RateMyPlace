@@ -144,8 +144,16 @@ namespace RateMyPlace.Pages
 
         protected void btnDeleteReview_Command(object sender, CommandEventArgs e)
         {
-            Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
-            Response.Redirect("View.aspx?Page=Review");//Redirects to view page
+            if (DialogResult.No == MessageBox.Show("Are you sure you want to delete this review?","Confirm Deletion",MessageBoxButtons.YesNo))
+            {
+                return;
+            }//If not confirmed delete, abort
+
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@PK_ReviewID",e.CommandArgument));//Adds Review IK as Parameter
+            Connection.RunNonQuerySQL("DELETE FROM Reviews WHERE PK_ReviewID = @PK_ReviewID", Parameters);//Deletes review
+            Response.Redirect("List.aspx?Page=Review&Type=User");//Refreshes page
+
         }//Buttonhandler for each item in repeater to delete specific review
 
         protected void btnSubmitCompareComplex_Click(object sender, EventArgs e)
