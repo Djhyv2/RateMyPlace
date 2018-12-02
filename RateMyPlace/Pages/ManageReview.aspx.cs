@@ -62,12 +62,10 @@ Parameters);//Gets selected review from database
             edited = review.Rows[0];//Gets Row to be Databound
             Page.DataBind();
             ddlComplex.SelectedValue = true == edited.Table.Columns.Contains("HousingComplex") && DBNull.Value != edited["HousingComplex"] ? edited["HousingComplex"].ToString() : "";
-
-
         }
 
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
+        protected void btnSubmit_Command(object sender, CommandEventArgs e)
         {
             if (false == ValidateForm())
             {
@@ -76,7 +74,7 @@ Parameters);//Gets selected review from database
 
             if ("Edit" == Request.QueryString["Page"])
             {
-                EditReview();
+                EditReview((int)e.CommandArgument);
             }
             else
             {
@@ -130,9 +128,12 @@ Parameters);//Gets selected review from database
             return true;//Return true if no errors found
         }
 
-        private void EditReview()
+        private void EditReview(int reviewID)
         {
-
+            List<SqlParameter> Parameters = GenerateParameters();//Gets Parameters from Page
+            Parameters.Add(new SqlParameter("@PK_ReviewID", reviewID));//Adds Review ID as Parameter
+            //Session["Viewed"] = reviewID;
+            //Response.Redirect("View.aspx?Page=Review");//Redirects to view page
         }
 
         private void AddReview()

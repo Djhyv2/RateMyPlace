@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="form-group form-inline">
-                <asp:Button runat="server" Text="Submit Review" id="btnSubmit" class="button" OnClick="btnSubmit_Click" />
+                <asp:Button runat="server" Text="Submit Review" id="btnSubmit" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>' class="button" OnCommand="btnSubmit_Command" />
             </div>
         </form>
     </div>
