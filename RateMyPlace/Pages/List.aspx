@@ -22,9 +22,10 @@
                             <th class="centered">Average Rating</th>
                             <th class="centered">Average Rent</th>
                             <th class="centered">Average Utilities</th>
-                            <th class="right">Square Footage</th>
+                            <th class="centered">Average Square Footage</th>
                             <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.CompareComplex)?"":"display:none"); %>'>Select for Comparison</th>
                             <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ViewComplex)?"":"display:none"); %>'>Select to View</th>
+                            <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ListComplex)?"":"display:none"); %>'>Select Complex to List</th>
                         </tr>
                 </HeaderTemplate>
                 <ItemTemplate>
@@ -36,6 +37,7 @@
                         <td><%#(DBNull.Value == Eval("AverageSquareFootage"))?"Unspecified":Eval("AverageSquareFootage","{0:0} sq. ft.")%></td>
                         <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.CompareComplex)?"":"display:none"); %>'><input type="checkbox" class="checkbox" name="Complexes" value='<%#Eval("HousingComplex")%>'></input></td>
                         <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ViewComplex)?"":"display:none"); %>'><asp:Button runat="server" id="btnViewComplex" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("HousingComplex")%>'  OnCommand="btnViewComplex_Command" /></td>
+                        <td class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ListComplex)?"":"display:none"); %>'><asp:Button runat="server" id="btnListComplex" Text="Select" UseSubmitBehavior="false" CommandArgument='<%#Eval("HousingComplex")%>'  OnCommand="btnListComplex_Command" /></td>
                     </tr>
                 </ItemTemplate>
                 <FooterTemplate>
@@ -71,9 +73,10 @@
                         <td class="centered">
                             <asp:CheckBox runat="server" onclick="return false" checked='<%#(DBNull.Value == Eval("Pets")?false:Convert.ToBoolean(Eval("Pets")))%>'/>
                         </td>
-                        <th rowspan="2"><asp:Button runat="server" id="btnViewReview" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnViewReview_Command" /></th>
+                        <th rowspan="2"><asp:Button runat="server" id="btnViewReview" Text="View" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>' Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview || displayType == RateMyPlace.Pages.List.DisplayType.AllReview)?"":"display:none"); %>'    OnCommand="btnViewReview_Command" /></th>
                         <td Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>' rowspan="2"><asp:Button runat="server" id="btnEdit" Text="Edit" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnEditReview_Command" /></td>
                         <th Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.UserReview)?"":"display:none"); %>' rowspan="2"><asp:Button runat="server" id="btnDelete" Text="Delete" UseSubmitBehavior="false" CommandArgument='<%#Eval("PK_ReviewID")%>'  OnCommand="btnDeleteReview_Command" /></th>
+                        <th class="centered" Style='<% Response.Write((displayType == RateMyPlace.Pages.List.DisplayType.ComplexReview)?"":"display:none"); %>'><input type="checkbox" class="checkbox" name="Reviews" value='<%#Eval("PK_ReviewID")%>'></input></th>
                     </tr>
                     <tr>
                         <td ><%#Eval("HousingComplex")%></td>

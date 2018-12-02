@@ -66,6 +66,25 @@ namespace RateMyPlace.Pages
                     displayType = DisplayType.UserReview;
                     break;
                 case "Complex":
+                    if (null != Session["Listed"])
+                    {
+                        Page.Title = Session["Listed"] + "'s Reviews";
+                        List<SqlParameter> Parameters = new List<SqlParameter>();
+                        Parameters.Add(new SqlParameter("@HousingComplex", Session["Listed"]));//Adds Housing Complex as parameter
+                        Reviews = Connection.RunSQL("SELECT * FROM Reviews WHERE HousingComplex = @HousingComplex ORDER BY PK_ReviewID DESC",
+            Parameters);//Gets user's reviews from database
+                        if (0 == Reviews.Rows.Count)
+                        {
+                            lblError.Text = "No Reviews Of " + Session["Listed"] + " To Display";
+                            lblError.Visible = true;
+                        }//If No Rows Display Error
+                    }//If listed set, get reviews of complex in listed
+                    else
+                    {
+                        DisplayNothing("No type specified, Please try again from the beginning");//Default error and show nothing
+                        return;
+                    }//If Username not set, error
+                    displayType = DisplayType.ComplexReview;
                     break;
                 default:
                     DisplayNothing("No type specified, Please try again from the beginning");//Default error and show nothing
@@ -95,6 +114,10 @@ namespace RateMyPlace.Pages
                 case "View":
                     Page.Title = "List Complexes to View";
                     displayType = DisplayType.ViewComplex;//Will be checked before showing view buttons
+                    break;
+                case "List":
+                    Page.Title = "List Complexes to List";
+                    displayType = DisplayType.ListComplex;//Will be checked before showing list button
                     break;
                 default:
                     DisplayNothing("No type specified, Please try again from the beginning");//Default error and show nothing
@@ -174,6 +197,12 @@ namespace RateMyPlace.Pages
         {
             Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
             Response.Redirect("View.aspx?Page=Complex");//Redirects to view page
+        }//Buttonhandler for each complex in repeater to view specific complex
+
+        protected void btnListComplex_Command(object sender, CommandEventArgs e)
+        {
+            Session["Listed"] = e.CommandArgument;//Sets complex to be listed
+            Response.Redirect("List.aspx?Page=Review&Type=Complex");//Redirects to list of reviews from that complex
         }//Buttonhandler for each complex in repeater to view specific complex
     }
 }

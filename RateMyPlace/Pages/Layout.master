@@ -45,7 +45,7 @@
                 <a class="nav-link" href="List.aspx?Page=Complex&Type=View">View Complex</a>
                 </li>
                 <li class="nav-item headerButton">
-                    <a class="nav-link" href="#">Compare Reviews</a>
+                    <a class="nav-link" href="List.aspx?Page=Complex&Type=List">Compare Reviews</a>
                 </li>
                 <li class="nav-item headerButton">
                     <a class="nav-link" href="List.aspx?Page=Complex&Type=Compare">Compare Housing Complexes</a>
