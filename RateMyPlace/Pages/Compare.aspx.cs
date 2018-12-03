@@ -21,6 +21,7 @@ namespace RateMyPlace.Pages
                     DisplayComplexes();
                     break;
                 case "Reviews":
+                    DisplayReviews();
                     break;
                 default://If nothing specified, there is no default items to compare
                     DisplayNothing();
@@ -73,6 +74,57 @@ Parameters);//Gets selected complexes from database using table as parameter to 
             tblCompare.Visible = true;
         }
 
+        private void DisplayReviews()
+        {
+            if (null == Session["Compared"] || 2 > ((String[])Session["Compared"]).Length)
+            {
+                DisplayNothing();
+                return;
+            }//If invalid session data
+
+            Page.Title = "Compare Reviews";
+            List<SqlParameter> Parameters = new List<SqlParameter>();
+            Parameters.Add(new SqlParameter("@Reviews", Connection.StringsToDataTable((String[])Session["Compared"])));//Adds Table of strings as parameter
+            Parameters[0].SqlDbType = SqlDbType.Structured;//Sets new parameter to be structured
+            Parameters[0].TypeName = "stringTable";//Use stringTable type defined in database
+            DataTable Reviews = Connection.RunSQL(@"SELECT
+CONCAT('Review ',ROW_NUMBER() OVER(ORDER BY PK_ReviewID)),
+FK_Username AS 'Author',
+OverallRating AS 'Overall Rating',
+Rent AS 'Rent',
+Utilities AS 'Utilities',
+Noise AS 'Noise Amount',
+Safety AS 'Safety',
+Maintenance AS 'Maintenance Quality',
+Location AS 'Location Rating',
+CampusDistance AS 'Campus Distance',
+SquareFootage AS 'Square Footage',
+CAST(StudySpace AS INT) AS 'Study Space',
+CAST(Shuttle AS INT) AS 'Shuttle',
+CAST(Wifi AS INT) AS 'Wifi',
+CAST(Furnished AS INT) AS 'Furnished',
+CAST(TV AS INT) AS 'TV',
+CAST(TrashService AS INT) AS 'Trash Service',
+CAST(Gym AS INT) AS 'Gym',
+CAST(Parking AS INT) AS 'Parking',
+ParkingFee AS 'Parking Fee',
+CAST(Pets AS INT) AS 'Pets',
+PetsFee AS 'Pets Fee',
+MiscFee AS 'Misc Fees',
+Pros AS 'Pros',
+Cons AS 'Cons',
+LeaseStartDate AS 'Lease Start Date',
+LeaseEndDate AS 'Lease End Date'
+FROM Reviews 
+WHERE PK_ReviewID IN (SELECT * FROM @Reviews)
+ORDER BY PK_ReviewID;",
+Parameters);//Gets selected complexes from database using table as parameter to create list for in clause
+            Reviews = Connection.TransposeTable(Reviews);//Transposed table to be horizontal instead of vertical
+            tblCompare.DataSource = Reviews;
+            tblCompare.DataBind();//Binds SQL Return to Repeater
+            tblCompare.Visible = true;
+        }
+
         private void DisplayNothing()
         {
             lblError.Text = "Nothing selected to compare, Please try again from the beginning";
@@ -83,12 +135,44 @@ Parameters);//Gets selected complexes from database using table as parameter to 
 
         protected void tblCompare_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
-            string[] miles = new string[] { "Average Campus Distance" };
+            string[] miles = new string[] { "Average Campus Distance", "Campus Distance" };
             string[] checkboxes = new string[] { "Study Space", "Shuttle", "Wifi","Furnished","TV","Trash Service","Gym","Parking","Pets" };
-            string[] currency = new string[] { "Average Rent", "Average Utilities", "Average Parking Fee", "Average Pets Fee", "Average Misc Fees" };
-            string[] stars = new string[] { "Overall Rating","Average Noise Amount","Average Safety","Average Maintenance Quality","Average Location Rating"};
-            string[] sqFoot = new string[] { "Average Square Footage" };
+            string[] currency = new string[] { "Average Rent", "Average Utilities", "Average Parking Fee", "Average Pets Fee", "Average Misc Fees", "Rent", "Utilities", "Parking Fee", "Pets Fee", "Misc Fees" };
+            string[] stars = new string[] { "Overall Rating","Average Noise Amount","Average Safety","Average Maintenance Quality","Average Location Rating", "Overall Rating", "Noise Amount", "Safety", "Maintenance Quality", "Location Rating"};
+            string[] sqFoot = new string[] { "Average Square Footage", "Square Footage" };
+            string[] texts = new string[] { "Author", "Pros", "Cons" };
+            string[] dates = new string[] { "Lease Start Date", "Lease End Date" };
             //Arrays of which row headers are to be what format
+
+            if (0 <= Array.IndexOf(texts, e.Item.Cells[0].Text))
+            {
+                for (int i = 1; e.Item.Cells.Count > i; i++)
+                {
+                    if ("&nbsp;" != e.Item.Cells[i].Text)
+                    {
+                        e.Item.Cells[i].Text = e.Item.Cells[i].Text;//Displays text
+                    }//If not null
+                    else
+                    {
+                        e.Item.Cells[i].Text = "Unspecified";
+                    }//Default to unspecified
+                }//For each column after header column
+            }//If row is to be a name
+
+            if (0 <= Array.IndexOf(dates, e.Item.Cells[0].Text))
+            {
+                for (int i = 1; e.Item.Cells.Count > i; i++)
+                {
+                    if ("&nbsp;" != e.Item.Cells[i].Text)
+                    {
+                        e.Item.Cells[i].Text = DateTime.Parse(e.Item.Cells[i].Text).Date.ToString("yyyy-MM-dd");//Displays datetime converted to date
+                    }//If not null
+                    else
+                    {
+                        e.Item.Cells[i].Text = "Unspecified";
+                    }//Default to unspecified
+                }//For each column after header column
+            }//If row is to be a date
 
             if ( 0 <= Array.IndexOf(stars,e.Item.Cells[0].Text))
             {

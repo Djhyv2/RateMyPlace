@@ -193,6 +193,22 @@ namespace RateMyPlace.Pages
 
         }//Submit Button for compare complex
 
+        protected void btnSubmitCompareReview_Click(object sender, EventArgs e)
+        {
+            if (null == Request.Form.GetValues("Reviews") || 2 > Request.Form.GetValues("Reviews").Length)
+            {
+                lblError.Text = "Select 2 or more Reviews to Compare.";
+                lblError.Visible = true;
+                return;
+            }//If selected <2 complexes
+
+            Session["Compared"] = Request.Form.GetValues("Reviews");//Stores values to be compared
+            Response.Redirect("Compare.aspx?Page=Reviews");//Redirects to compare
+
+        }//Submit Button for compare complex
+        
+
+
         protected void btnViewComplex_Command(object sender, CommandEventArgs e)
         {
             Session["Viewed"] = e.CommandArgument;//Sets reviw to be viewed
