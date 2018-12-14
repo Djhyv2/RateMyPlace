@@ -1,4 +1,6 @@
-﻿//Created by: Dustin Hengel
+﻿// Written by: Dustin Hengel
+// Tested by: Connor Fitzmaurice and Mercy Housh
+// Debugged by: Bradley Worthen and Madison Williams
 using System;
 using System.Collections.Generic;
 using System.Data;

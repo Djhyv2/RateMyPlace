@@ -1,4 +1,6 @@
-﻿//Created by: Dustin Hengel
+﻿// Written by: Dustin Hengel
+// Tested by: Madison Williams
+// Debugged by: Connor Fitzmaurice
 using System;
 using System.Data;
 using System.Data.SqlClient;

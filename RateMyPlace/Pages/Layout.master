@@ -1,4 +1,4 @@
-﻿<!-- Created by: Dustin Hengel -->
+﻿<!-- Created by: Dustin Hengel. Tested by: Bradley Worthen. Debugged by: Connor Fitzmaurice-->
 <%@ Master Language="C#" AutoEventWireup="true" Inherits="RateMyPlace.Pages.Layout" Codebehind="Layout.master.cs" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 
